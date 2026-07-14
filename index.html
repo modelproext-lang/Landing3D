@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training3D | Escaneo 3D Industrial de Precisión en México</title>
+<meta name="description" content="Reduce hasta 80% el tiempo de inspección dimensional con escáneres 3D industriales certificados. Soporte y calibración en México.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        },
+        colors: {
+          graphite: {
+            950: '#070B14',
+            900: '#0A0F1C',
+            850: '#0D1424',
+            800: '#111A2E',
+            700: '#182338',
+            600: '#243350',
+            500: '#3A4A6B',
+          },
+          accent: {
+            300: '#67E8F9',
+            400: '#22D3EE',
+            500: '#06B6D4',
+            600: '#0891B2',
+          },
+        },
+        boxShadow: {
+          'glow': '0 0 0 1px rgba(34,211,238,0.15), 0 0 40px -8px rgba(34,211,238,0.45)',
+          'glow-lg': '0 0 0 1px rgba(34,211,238,0.2), 0 0 80px -12px rgba(34,211,238,0.55)',
+        },
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #0A0F1C; }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(34,211,238,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34,211,238,0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(148,163,184,0.18) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .radial-fade {
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 35%, black 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 35%, black 40%, transparent 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, #67E8F9 0%, #22D3EE 45%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .scan-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34,211,238,0.9), transparent);
+    animation: scan 3.2s ease-in-out infinite;
+  }
+  @keyframes scan {
+    0% { top: 8%; opacity: 0; }
+    10% { opacity: 1; }
+    50% { top: 88%; opacity: 1; }
+    60% { opacity: 0; }
+    100% { top: 8%; opacity: 0; }
+  }
+
+  .pulse-dot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: currentColor;
+    animation: pulse-ring 1.8s cubic-bezier(0.4,0,0.6,1) infinite;
+  }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+</style>
+</head>
+<body class="bg-graphite-900 text-slate-200 font-sans antialiased">
+
+<!-- LOGO ESTÁTICO (sin navegación) -->
+<header class="relative z-30 border-b border-graphite-700/60">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-2.5 select-none">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="#22D3EE" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M16 2V16M16 16V30M16 16L28 9M16 16L4 9" stroke="#22D3EE" stroke-width="1.2" stroke-opacity="0.55"/>
+        <circle cx="16" cy="16" r="2.4" fill="#22D3EE"/>
+      </svg>
+      <span class="text-lg font-bold tracking-tight text-white">TRAINING<span class="text-accent-400">3D</span></span>
+    </div>
+    <span class="hidden sm:inline-flex items-center gap-2 text-xs font-medium text-slate-400 border border-graphite-600 rounded-full px-3 py-1.5">
+      <span class="relative w-1.5 h-1.5"><span class="pulse-dot absolute inset-0 text-accent-400"></span><span class="relative block w-1.5 h-1.5 rounded-full bg-accent-400"></span></span>
+      Escaneo 3D Industrial · México
+    </span>
+  </div>
+</header>
+
+<!-- SECCIÓN 1: HERO -->
+<section class="relative overflow-hidden bg-graphite-900">
+  <div class="absolute inset-0 bg-grid radial-fade"></div>
+  <div class="scan-line"></div>
+  <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-accent-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
+    <span class="inline-flex items-center gap-2 text-xs font-semibold text-accent-300 bg-accent-500/10 border border-accent-400/30 rounded-full px-4 py-1.5 mb-8">
+      PRECISIÓN CERTIFICADA · ±0.01 mm
+    </span>
+
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+      Reduce hasta un <span class="text-gradient">80% el tiempo</span><br class="hidden md:block">
+      de inspección dimensional en tu línea
+    </h1>
+
+    <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+      Para ingenieros y gerentes de calidad y manufactura que necesitan datos dimensionales
+      confiables, trazables y en minutos — sin detener producción ni depender de un CMM.
+    </p>
+
+    <div class="mt-10 flex flex-col items-center gap-4">
+      <a href="#contacto" class="group inline-flex items-center gap-2.5 bg-accent-400 hover:bg-accent-300 text-graphite-950 font-bold text-base px-8 py-4 rounded-xl shadow-glow-lg transition-all hover:scale-[1.03]">
+        Solicita tu Diagnóstico Técnico Gratuito
+        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <span class="text-xs text-slate-500">Sin compromiso · Respuesta en menos de 24 horas hábiles</span>
+    </div>
+
+    <!-- Visual: mockup de nube de puntos -->
+    <div class="mt-16 relative mx-auto max-w-3xl">
+      <div class="rounded-2xl border border-graphite-600 bg-graphite-850/80 backdrop-blur p-3 shadow-2xl">
+        <div class="rounded-xl bg-graphite-950 border border-graphite-700 aspect-[16/8] relative overflow-hidden bg-dots flex items-center justify-center">
+          <svg viewBox="0 0 400 200" class="w-4/5 h-4/5 opacity-90">
+            <g stroke="#22D3EE" stroke-width="0.6" fill="none" opacity="0.55">
+              <path d="M60 140 L120 60 L200 40 L280 60 L340 140 L280 170 L120 170 Z"/>
+              <path d="M120 60 L120 170 M200 40 L200 175 M280 60 L280 170"/>
+              <path d="M60 140 L340 140 M90 100 L310 100"/>
+            </g>
+            <g fill="#67E8F9">
+              <circle cx="60" cy="140" r="2.2"/><circle cx="120" cy="60" r="2.2"/><circle cx="200" cy="40" r="2.2"/>
+              <circle cx="280" cy="60" r="2.2"/><circle cx="340" cy="140" r="2.2"/><circle cx="280" cy="170" r="2.2"/>
+              <circle cx="120" cy="170" r="2.2"/><circle cx="200" cy="100" r="2.2"/><circle cx="150" cy="90" r="1.6"/>
+              <circle cx="250" cy="90" r="1.6"/><circle cx="180" cy="130" r="1.6"/><circle cx="220" cy="130" r="1.6"/>
+            </g>
+          </svg>
+          <span class="absolute bottom-3 right-4 text-[10px] font-mono text-accent-400/80 tracking-wider">RES: 0.05mm · 1.2M pts/s</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: PROBLEMA / AGITACIÓN -->
+<section class="relative bg-graphite-850 border-t border-graphite-700/60">
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">El costo oculto</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+        Medir con métodos tradicionales te está costando más de lo que crees
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-graphite-900 border border-graphite-700 rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="font-semibold text-white mb-1.5">Horas perdidas por pieza</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Calibradores y CMM que toman horas en piezas complejas mientras la línea espera.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-8.25 3.75h.008v.008h-.008v-.008z"/></svg>
+        </div>
+        <h3 class="font-semibold text-white mb-1.5">Errores humanos de medición</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Puntos de muestreo insuficientes que dejan pasar desviaciones críticas.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
+        </div>
+        <h3 class="font-semibold text-white mb-1.5">Retrabajos y piezas rechazadas</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Desviaciones detectadas hasta después del ensamble, ya con costo hundido.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 rounded-xl p-6">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
+        </div>
+        <h3 class="font-semibold text-white mb-1.5">Reportes que tardan días</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Sin trazabilidad digital lista para auditorías IATF, AS9100 o ISO.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: SOLUCIÓN / PRODUCTO -->
+<section class="relative bg-graphite-900 border-t border-graphite-700/60 overflow-hidden">
+  <div class="absolute inset-0 bg-grid radial-fade opacity-60"></div>
+  <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-24 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">La solución</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
+        Escáneres 3D de precisión industrial, listos para tu piso de producción
+      </h2>
+      <p class="mt-5 text-slate-400 leading-relaxed">
+        Distribuimos y damos soporte técnico en México a escáneres 3D portátiles de grado
+        metrológico: capturas en minutos, exportación directa a tu software de GD&T y
+        calibración certificada localmente — sin depender de soporte en el extranjero.
+      </p>
+      <ul class="mt-7 space-y-3">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          <span class="text-slate-300 text-sm">Precisión de hasta ±0.01 mm en piezas metálicas, plásticas y compuestas</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          <span class="text-slate-300 text-sm">Portátil: capturas en sitio, sin trasladar la pieza al laboratorio</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-accent-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          <span class="text-slate-300 text-sm">Integración directa con GOM Inspect, PolyWorks, Geomagic y SolidWorks</span>
+        </li>
+      </ul>
+      <a href="#contacto" class="mt-8 inline-flex items-center gap-2.5 bg-accent-400 hover:bg-accent-300 text-graphite-950 font-bold px-7 py-3.5 rounded-xl shadow-glow transition-all hover:scale-[1.03]">
+        Solicita tu Diagnóstico Técnico Gratuito
+      </a>
+    </div>
+
+    <div class="relative">
+      <div class="rounded-2xl border border-graphite-600 bg-graphite-850 p-8 shadow-2xl">
+        <div class="aspect-square rounded-xl bg-graphite-950 border border-graphite-700 flex items-center justify-center relative overflow-hidden">
+          <svg viewBox="0 0 200 200" class="w-2/3 h-2/3">
+            <rect x="70" y="40" width="60" height="90" rx="10" fill="none" stroke="#22D3EE" stroke-width="1.5"/>
+            <circle cx="100" cy="60" r="10" fill="none" stroke="#67E8F9" stroke-width="1.5"/>
+            <circle cx="100" cy="60" r="3" fill="#22D3EE"/>
+            <path d="M100 70 L100 100" stroke="#22D3EE" stroke-width="1" stroke-dasharray="2 3"/>
+            <rect x="78" y="100" width="44" height="22" rx="4" fill="none" stroke="#3A4A6B" stroke-width="1.2"/>
+            <path d="M50 175 Q100 155 150 175" stroke="#22D3EE" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="50" cy="175" r="1.8" fill="#67E8F9"/><circle cx="100" cy="158" r="1.8" fill="#67E8F9"/><circle cx="150" cy="175" r="1.8" fill="#67E8F9"/>
+          </svg>
+        </div>
+        <div class="mt-5 flex justify-between text-xs font-mono text-slate-500">
+          <span>MOD: TR3D-SX2</span>
+          <span class="text-accent-400">● CALIBRADO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: BENEFICIOS TÉCNICOS -->
+<section class="relative bg-graphite-850 border-t border-graphite-700/60">
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">Beneficios técnicos</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+        Todo lo que tu área de calidad necesita, en un solo equipo
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-graphite-900 border border-graphite-700 hover:border-accent-400/50 rounded-xl p-6 transition-colors">
+        <span class="font-mono text-2xl font-bold text-accent-400">±0.01mm</span>
+        <h3 class="font-semibold text-white mt-2 mb-1.5">Precisión metrológica</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Certificada bajo estándares trazables a normas internacionales.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 hover:border-accent-400/50 rounded-xl p-6 transition-colors">
+        <span class="font-mono text-2xl font-bold text-accent-400">-90%</span>
+        <h3 class="font-semibold text-white mt-2 mb-1.5">Tiempo de inspección</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Piezas completas capturadas en minutos, no en horas.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 hover:border-accent-400/50 rounded-xl p-6 transition-colors">
+        <span class="font-mono text-2xl font-bold text-accent-400">GD&T</span>
+        <h3 class="font-semibold text-white mt-2 mb-1.5">Reportes automáticos</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Mapas de color y reportes dimensionales listos para auditoría.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 hover:border-accent-400/50 rounded-xl p-6 transition-colors">
+        <span class="font-mono text-2xl font-bold text-accent-400">MX</span>
+        <h3 class="font-semibold text-white mt-2 mb-1.5">Soporte y calibración local</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Servicio técnico y refacciones sin depender del extranjero.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 hover:border-accent-400/50 rounded-xl p-6 transition-colors">
+        <span class="font-mono text-2xl font-bold text-accent-400">1.2M</span>
+        <h3 class="font-semibold text-white mt-2 mb-1.5">Puntos por segundo</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Nube de puntos de alta densidad incluso en piezas complejas.</p>
+      </div>
+      <div class="bg-graphite-900 border border-graphite-700 hover:border-accent-400/50 rounded-xl p-6 transition-colors">
+        <span class="font-mono text-2xl font-bold text-accent-400">100%</span>
+        <h3 class="font-semibold text-white mt-2 mb-1.5">Opciones de adquisición</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Compra, renta o financiamiento adaptado a tu proyecto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: PRUEBA SOCIAL -->
+<section class="relative bg-graphite-900 border-t border-graphite-700/60">
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">Confianza comprobada</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+        Empresas industriales en México ya escanean con nosotros
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-14">
+      <span class="border border-graphite-600 text-slate-400 text-sm font-semibold rounded-lg px-5 py-3">Automotriz</span>
+      <span class="border border-graphite-600 text-slate-400 text-sm font-semibold rounded-lg px-5 py-3">Aeroespacial</span>
+      <span class="border border-graphite-600 text-slate-400 text-sm font-semibold rounded-lg px-5 py-3">Moldes y Troqueles</span>
+      <span class="border border-graphite-600 text-slate-400 text-sm font-semibold rounded-lg px-5 py-3">Manufactura Pesada</span>
+      <span class="border border-graphite-600 text-slate-400 text-sm font-semibold rounded-lg px-5 py-3">Autopartes</span>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-graphite-850 border border-graphite-700 rounded-xl p-7">
+        <div class="flex gap-1 mb-4 text-accent-400">
+          <span>★★★★★</span>
+        </div>
+        <p class="text-slate-300 leading-relaxed">"Lo que antes nos tomaba media jornada con el CMM ahora lo resolvemos en 20 minutos, y el reporte GD&T sale automático."</p>
+        <p class="mt-4 text-sm font-semibold text-white">Gerente de Calidad</p>
+        <p class="text-xs text-slate-500">Planta de autopartes, Bajío</p>
+      </div>
+      <div class="bg-graphite-850 border border-graphite-700 rounded-xl p-7">
+        <div class="flex gap-1 mb-4 text-accent-400">
+          <span>★★★★★</span>
+        </div>
+        <p class="text-slate-300 leading-relaxed">"El soporte técnico local hizo la diferencia. La calibración y capacitación se resolvieron en la misma semana."</p>
+        <p class="mt-4 text-sm font-semibold text-white">Ingeniero de Manufactura</p>
+        <p class="text-xs text-slate-500">Proveedor Tier 1, Nuevo León</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: CÓMO FUNCIONA / PROCESO -->
+<section class="relative bg-graphite-850 border-t border-graphite-700/60">
+  <div class="max-w-5xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">Proceso simple</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+        De la duda técnica a datos confiables, en 4 pasos
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="relative">
+        <div class="w-11 h-11 rounded-lg bg-accent-400/10 border border-accent-400/40 flex items-center justify-center font-mono font-bold text-accent-400 mb-4">01</div>
+        <h3 class="font-semibold text-white mb-1.5">Agenda tu diagnóstico</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Completas el formulario y un especialista te contacta en menos de 24h.</p>
+      </div>
+      <div class="relative">
+        <div class="w-11 h-11 rounded-lg bg-accent-400/10 border border-accent-400/40 flex items-center justify-center font-mono font-bold text-accent-400 mb-4">02</div>
+        <h3 class="font-semibold text-white mb-1.5">Evaluamos tu aplicación</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Analizamos tus piezas, tolerancias y flujo de trabajo actual.</p>
+      </div>
+      <div class="relative">
+        <div class="w-11 h-11 rounded-lg bg-accent-400/10 border border-accent-400/40 flex items-center justify-center font-mono font-bold text-accent-400 mb-4">03</div>
+        <h3 class="font-semibold text-white mb-1.5">Demo con equipo real</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Ves el escáner trabajando con tu propia pieza, en sitio o remoto.</p>
+      </div>
+      <div class="relative">
+        <div class="w-11 h-11 rounded-lg bg-accent-400/10 border border-accent-400/40 flex items-center justify-center font-mono font-bold text-accent-400 mb-4">04</div>
+        <h3 class="font-semibold text-white mb-1.5">Cotización e implementación</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">Propuesta a medida, capacitación y calibración incluidas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 7: COMPARATIVA / SPECS TÉCNICAS -->
+<section class="relative bg-graphite-900 border-t border-graphite-700/60">
+  <div class="max-w-5xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">Comparativa</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+        Método tradicional vs. escaneo 3D Training3D
+      </h2>
+    </div>
+
+    <div class="overflow-x-auto rounded-xl border border-graphite-700">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-graphite-850 text-left">
+            <th class="px-6 py-4 font-semibold text-slate-300">Criterio</th>
+            <th class="px-6 py-4 font-semibold text-slate-500">Método tradicional</th>
+            <th class="px-6 py-4 font-semibold text-accent-400">Training3D</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-graphite-700">
+          <tr class="bg-graphite-900">
+            <td class="px-6 py-4 text-slate-300 font-medium">Tiempo por pieza</td>
+            <td class="px-6 py-4 text-slate-500">2–6 horas</td>
+            <td class="px-6 py-4 text-white font-mono">5–15 min</td>
+          </tr>
+          <tr class="bg-graphite-850/40">
+            <td class="px-6 py-4 text-slate-300 font-medium">Densidad de datos</td>
+            <td class="px-6 py-4 text-slate-500">Puntos discretos</td>
+            <td class="px-6 py-4 text-white font-mono">Nube de puntos completa</td>
+          </tr>
+          <tr class="bg-graphite-900">
+            <td class="px-6 py-4 text-slate-300 font-medium">Formato de reporte</td>
+            <td class="px-6 py-4 text-slate-500">Manual, en horas/días</td>
+            <td class="px-6 py-4 text-white font-mono">GD&T automático</td>
+          </tr>
+          <tr class="bg-graphite-850/40">
+            <td class="px-6 py-4 text-slate-300 font-medium">Portabilidad</td>
+            <td class="px-6 py-4 text-slate-500">CMM fijo en laboratorio</td>
+            <td class="px-6 py-4 text-white font-mono">Portátil, en línea</td>
+          </tr>
+          <tr class="bg-graphite-900">
+            <td class="px-6 py-4 text-slate-300 font-medium">Piezas complejas / suaves</td>
+            <td class="px-6 py-4 text-slate-500">Limitado</td>
+            <td class="px-6 py-4 text-white font-mono">Cobertura total de geometría</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 8: FAQ / OBJECIONES -->
+<section class="relative bg-graphite-850 border-t border-graphite-700/60">
+  <div class="max-w-3xl mx-auto px-6 py-20 md:py-24">
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold tracking-widest text-accent-400 uppercase">Preguntas frecuentes</span>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold text-white tracking-tight">
+        Resolvemos tus dudas antes de invertir
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      <details class="group bg-graphite-900 border border-graphite-700 rounded-xl px-6 py-5" open>
+        <summary class="flex items-center justify-between cursor-pointer font-semibold text-white">
+          ¿Cuál es la inversión aproximada de un escáner 3D industrial?
+          <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Depende de la precisión y volumen de trabajo requeridos. En tu diagnóstico técnico gratuito te damos una cotización específica para tu aplicación, incluyendo opciones de renta y financiamiento.</p>
+      </details>
+      <details class="group bg-graphite-900 border border-graphite-700 rounded-xl px-6 py-5">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold text-white">
+          ¿Mi equipo necesita capacitación especializada?
+          <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">La curva de aprendizaje es corta. Incluimos capacitación práctica con tus propias piezas para que tu equipo de calidad opere el sistema con autonomía desde la primera semana.</p>
+      </details>
+      <details class="group bg-graphite-900 border border-graphite-700 rounded-xl px-6 py-5">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold text-white">
+          ¿Es compatible con el software que ya usamos?
+          <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Sí. Los equipos exportan en formatos estándar compatibles con GOM Inspect, PolyWorks, Geomagic, SolidWorks y la mayoría de plataformas CAD/CAM del mercado.</p>
+      </details>
+      <details class="group bg-graphite-900 border border-graphite-700 rounded-xl px-6 py-5">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold text-white">
+          ¿Qué pasa si necesito soporte o calibración después de la compra?
+          <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">Contamos con soporte técnico y calibración certificada dentro de México, sin depender de tiempos de importación ni soporte extranjero.</p>
+      </details>
+      <details class="group bg-graphite-900 border border-graphite-700 rounded-xl px-6 py-5">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold text-white">
+          ¿Cuánto tiempo toma implementarlo en mi línea de producción?
+          <svg class="faq-icon w-5 h-5 text-accent-400 shrink-0 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-3 text-sm text-slate-400 leading-relaxed">La mayoría de los proyectos quedan operando en 1 a 2 semanas desde la cotización, incluyendo entrega, calibración y capacitación.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 9: CTA FINAL -->
+<section id="contacto" class="relative bg-graphite-900 border-t border-graphite-700/60 overflow-hidden">
+  <div class="absolute inset-0 bg-grid radial-fade opacity-70"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-accent-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28">
+    <div class="text-center mb-10">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold text-orange-300 bg-orange-500/10 border border-orange-400/30 rounded-full px-4 py-1.5 mb-6">
+        CUPO LIMITADO · Diagnósticos técnicos gratuitos este mes
+      </span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        Deja de adivinar tolerancias.<br class="hidden md:block"> Empieza a medir con certeza.
+      </h2>
+      <p class="mt-5 text-slate-400 max-w-xl mx-auto">
+        Agenda tu diagnóstico técnico gratuito y descubre en qué punto exacto de tu proceso
+        el escaneo 3D reduce tiempo, costo y errores.
+      </p>
+    </div>
+
+    <div class="max-w-lg mx-auto bg-graphite-850 border border-graphite-600 rounded-2xl p-7 md:p-9 shadow-glow-lg">
+      <form class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 mb-1.5">Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" class="w-full bg-graphite-900 border border-graphite-600 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 mb-1.5">Empresa</label>
+          <input type="text" placeholder="Nombre de tu empresa" class="w-full bg-graphite-900 border border-graphite-600 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-400 mb-1.5">Correo o WhatsApp</label>
+          <input type="text" placeholder="correo@empresa.com" class="w-full bg-graphite-900 border border-graphite-600 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400">
+        </div>
+        <button type="submit" class="w-full bg-accent-400 hover:bg-accent-300 text-graphite-950 font-bold text-base px-8 py-4 rounded-xl shadow-glow transition-all hover:scale-[1.02]">
+          Solicita tu Diagnóstico Técnico Gratuito
+        </button>
+        <p class="text-center text-xs text-slate-500">Sin compromiso · Tus datos están protegidos</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 10: FOOTER -->
+<footer class="relative bg-graphite-950 border-t border-graphite-700/60">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2 select-none">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="#22D3EE" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="16" cy="16" r="2.4" fill="#22D3EE"/>
+      </svg>
+      <span class="text-sm font-bold text-white">TRAINING<span class="text-accent-400">3D</span></span>
+    </div>
+    <p class="text-xs text-slate-500 text-center">Escaneo 3D Industrial · México · training3d.mx</p>
+    <p class="text-xs text-slate-600">© 2026 Training3D. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
