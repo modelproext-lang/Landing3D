@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48.95 48.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_未命名的渐变_34);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        opacity: .68;
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_34" data-name="未命名的渐变 34" x1="10.47" y1="25.71" x2="38.47" y2="25.71" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a6ac9"/>
+      <stop offset=".16" stop-color="#0776d7"/>
+      <stop offset=".44" stop-color="#0387ed"/>
+      <stop offset=".72" stop-color="#0092fa"/>
+      <stop offset=".98" stop-color="#0096ff"/>
+    </linearGradient>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <rect class="cls-2" width="48.95" height="48.95" rx="9.46" ry="9.46"/>
+    <g id="Layer_2" data-name="Layer 2">
+      <path class="cls-1" d="M34.47,28.2c0,.97-.36,1.9-1,2.62v4.31c.04.74-.31,1.44-.92,1.86-.23.14-.49.21-.75.21-.24,0-.47-.06-.68-.17l-.65-.35-.65.35c-.44.26-.99.26-1.43,0-.62-.42-.97-1.15-.92-1.9v-4.31c-1.46-1.66-1.3-4.18.35-5.65,1.66-1.46,4.18-1.3,5.65.35.65.74,1.01,1.69,1,2.67ZM38.47,17.2v13c0,1.66-1.34,3-3,3v-1.71c1.83-2.76,1.08-6.48-1.68-8.32-2.76-1.83-6.48-1.08-8.32,1.68-1.33,2.01-1.33,4.62,0,6.63v1.71h-12c-1.66,0-3-1.34-3-3v-13c0-1.66,1.34-3,3-3h22c1.66,0,3,1.34,3,3ZM23.47,24.2c0-.55-.45-1-1-1h-8c-.55,0-1,.45-1,1s.45,1,1,1h8c.55,0,1-.45,1-1ZM26.47,20.2c0-.55-.45-1-1-1h-11c-.55,0-1,.45-1,1s.45,1,1,1h11c.55,0,1-.45,1-1Z"/>
+    </g>
+  </g>
+</svg>

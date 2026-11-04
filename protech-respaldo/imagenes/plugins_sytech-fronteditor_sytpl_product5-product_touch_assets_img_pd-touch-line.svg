@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720.8 620.65">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        opacity: .21;
+        stroke: url(#_未命名的渐变_34);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 44px;
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_34" data-name="未命名的渐变 34" x1="370.05" y1="-940.02" x2="1013.51" y2="-940.02" gradientTransform="translate(-567.05 981.82) rotate(15.34)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a6ac9"/>
+      <stop offset=".16" stop-color="#0776d7"/>
+      <stop offset=".44" stop-color="#0387ed"/>
+      <stop offset=".72" stop-color="#0092fa"/>
+      <stop offset=".98" stop-color="#0096ff"/>
+    </linearGradient>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <path class="cls-1" d="M698.8,73.46S258.91-27.81,177.43,53.77c-81.48,81.58-4.06,136.6,232.09,186.91,236.15,50.3,292.32,21.88,224.56-14.55s-412.74-76.38-308.53,84.2c89.6,138.04,178.77,74.1,157.2,34.39-21.57-39.71-554.33-121.04-446.3,3.75,108.03,124.79,529.71,250.18,529.71,250.18"/>
+  </g>
+</svg>

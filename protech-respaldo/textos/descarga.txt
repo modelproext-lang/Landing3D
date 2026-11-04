@@ -1,0 +1,120 @@
+Centro de descargas - ProTech 
+ProTech 
+Productos 
+ZWCAD 
+ZW3D CAD/CAM 
+Soporte 
+Centro de descargas 
+Precios y Comprar 
+Partners 
+Localizador de Resellers 
+Log in 
+Contact Us 
+Download 
+[H1] Centro de Descargas 
+Accede a las versiones oficiales del software y encuentra rápidamente lo que necesitas. 
+ZW3D CAD/CAM (Windows) 
+ZWCAD Standard/Professional (Windows) 
+ZW3D Network License Manager 
+Download Now 
+ZW3D 2026 for Windows 7 
+Download Now 
+ZW3D 2026 for Windows 10/11 
+Download Now 
+ZWCAD 2026 Inglés 
+Download Now 
+ZWCAD 2026 Español 
+Download Now 
+Ponte en Contacto 
+[H2] ¿Necesitas mas Información? 
+Contáctanos por el medio que te resulte más conveniente. 
+[H3] Teléfono 
++86 442 949 4873 
+Chat Now 
+[H3] Email 
+contacto@protechmexico.com 
+Send a Message 
+[H3] Submit a Ticket 
+Completa el formulario y cuéntanos cómo podemos ayudarte. 
+Submit a Ticket 
+English 
+French 
+German 
+Japanese 
+Korean 
+CONTÁCTANOS 
+[H2] Estamos Listos para Apoyar 
+Favor especificar su requerimiento en el formulario y le vamos a contactar de forma inmediata 
+Nombre * 
+Apellido * 
+Teléfono * 
+Correo de Trabajo * 
+Estado * Please select Ciudad de México Estado de México Puebla Querétaro Jalisco Nuevo León Guanajuato Aguascalientes Baja California Baja California Sur Campeche Chiapas Chihuahua Coahuila Colima Durango Guerrero Hidalgo Michoacán Morelos Nayarit Oaxaca Quintana Roo San Luis Potosí Sinaloa Sonora Tabasco Tamaulipas Tlaxcala Veracruz Yucatán Zacatecas 
+Industria * Please select AEC-Architecture AEC-Construction AEC-Real estate AEC-Structure AEC-Survey AEC-Civil AEC-Electricity AEC-Landscape AEC-Furniture & Decoration AEC-HVAC & Piping AEC-Prefabricated AEC-Government & Municipal AEC-Environmental AEC-Schematization Other AEC industries MFG-Machinery MFG-Mold & Die MFG-Electronic & Electric MFG-Automotive MFG-Ship MFG-Electric appliance MFG-Consumer products MFG-Elevator MFG-Pump valve MFG-Diesel engine Other MFG Industries EDU-undergraduate education EDU-high school education EDU-higher vocational education Other education 
+Tipo de Requerimiento * Please select Material de Información Demo Cotización Soporte Técnico Otros 
+Producto de Interés * Producto de Interés ZWCAD Standard ZWCAD Professional ZWCAD MFG ZW3D CAD ZW3D CAM ZW3D Simulación Estructural ZW3D Simulación de Fluido ZW3D PDM CivilCAD 
+Nombre de Empresa o Instituto * 
+Tipo de Uso * Tipo de Uso Negocio Personal Educación 
+Comentario Doy mi consentimiento para recibir actualizaciones sobre productos y eventos de ProTech, y otorgo mi consentimiento de acuerdo con la Política de 
+Privacidad de ProTech . Submit 
+Create a new ticket 
+Problem with installation 
+Subject 
+I Need Help With * Requirement #1 Requirement #2 Requirement #3 
+Your Message * 
+Drag & Drop your Files Here Submit 
+DA EL SIGUIENTE PASO 
+[H2] ¿Quieres más información? 
+Déjanos tus datos y estaremos a tus ordenes. 
+Contáctanos 
+ProTech 
+Contact Us 
+Precios 
+Contáctanos 
+facebook 
+instagram 
+youtube 
+linkedin 
+twitter 
+Productos 
+ZWCAD 
+ZW3D CAD/CAM 
+Soporte 
+Centro de descargas 
+Compañía 
+Quiénes Somos 
+Contact Us 
+Partner 
+Localizador de Resellers 
+Copyright © 2026 ProTech. All rights reserved. 
+Política de Privacidad 
+TÉRMINOS DE USO 
+Back to Top 
+× 
+
+
+### IMAGES
+('https://protechmexico.com/wp-content/themes/sytech/assets/img/logo.svg', '')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", 'Centro de descargas Banner')
+('https://protechmexico.com/wp-content/uploads/2026/02/4-2-1920x921.webp', 'Centro de descargas Banner')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", 'ZW3D CAD/CAM (Windows) Logo')
+('https://protechmexico.com/wp-content/uploads/2026/01/ZW3D-150x150.webp', 'ZW3D CAD/CAM (Windows) Logo')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", 'ZWCAD Standard/Professional (Windows) Logo')
+('https://protechmexico.com/wp-content/uploads/2026/01/ZWCAD-150x150.png', 'ZWCAD Standard/Professional (Windows) Logo')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/contact3-section_touch/assets/img/touch-img.png', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/contact3-section_touch/assets/img/touch-ball1.png', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/contact3-section_touch/assets/img/touch-ball2.png', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/contact3-section_touch/assets/img/touch-phone.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/contact3-section_touch/assets/img/touch-email.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/contact3-section_touch/assets/img/touch-ticket.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/en.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/fr.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/de.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/ja.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/ko.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-dots.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-line.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-ball.png', '')
+('https://protechmexico.com/wp-content/uploads/2026/01/login-img.png', '')

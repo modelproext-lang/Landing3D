@@ -1,0 +1,269 @@
+ZWCAD - ProTech 
+ProTech 
+Productos 
+ZWCAD 
+ZW3D CAD/CAM 
+Soporte 
+Centro de descargas 
+Precios y Comprar 
+Partners 
+Localizador de Resellers 
+Log in 
+Contact Us 
+ZWCAD 
+[H1] 2D CAD Rápido, Potente y Compatible 
+2D/3D CAD Software para profesionales del sector de AECO. Perpetuo y disponible en licenciamiento de licencias flotantes. 
+Desde  MXN $17,980 , para tener una licencia perpetua. 
+Comprar Ahora 
+Prueba Gratuita 
+ZWCAD 
+¿Qué es ZWCAD? 
+Funciones Avanzadas 
+Comparación 
+Cases 
+Opciones 
+Referencias 
+Faqs 
+Comprar Ahora 
+¿Qué es ZWCAD? 
+[H2] Una solución 2D/3D CAD potente hecha para ti 
+ZWCAD es una potente solución CAD para dibujo 2D complejo y navegación 3D avanzada. Con amplia compatibilidad con DWG y otros formatos principales, permite una colaboración fluida entre equipos, clientes y proveedores. Con una interfaz intuitiva, funciones que mejoran la eficiencia y herramientas con IA, ZWCAD ayuda a arquitectos, ingenieros y diseñadores en Latinoamérica a llevar sus ideas del plano a la entrega, con opciones de cotización y soporte local. 
+[H3] Amplia compatibilidad 
+Trabaja sin fricción con DWG, DXF, DWT y otros formatos comunes, facilitando la colaboración entre equipos, proveedores y clientes en proyectos de LATAM. 
+[H3] Altamente personalizable 
+Integra o crea aplicaciones de terceros con APIs robustas (LISP, VBA, ZRX y .NET) para adaptar ZWCAD a tus necesidades y procesos. 
+[H3] Migración rápida 
+Migra impresoras, plantillas, fuentes, alias de comandos y patrones de sombreado sin esfuerzo, para una transición suave y sin tiempos muertos. 
+Funciones Avanzadas 
+[H2] CAD potente y rápido: Haz más en menos tiempo 
+ZWCAD incluye todas las herramientas esenciales que necesitas, junto con funciones avanzadas e innovadoras diseñadas para aumentar productividad y entregar resultados más rápido. 
+Diseño Paramétrico 
+Flexiblock 
+Nube de Puntos 
+Sheet Set Manager 
+PDF Import 
+File Compare 
+Tabla de Area 
+[H3] Diseño Paramétrico 
+Añade restriccciones geométricas y dimensionales para ajustar tamaño y forma rápidamente 
+[H3] Flexiblock 
+El Flexibloque contiene acciones y parámetros que permiten cambiar su forma libremente 
+[H3] Nube de Puntos 
+Lee y procesa nube d puntos complejas sin problemas. Puedes adjuntarlas, editarlas y gestionarlas 
+[H3] Sheet Set Manager 
+Visualiza, accede, gestiona, traza múltiple dibujos. Todo desde un solo panel. 
+[H3] PDF Import 
+Importa múltiples páginas PDF como objetos CAD en solo paso. 
+[H3] File Compare 
+Identifica diferencias entre dos dibujos al instante. 
+[H3] Tabla de Area 
+Calcula áreas y genera tablas automáticamente en pocos pasos. 
+Comparación 
+[H2] Comparación con AutoCAD® 
+ZWCAD ofrece un rendimiento sólido en dibujo 2D y navegación 3D para colaborar sin fricción en proyectos de LATAM, con compatibilidad DWG y opciones de cotización. 
+1.98x Faster 
+ZWCAD 44.2s 
+AutoCAD® 87.6s 
+Dibujo 2D complejo 
+[H3] 1.98x más rápido que AutoCAD® 
+Open 
+00:27 
+Rasterize 30 times 
+00:16 
+Pan 
+00:08 
+Save 
+00:10 
+Open 
+02:15 
+Rasterize 30 times 
+01:52 
+Pan 
+00:10 
+Save 
+03:44 
+Navegación 3D Avanzada 
+[H3] 3x más rápido que AutoCAD® 
+Contáctanos 
+[H2] Hablar con un Experto Ahora. 
+Te ayudamos en identificar sus dolores y darte la solución más adecuada 
+Contáctanos 
+OPCIONES 
+[H2] OPCIONES DE LICENCIAMIENTO 
+Standalone 
+Standalone 
+Network 
+ZWCAD Standard 
+$ 17,980.00 / Licencia Perpetua 
+2D CAD para dibujar en 2D y 3D básico 
+Seleccionar el Plan 
+Prueba Gratuita de 30 días 
+Herramienta de Dibujo 2D 
+Visualización de modelo 3D básico 
+Extensión LISP 
+ZWCAD Professional 
+$ 23,980.00 / Licencia Perpetua 
+2D/3D CAD completo para Dibujo 2D y Modelado en 3D 
+Seleccionar el Plan 
+Prueba Gratuita de 30 días 
+Todo incluido en ZWCAD Standard 
+Herramienta de Modelado en 3D 
+Nube de Puntos 
+GIS 
+Conversión de Vectorización 
+Extensión Completa de APIs 
+ZWCAD MFG (Mecánico) 
+$ 27,980.00 / Licencia Perpetua 
+2D/3D CAD completo para Dibujo 2D y Modelado en 3D con Módulo Mecánico 
+Seleccionar el Plan 
+Prueba Gratuita de 30 días 
+Todo incluido en ZWCAD Professional 
+Biblioteca de Piezas Estandar 
+Compatibilidad con AutoCAD Mechanical 
+Generación de BOM 
+Herramientas de Dibujo Mecánico 
+Dimensiones de Power 
+Herramientas de Anotaciones Mecánicas 
+Herramientas de Cálculo Mecánico 
+ProTech es 
+gratuito para estudiantes y educadores. 
+Investigar Todos los Planes 
+REFERENCIAS 
+[H2] Experiencias Reales de Uso 
+"Mejoró la precisión de licitación a construcción y redujo el desperdicio gracias a la perfecta compatibilidad DWG y los flujos de trabajo optimizados de ZWCAD." 
+Steurer GmbH 
+MFG-Interiores | Italia 
+"Mejoró la precisión de licitación a construcción y redujo el desperdicio gracias a la perfecta compatibilidad DWG y los flujos de trabajo optimizados de ZWCAD." 
+Madro sp. z o.o. 
+AEC-Arquitectura | Polonia 
+"Entregó 39 proyectos importantes por valor de 122,5 millones de dólares de forma más rápida y colaborativa mediante el eficiente flujo de trabajo multiequipo de ZWCAD." 
+Thang Tien Engineering 
+AEC-MEP | Vietnam 
+"Aumentó la eficiencia de I+D y redujo los costes de CAD al adoptar ZWCAD para flujos de trabajo 2D más rápidos y flexibles." 
+VIMPO MAKİNE 
+MFG-Maquinaria | Turquía 
+Faqs 
+[H2] Preguntas Más Frecuentes 
+¿Cómo funciona licenciamiento perpetuo? 
+ZWCAD o ZW3D perpetuo solo exige único pago para tener la licencia para el uso de vida. El producto se queda con el cliente para siempre sin exigencia de pagar un gasto anual. 
+¿Si compro la licencia, se garantiza las acualizaciones nuevas del producto? 
+Cada año, ZWSOFT lanza actualizaciones de nuevas funciones o módulos. Se necesita comprar actualización/upgrade para actualizar el producto que tiene en mano a la nueva versión. Pero esta actualización no es obligatoria. 
+¿Puedo usar ZWCAD y AutoCAD al mismo tiempo? 
+Sí se pueden usar los dos al mismo tiempo. No existen conflictos. ZWCAD y AutoCAD ambos trabajan sobre formato de .dwg para tener total compatibilidad. 
+¿Está compatible con los documentos históricos de AutoCAD? 
+Sí. ZWCAD es totalmente compatible con archivos DWG creados en versiones recientes de AutoCAD, como 2023, 2024, 2025, 2026, etc. Además, al guardar archivos en ZWCAD, puedes elegir entre diferentes versiones de DWG (2018, 2013, 2010, 2007, 2004, 2000 y R14) y DXF (2018, 2013, 2010, 2007, 2004, 2000 y R12), lo que facilita el trabajo colaborativo con usuarios que utilizan versiones anteriores de AutoCAD o distintas plataformas CAD. 
+¿Qué compatibilidad hay entre ZWCAD y sofwares BIM como Revit? 
+ZWCAD ofrece compatibilidad con softwares BIM mediante la capacidad de importar archivos en formato IFC. 
+English 
+French 
+German 
+Japanese 
+Korean 
+CONTÁCTANOS 
+[H2] Estamos Listos para Apoyar 
+Favor especificar su requerimiento en el formulario y le vamos a contactar de forma inmediata 
+Nombre * 
+Apellido * 
+Teléfono * 
+Correo de Trabajo * 
+Estado * Please select Ciudad de México Estado de México Puebla Querétaro Jalisco Nuevo León Guanajuato Aguascalientes Baja California Baja California Sur Campeche Chiapas Chihuahua Coahuila Colima Durango Guerrero Hidalgo Michoacán Morelos Nayarit Oaxaca Quintana Roo San Luis Potosí Sinaloa Sonora Tabasco Tamaulipas Tlaxcala Veracruz Yucatán Zacatecas 
+Industria * Please select AEC-Architecture AEC-Construction AEC-Real estate AEC-Structure AEC-Survey AEC-Civil AEC-Electricity AEC-Landscape AEC-Furniture & Decoration AEC-HVAC & Piping AEC-Prefabricated AEC-Government & Municipal AEC-Environmental AEC-Schematization Other AEC industries MFG-Machinery MFG-Mold & Die MFG-Electronic & Electric MFG-Automotive MFG-Ship MFG-Electric appliance MFG-Consumer products MFG-Elevator MFG-Pump valve MFG-Diesel engine Other MFG Industries EDU-undergraduate education EDU-high school education EDU-higher vocational education Other education 
+Tipo de Requerimiento * Please select Material de Información Demo Cotización Soporte Técnico Otros 
+Producto de Interés * Producto de Interés ZWCAD Standard ZWCAD Professional ZWCAD MFG ZW3D CAD ZW3D CAM ZW3D Simulación Estructural ZW3D Simulación de Fluido ZW3D PDM CivilCAD 
+Nombre de Empresa o Instituto * 
+Tipo de Uso * Tipo de Uso Negocio Personal Educación 
+Comentario Doy mi consentimiento para recibir actualizaciones sobre productos y eventos de ProTech, y otorgo mi consentimiento de acuerdo con la Política de 
+Privacidad de ProTech . Submit 
+Create a new ticket 
+Problem with installation 
+Subject 
+I Need Help With * Requirement #1 Requirement #2 Requirement #3 
+Your Message * 
+Drag & Drop your Files Here Submit 
+DA EL SIGUIENTE PASO 
+[H2] ¿Quieres más información? 
+Déjanos tus datos y estaremos a tus ordenes. 
+Contáctanos 
+ProTech 
+Contact Us 
+Precios 
+Contáctanos 
+facebook 
+instagram 
+youtube 
+linkedin 
+twitter 
+Productos 
+ZWCAD 
+ZW3D CAD/CAM 
+Soporte 
+Centro de descargas 
+Compañía 
+Quiénes Somos 
+Contact Us 
+Partner 
+Localizador de Resellers 
+Copyright © 2026 ProTech. All rights reserved. 
+Política de Privacidad 
+TÉRMINOS DE USO 
+Back to Top 
+× 
+
+
+### IMAGES
+('https://protechmexico.com/wp-content/themes/sytech/assets/img/logo.svg', '')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", 'ZWCAD Logo')
+('https://protechmexico.com/wp-content/uploads/2026/01/ZWCAD-150x150.png', 'ZWCAD Logo')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", 'ZWCAD Featured Image')
+('https://protechmexico.com/wp-content/uploads/2026/01/product-1220x549.webp', 'ZWCAD Featured Image')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", '')
+('https://protechmexico.com/wp-content/uploads/2026/01/ZWCAD-150x150.png', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product2-product_overview_video/assets/img/pd-overview1.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product2-product_overview_video/assets/img/pd-overview2.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product2-product_overview_video/assets/img/pd-overview3.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon1.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon2.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon3.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon4.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon5.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon6.svg', '')
+('https://protechmexico.com/wp-content/plugins/sytech-fronteditor/sytpl/product3-product_feature_video/assets/img/pd-features-icon7.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product4-product_comparison/assets/img/pd-comparisons.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product5-product_touch/assets/img/pd-touch-bg1.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product5-product_touch/assets/img/pd-touch-bg2.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product5-product_touch/assets/img/pd-touch-line.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product5-product_touch/assets/img/pd-touch.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product5-product_touch/assets/img/pd-touch-ball1.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product5-product_touch/assets/img/pd-touch-ball2.png', '')
+('https://protechmexico.com/wp-content/themes/sytech/assets/img/license-logo1.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/pd-testimonial-line.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/pd-testimonial-bg1.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/pd-testimonial-bg2.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/pd-testimonial-bg3.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/stars.svg', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/logo2.svg', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/logo3.svg', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/logo4.svg', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/logo1.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/avatar2.jpg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/avatar3.jpg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/avatar4.jpg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/product8-product_testimonial/assets/img/avatar5.jpg', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo2.1svg-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo2.3-01-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo2.5-01-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo3.3-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo3.5-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo3.6-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo3.8-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/uploads/2026/02/customter-logo2.2-01.svg?width=213&height=94', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/en.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/fr.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/de.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/ja.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/ko.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-dots.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-line.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-ball.png', '')
+('https://protechmexico.com/wp-content/uploads/2026/01/login-img.png', '')

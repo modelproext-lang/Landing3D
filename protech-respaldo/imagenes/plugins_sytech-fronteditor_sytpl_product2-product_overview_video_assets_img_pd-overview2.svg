@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360.51 268.5">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        fill: #297dfe;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        fill: none;
+        stroke: #cad6dd;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-9 {
+        fill: #fff;
+        font-size: 31.5px;
+      }
+
+      .cls-9, .cls-10 {
+        font-family: Geist-Medium, Geist;
+        font-weight: 500;
+      }
+
+      .cls-10 {
+        fill: #2e2e2e;
+        font-size: 18px;
+      }
+
+      .cls-11 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-12 {
+        fill: #0096ff;
+      }
+
+      .cls-13 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-14 {
+        fill: #d6ecfc;
+      }
+
+      .cls-15 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <path class="cls-8" d="M29.56,59.12v41.69c0,6.64,5.38,12.02,12.02,12.02h126.65c6.64,0,12.02,5.38,12.02,12.02v61.47"/>
+    <path class="cls-8" d="M104.91,59.12v41.3c0,6.86,5.56,12.41,12.41,12.41h50.52c6.86,0,12.41,5.56,12.41,12.41v61.08"/>
+    <path class="cls-8" d="M255.6,59.12v41.31c0,6.85-5.55,12.4-12.4,12.4h-50.54c-6.85,0-12.4,5.55-12.4,12.4v61.09"/>
+    <path class="cls-8" d="M330.95,59.12v41.6c0,6.69-5.42,12.11-12.11,12.11h-126.47c-6.69,0-12.11,5.42-12.11,12.11v61.38"/>
+    <circle class="cls-4" cx="29.56" cy="71.88" r="3.52"/>
+    <circle class="cls-4" cx="330.95" cy="68.36" r="3.52"/>
+    <rect class="cls-14" x="0" y="0" width="59.12" height="59.12" rx="29.56" ry="29.56"/>
+    <text class="cls-10" transform="translate(10.66 37.25)"><tspan class="cls-6" x="0" y="0">L</tspan><tspan class="cls-11" x="9.7" y="0">IS</tspan><tspan x="25.97" y="0">P</tspan></text>
+    <g>
+      <rect class="cls-14" x="75.35" y="0" width="59.12" height="59.12" rx="29.56" ry="29.56"/>
+      <text class="cls-10" transform="translate(88.08 37.25)"><tspan class="cls-2" x="0" y="0">Z</tspan><tspan x="10.03" y="0">RX</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-14" x="150.69" y="0" width="59.12" height="59.12" rx="29.56" ry="29.56"/>
+      <text class="cls-10" transform="translate(162.08 37.25)"><tspan class="cls-15" x="0" y="0">V</tspan><tspan class="cls-13" x="11.95" y="0">B</tspan><tspan x="23.94" y="0">A</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-14" x="226.04" y="0" width="59.12" height="59.12" rx="29.56" ry="29.56"/>
+      <text class="cls-10" transform="translate(236.55 37.25)"><tspan x="0" y="0">.</tspan><tspan class="cls-7" x="3.83" y="0">N</tspan><tspan x="16.92" y="0">ET</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-14" x="301.38" y="0" width="59.12" height="59.12" rx="29.56" ry="29.56"/>
+      <text class="cls-10" transform="translate(325.2 37.25)"><tspan x="0" y="0">...</tspan></text>
+    </g>
+    <line class="cls-8" x1="180.25" y1="51.32" x2="180.25" y2="131.62"/>
+    <g>
+      <circle class="cls-12" cx="180.25" cy="226.07" r="42.43"/>
+      <text class="cls-9" transform="translate(155.3 237.37)"><tspan class="cls-1" x="0" y="0">A</tspan><tspan class="cls-3" x="21.01" y="0">P</tspan><tspan class="cls-5" x="41.08" y="0">I</tspan></text>
+    </g>
+  </g>
+</svg>

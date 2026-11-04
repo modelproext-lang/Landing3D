@@ -1,0 +1,112 @@
+Política de Privacidad - ProTech 
+ProTech 
+Productos 
+ZWCAD 
+ZW3D CAD/CAM 
+Soporte 
+Centro de descargas 
+Precios y Comprar 
+Partners 
+Localizador de Resellers 
+Log in 
+Contact Us 
+Home Política de Privacidad 
+[H1] Política de Privacidad 
+[H2] Quiénes somos 
+La dirección de nuestro sitio web es: https://www.protechmexico.com 
+[H2] Comentarios 
+Cuando los visitantes dejan comentarios en el sitio, recopilamos los datos que se muestran en el formulario de comentarios, así como la dirección IP del visitante y la cadena de agente de usuario de su navegador para ayudar a la detección de spam. 
+Se puede proporcionar una cadena anónima creada a partir de su dirección de correo electrónico (también llamada hash) al servicio Gravatar para ver si lo está utilizando. La política de privacidad del servicio Gravatar está disponible aquí: https://automattic.com/privacy/. Después de la aprobación de su comentario, la imagen de su perfil es visible para el público en el contexto de su comentario. 
+[H2] Medios 
+Si sube imágenes al sitio web, debe evitar subir imágenes que incluyan datos de ubicación incrustados (EXIF GPS). Los visitantes del sitio web pueden descargar y extraer cualquier dato de ubicación de las imágenes del sitio web. 
+[H2] Cookies 
+Si deja un comentario en nuestro sitio, puede optar por guardar su nombre, dirección de correo electrónico y sitio web en cookies. Esto es para su conveniencia, para que no tenga que volver a llenar sus datos cuando deje otro comentario. Estas cookies durarán un año. 
+Si visita nuestra página de inicio de sesión, configuraremos una cookie temporal para determinar si su navegador acepta cookies. Esta cookie no contiene datos personales y se descarta cuando cierra su navegador. 
+Cuando inicia sesión, también configuraremos varias cookies para guardar su información de inicio de sesión y las opciones de visualización de su pantalla. Las cookies de inicio de sesión duran dos días y las cookies de opciones de pantalla duran un año. Si selecciona "Recordarme", su inicio de sesión persistirá durante dos semanas. Si cierra la sesión de su cuenta, las cookies de inicio de sesión se eliminarán. 
+Si edita o publica un artículo, se guardará una cookie adicional en su navegador. Esta cookie no incluye datos personales y simplemente indica el ID de la publicación del artículo que acaba de editar. Caduca después de 1 día. 
+[H2] Contenido incrustado de otros sitios web 
+Los artículos en este sitio pueden incluir contenido incrustado (por ejemplo, videos, imágenes, artículos, etc.). El contenido incrustado de otros sitios web se comporta exactamente de la misma manera que si el visitante hubiera visitado el otro sitio web. 
+Estos sitios web pueden recopilar datos sobre usted, usar cookies, incrustar un rastreo adicional de terceros y monitorear su interacción con ese contenido incrustado, incluido el rastreo de su interacción con el contenido incrustado si tiene una cuenta y está conectado a ese sitio web. 
+[H2] Con quién compartimos sus datos 
+Si solicita un restablecimiento de contraseña, su dirección IP se incluirá en el correo electrónico de restablecimiento. 
+[H2] Por cuánto tiempo retenemos sus datos 
+Si deja un comentario, el comentario y sus metadatos se conservan indefinidamente. Esto es para que podamos reconocer y aprobar automáticamente cualquier comentario de seguimiento en lugar de mantenerlos en una cola de moderación. 
+De los usuarios que se registran en nuestro sitio web (si los hay), también almacenamos la información personal que proporcionan en su perfil de usuario. Todos los usuarios pueden ver, editar o eliminar su información personal en cualquier momento (excepto que no pueden cambiar su nombre de usuario). Los administradores del sitio web también pueden ver y editar esa información. 
+[H2] Qué derechos tiene sobre sus datos 
+Si tiene una cuenta en este sitio o ha dejado comentarios, puede solicitar recibir un archivo exportado de los datos personales que tenemos sobre usted, incluidos los datos que nos haya proporcionado. También puede solicitar que borremos cualquier dato personal que tengamos sobre usted. Esto no incluye ningún dato que estemos obligados a conservar con fines administrativos, legales o de seguridad. 
+[H2] Dónde se envían sus datos 
+Los comentarios de los visitantes pueden ser revisados mediante un servicio automatizado de detección de spam. 
+Table of Summary 
+Share to 
+Share to facebook 
+Share to twitter 
+Share to linkedin 
+English 
+French 
+German 
+Japanese 
+Korean 
+CONTÁCTANOS 
+[H2] Estamos Listos para Apoyar 
+Favor especificar su requerimiento en el formulario y le vamos a contactar de forma inmediata 
+Nombre * 
+Apellido * 
+Teléfono * 
+Correo de Trabajo * 
+Estado * Please select Ciudad de México Estado de México Puebla Querétaro Jalisco Nuevo León Guanajuato Aguascalientes Baja California Baja California Sur Campeche Chiapas Chihuahua Coahuila Colima Durango Guerrero Hidalgo Michoacán Morelos Nayarit Oaxaca Quintana Roo San Luis Potosí Sinaloa Sonora Tabasco Tamaulipas Tlaxcala Veracruz Yucatán Zacatecas 
+Industria * Please select AEC-Architecture AEC-Construction AEC-Real estate AEC-Structure AEC-Survey AEC-Civil AEC-Electricity AEC-Landscape AEC-Furniture & Decoration AEC-HVAC & Piping AEC-Prefabricated AEC-Government & Municipal AEC-Environmental AEC-Schematization Other AEC industries MFG-Machinery MFG-Mold & Die MFG-Electronic & Electric MFG-Automotive MFG-Ship MFG-Electric appliance MFG-Consumer products MFG-Elevator MFG-Pump valve MFG-Diesel engine Other MFG Industries EDU-undergraduate education EDU-high school education EDU-higher vocational education Other education 
+Tipo de Requerimiento * Please select Material de Información Demo Cotización Soporte Técnico Otros 
+Producto de Interés * Producto de Interés ZWCAD Standard ZWCAD Professional ZWCAD MFG ZW3D CAD ZW3D CAM ZW3D Simulación Estructural ZW3D Simulación de Fluido ZW3D PDM CivilCAD 
+Nombre de Empresa o Instituto * 
+Tipo de Uso * Tipo de Uso Negocio Personal Educación 
+Comentario Doy mi consentimiento para recibir actualizaciones sobre productos y eventos de ProTech, y otorgo mi consentimiento de acuerdo con la Política de 
+Privacidad de ProTech . Submit 
+Create a new ticket 
+Problem with installation 
+Subject 
+I Need Help With * Requirement #1 Requirement #2 Requirement #3 
+Your Message * 
+Drag & Drop your Files Here Submit 
+DA EL SIGUIENTE PASO 
+[H2] ¿Quieres más información? 
+Déjanos tus datos y estaremos a tus ordenes. 
+Contáctanos 
+ProTech 
+Contact Us 
+Precios 
+Contáctanos 
+facebook 
+instagram 
+youtube 
+linkedin 
+twitter 
+Productos 
+ZWCAD 
+ZW3D CAD/CAM 
+Soporte 
+Centro de descargas 
+Compañía 
+Quiénes Somos 
+Contact Us 
+Partner 
+Localizador de Resellers 
+Copyright © 2026 ProTech. All rights reserved. 
+Política de Privacidad 
+TÉRMINOS DE USO 
+Back to Top 
+× 
+
+
+### IMAGES
+('https://protechmexico.com/wp-content/themes/sytech/assets/img/logo.svg', '')
+("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E", '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/en.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/fr.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/de.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/ja.svg', '')
+('https://protechmexico.com/wp-content/plugins/wordpress-translation/includes/../assets/images/ko.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-dots.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-line.svg', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started.png', '')
+('https://protechmexico.com//wp-content/plugins/sytech-fronteditor/sytpl/home11-footer_started/assets/img/footer-started-ball.png', '')
+('https://protechmexico.com/wp-content/uploads/2026/01/login-img.png', '')
