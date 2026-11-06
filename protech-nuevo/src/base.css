@@ -222,3 +222,23 @@
 .pt .plan ul{align-content:start}
 .pt .steps.three{grid-template-columns:repeat(3,1fr)}
 @media(max-width:860px){.pt .steps.three{grid-template-columns:1fr}}
+/* botones con la identidad del sitio original: píldora, degradado azul animado al pasar el mouse */
+.pt{--g1:#0a6ac9;--g2:#0096ff}
+.pt .btn{border-radius:100px;padding:14px 28px;font-weight:600;transition:background-position .4s ease,color .3s ease,box-shadow .3s ease,transform .3s ease;background-size:200% 100%;background-position:left center}
+.pt .btn-p{color:#fff;background-color:var(--g1);background-image:linear-gradient(to right,var(--g1),var(--g2),var(--g1));border:0}
+.pt .btn-p:hover{background-color:var(--g1);background-position:right center;box-shadow:0 10px 24px rgba(0,150,255,.28)}
+.pt .btn-p:after{content:"→";display:inline-block;transition:transform .3s ease}
+.pt .btn-p:hover:after{transform:translateX(4px)}
+.pt .btn-wa{color:#fff;background-color:#1da851;background-image:linear-gradient(to right,#1da851,#25d366,#1da851);border:0}
+.pt .btn-wa:hover{background-color:#1da851;background-position:right center;box-shadow:0 10px 24px rgba(37,211,102,.3)}
+.pt .btn-o{color:var(--g1);border:1px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(to right,var(--g1),var(--g2)) border-box}
+.pt .btn-o:hover{color:#fff;border-color:transparent;background:linear-gradient(to right,var(--g1),var(--g2)) padding-box,linear-gradient(to right,var(--g1),var(--g2)) border-box}
+.pt .partner .btn-o{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(#fff,#fff) border-box}
+.pt .partner .btn-o:hover{color:#fff;background:transparent padding-box,linear-gradient(#fff,#fff) border-box}
+.pt .tabs,.pt .tabs button{border-radius:100px}
+.pt .tabs button.on{background-image:linear-gradient(to right,var(--g1),var(--g2));color:#fff;box-shadow:none}
+.pt .plan.hot{border:0;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,var(--g1),var(--g2)) border-box;border:2px solid transparent}
+.pt .plan .badge,.pt .fwa{background-image:linear-gradient(to right,var(--g1),var(--g2))}
+.pt .fwa{background-image:linear-gradient(to right,#1da851,#25d366)}
+.pt .nav-cta{padding:10px 18px}
+@media(prefers-reduced-motion:reduce){.pt .btn:after{transition:none}}

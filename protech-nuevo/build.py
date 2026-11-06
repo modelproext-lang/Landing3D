@@ -60,7 +60,7 @@ def plans_html(key, limit=None):
         msg = f"Hola ProTech, quiero {name} (${price:,} MXN)."
         cls = "plan hot" if hot else "plan"
         badge = '<span class="badge">Recomendado</span>' if hot else ""
-        btn = "btn-p" if hot else "btn-wa"
+        btn = "btn-p"
         lis = "".join(f"<li>{f}</li>" for f in feats)
         out.append(
             f'<div class="{cls}">{badge}<h3>{name}</h3><div class="pr">${price:,} <small>MXN · perpetua</small></div>'
