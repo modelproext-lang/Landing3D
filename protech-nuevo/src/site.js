@@ -9,7 +9,7 @@
   });
   // tabs (each .tabs-wrap is independent)
   root.querySelectorAll('.tabs-wrap').forEach(function(w){
-    var bs=w.querySelectorAll('.tabs button');
+    var bs=w.querySelectorAll('.tabs button, .z3-tablist button');
     bs.forEach(function(b){b.addEventListener('click',function(){
       bs.forEach(function(x){x.classList.toggle('on',x===b);});
       w.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==b.getAttribute('data-tab');});
@@ -57,14 +57,14 @@
   });
   // scroll reveal (AOS-like) + counters + bars
   if('IntersectionObserver' in window&&!reduce){
-    var auto=['section h2','section .lead','.feat>div','.prod','.plan','.step','.vs .card','details','.st','.rs>div','.dl>div','.partner','.split>img','form'];
+    var auto=['section h2','section .lead','.feat>div','.prod','.plan','.step','.vs .card','details','.st','.rs>div','.dl>div','.partner','.split>img','form','.z3-adv>a','.z3-ctrl>div','.z3-cases>article','.z3-reviews>figure','.z3-badges','.z3-points>div','.z3-loop','.z3-startup'];
     document.querySelectorAll('.pt').forEach(function(r){
       auto.forEach(function(sel){r.querySelectorAll(sel).forEach(function(el){
         if(el.closest('.hs')||el.hasAttribute('data-aos'))return;
-        var a='fade-up';if(el.matches('.split>img,.vs .card.g'))a='fade-left';if(el.matches('.vs .card.x'))a='fade-right';if(el.matches('.partner'))a='zoom';
+        var a='fade-up';if(el.matches('.split>img,.vs .card.g'))a='fade-left';if(el.matches('.vs .card.x'))a='fade-right';if(el.matches('.partner,.z3-loop'))a='zoom';
         el.setAttribute('data-aos',a);
         var sib=el.parentNode?Array.prototype.indexOf.call(el.parentNode.children,el):0;
-        if(el.matches('.feat>div,.prod,.plan,.step,.st,.rs>div,.dl>div,details'))el.style.setProperty('--d',Math.min(sib,5)*0.08+'s');
+        if(el.matches('.feat>div,.prod,.plan,.step,.st,.rs>div,.dl>div,details,.z3-adv>a,.z3-ctrl>div,.z3-cases>article,.z3-reviews>figure,.z3-points>div'))el.style.setProperty('--d',Math.min(sib,5)*0.08+'s');
       });});
       r.classList.add('aos');
     });

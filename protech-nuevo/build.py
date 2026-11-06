@@ -63,14 +63,15 @@ PRODUCTS = [  # orden y textos del cotizador
 ]
 
 
-def cotizador_html(img_of):
+def cotizador_html(img_of, start=None):
     data = []
     for key, label, sub, logo in PRODUCTS:
         data.append({"id": key, "label": label, "sub": sub, "logo": img_of(logo), "plans": [
             {"name": n, "price": p, "net": NETWORK.get(n), "desc": d, "feats": f, "hot": h}
             for n, p, d, f, h in PLANS[key]]})
     js = json.dumps(data, ensure_ascii=False).replace("'", "&#39;")
-    return (f"<div class=\"cz\" data-cz='{js}'><noscript><p>Activa JavaScript para usar el cotizador, "
+    st = f' data-start="{start}"' if start else ""
+    return (f"<div class=\"cz\"{st} data-cz='{js}'><noscript><p>Activa JavaScript para usar el cotizador, "
             "o consulta la lista de precios más abajo.</p></noscript></div>")
 
 
@@ -128,8 +129,7 @@ def render(text, url_of, img_of):
     text = text.replace("{{wa-icon}}", WA_ICON)
     text = re.sub(r"\{\{plans:(\w+)(?::(\d+))?\}\}", lambda m: plans_html(m.group(1), int(m.group(2)) if m.group(2) else None), text)
     text = text.replace("{{terminos}}", terms_html())
-    if "{{cotizador}}" in text:
-        text = text.replace("{{cotizador}}", cotizador_html(img_of))
+    text = re.sub(r"\{\{cotizador(?::(\w+))?\}\}", lambda m: cotizador_html(img_of, m.group(1)), text)
     text = re.sub(r"\{\{u:([\w-]+)\}\}", lambda m: url_of(m.group(1)), text)
     text = re.sub(r"\{\{img:([\w.-]+)\}\}", lambda m: img_of(m.group(1)), text)
     return text
@@ -138,7 +138,7 @@ def render(text, url_of, img_of):
 def main():
     pages = load_pages()
     by_id = {p["id"]: p for p in pages}
-    css = (SRC / "base.css").read_text(encoding="utf-8") + (SRC / "cotizador.css").read_text(encoding="utf-8")
+    css = (SRC / "base.css").read_text(encoding="utf-8") + (SRC / "cotizador.css").read_text(encoding="utf-8") + (SRC / "zw3d.css").read_text(encoding="utf-8")
     js = (SRC / "site.js").read_text(encoding="utf-8")
     marker = "  // single-file preview: hash router"
     js = js.replace(marker, (SRC / "cotizador.js").read_text(encoding="utf-8") + marker, 1)

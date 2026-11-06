@@ -3,7 +3,8 @@
   document.querySelectorAll('.pt .cz').forEach(function(cz){
     var D=JSON.parse(cz.getAttribute('data-cz')),st={p:0,v:null,t:'standalone',q:1},shown=0,raf=null;
     function hot(pi){var pl=D[pi].plans;for(var k=0;k<pl.length;k++)if(pl[k].hot)return k;return 0;}
-    st.v=hot(0);
+    var sp=cz.getAttribute('data-start');if(sp)D.forEach(function(p,i){if(p.id===sp)st.p=i;});
+    st.v=hot(st.p);
     cz.innerHTML=
       '<div class="cz-grid"><div class="cz-main">'+
       '<div class="cz-step"><div class="cz-h"><span>1</span><h3>¿Qué software necesitas?</h3></div><div class="cz-prod" role="radiogroup" aria-label="Producto"></div></div>'+
