@@ -53,6 +53,27 @@ PLANS = {
 }
 
 
+# Precio de licencia de red (flotante). None = se cotiza aparte. Fuente: sitio anterior.
+NETWORK = {"ZWCAD Standard": 18980, "ZWCAD Professional": 24980, "ZWCAD MFG (Mecánico)": 28980}
+
+PRODUCTS = [  # orden y textos del cotizador
+    ("zwcad", "ZWCAD", "CAD 2D/3D compatible con DWG", "logo-zwcad.webp"),
+    ("zw3d", "ZW3D CAD", "CAD/CAE 3D todo en uno", "logo-zw3d.webp"),
+    ("cam", "ZW3D CAM", "Maquinado 2X y 3X", "logo-zw3d.webp"),
+]
+
+
+def cotizador_html(img_of):
+    data = []
+    for key, label, sub, logo in PRODUCTS:
+        data.append({"id": key, "label": label, "sub": sub, "logo": img_of(logo), "plans": [
+            {"name": n, "price": p, "net": NETWORK.get(n), "desc": d, "feats": f, "hot": h}
+            for n, p, d, f, h in PLANS[key]]})
+    js = json.dumps(data, ensure_ascii=False).replace("'", "&#39;")
+    return (f"<div class=\"cz\" data-cz='{js}'><noscript><p>Activa JavaScript para usar el cotizador, "
+            "o consulta la lista de precios más abajo.</p></noscript></div>")
+
+
 def plans_html(key, limit=None):
     items = PLANS[key][:limit] if limit else PLANS[key]
     out = []
@@ -62,8 +83,9 @@ def plans_html(key, limit=None):
         badge = '<span class="badge">Recomendado</span>' if hot else ""
         btn = "btn-p"
         lis = "".join(f"<li>{f}</li>" for f in feats)
+        net = f'<div class="net">Licencia de red: <b>${NETWORK[name]:,}</b></div>' if NETWORK.get(name) else ""
         out.append(
-            f'<div class="{cls}">{badge}<h3>{name}</h3><div class="pr">${price:,} <small>MXN · perpetua</small></div>'
+            f'<div class="{cls}">{badge}<h3>{name}</h3><div class="pr">${price:,} <small>MXN · perpetua</small></div>{net}'
             f'<p>{desc}</p><ul>{lis}</ul><a class="btn {btn} wa" data-msg="{msg}" href="#">Cotizar este plan</a>'
             f'<a class="trial wa" data-msg="Hola ProTech, quiero la prueba gratis de 30 días de {name}." href="#">o pruébalo gratis 30 días</a></div>')
     n = len(items)
@@ -106,6 +128,8 @@ def render(text, url_of, img_of):
     text = text.replace("{{wa-icon}}", WA_ICON)
     text = re.sub(r"\{\{plans:(\w+)(?::(\d+))?\}\}", lambda m: plans_html(m.group(1), int(m.group(2)) if m.group(2) else None), text)
     text = text.replace("{{terminos}}", terms_html())
+    if "{{cotizador}}" in text:
+        text = text.replace("{{cotizador}}", cotizador_html(img_of))
     text = re.sub(r"\{\{u:([\w-]+)\}\}", lambda m: url_of(m.group(1)), text)
     text = re.sub(r"\{\{img:([\w.-]+)\}\}", lambda m: img_of(m.group(1)), text)
     return text
@@ -114,8 +138,10 @@ def render(text, url_of, img_of):
 def main():
     pages = load_pages()
     by_id = {p["id"]: p for p in pages}
-    css = (SRC / "base.css").read_text(encoding="utf-8")
+    css = (SRC / "base.css").read_text(encoding="utf-8") + (SRC / "cotizador.css").read_text(encoding="utf-8")
     js = (SRC / "site.js").read_text(encoding="utf-8")
+    marker = "  // single-file preview: hash router"
+    js = js.replace(marker, (SRC / "cotizador.js").read_text(encoding="utf-8") + marker, 1)
     header = (SRC / "header.html").read_text(encoding="utf-8")
     footer = (SRC / "footer.html").read_text(encoding="utf-8")
 

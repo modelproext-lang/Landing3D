@@ -327,6 +327,86 @@
 .pt.aos [data-aos="zoom"]{transform:scale(.94)}
 .pt.aos [data-aos].in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.pt.aos [data-aos]{opacity:1!important;transform:none!important}.pt .mq ul,.pt .hs-bg,.pt .hs-slide.on .hs-in>*{animation:none!important;transition:none!important}}
+/* ===== cotizador ===== */
+.pt .cz{text-align:left;margin-top:36px}
+.pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
+.pt .cz-main{display:grid;gap:18px;min-width:0}
+.pt .cz-step{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}
+.pt .cz-h{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.pt .cz-h span{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2));flex:none}
+.pt .cz-h h3{font-size:18px;margin:0}
+.pt .cz button{font-family:inherit;cursor:pointer;color:var(--n)}
+/* opciones seleccionables */
+.pt .cz-prod,.pt .cz-type{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pt .cz-type{grid-template-columns:1fr 1fr}
+.pt .cz-plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.pt .cz-prod button,.pt .cz-plans button,.pt .cz-type button{position:relative;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:4px;transition:border-color .25s,box-shadow .25s,transform .25s,background .25s}
+.pt .cz-prod button{flex-direction:row;align-items:center;gap:12px}
+.pt .cz-prod img{width:40px;height:40px;border-radius:10px;flex:none}
+.pt .cz-prod span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.pt .cz b{font-size:15px;color:var(--n)}
+.pt .cz small{font-size:13px;color:var(--m);line-height:1.4}
+.pt .cz-prod button:hover,.pt .cz-plans button:hover,.pt .cz-type button:hover{border-color:#9fd2ff;transform:translateY(-2px)}
+.pt .cz button.on{border-color:var(--g2);background:linear-gradient(180deg,#f2f9ff,#fff);box-shadow:0 0 0 3px rgba(0,150,255,.14),0 12px 28px rgba(10,106,201,.1)}
+.pt .cz-plans button.on:after,.pt .cz-type button.on:after,.pt .cz-prod button.on:after{content:"✓";position:absolute;top:10px;right:12px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.pt .cz-plans i{font-style:normal;font-size:11px;font-weight:700;color:var(--g1);background:#e6f4ff;border-radius:20px;padding:2px 8px;align-self:flex-start;margin-bottom:4px}
+.pt .cz-plans strong,.pt .cz-type em{font-style:normal;font-weight:700;color:var(--n);font-size:18px;margin-top:6px;font-variant-numeric:tabular-nums}
+.pt .cz-type em{font-size:15px;color:var(--g1)}
+.pt .cz-feats{margin-top:16px;padding:16px 18px;border-radius:14px;background:var(--l)}
+.pt .cz-feats ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:8px}
+.pt .cz-feats li{font-size:14px}
+.pt .cz-feats li:before{content:"✓ ";color:var(--b);font-weight:800}
+/* cantidad */
+.pt .cz-qty{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pt .cz-step-q{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:100px;overflow:hidden}
+.pt .cz-step-q button{width:48px;height:48px;border:0;background:#fff;font-size:22px;color:var(--g1)}
+.pt .cz-step-q button:hover{background:var(--l)}
+.pt .cz-step-q input{width:64px;height:48px;border:0;border-inline:1px solid var(--line);border-radius:0;text-align:center;font-size:18px;font-weight:700;padding:0;-moz-appearance:textfield}
+.pt .cz-step-q input::-webkit-inner-spin-button{-webkit-appearance:none}
+.pt .cz-chips{display:flex;gap:8px}
+.pt .cz-chips button{border:1.5px solid var(--line);background:#fff;border-radius:100px;padding:10px 16px;font-weight:600}
+.pt .cz-chips button:hover{border-color:var(--g2);color:var(--g1)}
+/* resumen */
+.pt .cz-sum{position:sticky;top:calc(90px + env(safe-area-inset-top,0px));border-radius:24px;padding:28px;color:#cfe0f5;background:radial-gradient(120% 80% at 100% 0%,rgba(0,150,255,.35),transparent 60%),linear-gradient(160deg,#0b1b33,#0a2a55);box-shadow:0 30px 60px rgba(11,27,51,.25);display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.pt .cz-sum-h{display:flex;gap:12px;align-items:center}
+.pt .cz-sum-h img{width:44px;height:44px;border-radius:12px;background:#fff}
+.pt .cz-sum small{color:#8fb0d6}
+.pt .cz-sum b{color:#fff}
+.pt .cz-sum-h b{display:block;font-size:19px}
+.pt .cz-sum dl{display:grid;gap:10px;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+.pt .cz-sum dl div{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.pt .cz-sum dd{color:#fff;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.pt .cz-total{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+.pt .cz-total b{font-size:clamp(34px,4vw,46px);font-weight:600;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums;background:linear-gradient(90deg,#fff,#9bd6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pt .cz.quote .cz-total b{font-size:32px}
+.pt .cz-total span{font-size:13px;color:#8fb0d6}
+.pt .cz-hint{font-size:13px;line-height:1.5;color:#dbeeff;background:rgba(0,150,255,.16);border:1px solid rgba(124,196,255,.3);border-radius:12px;padding:10px 12px}
+.pt .cz-sum .btn{justify-content:center;width:100%}
+.pt .cz-trial{color:#fff;border:1px solid rgba(255,255,255,.35);background:transparent}
+.pt .cz-trial:hover{background:rgba(255,255,255,.1)}
+.pt .cz-perks{list-style:none;display:grid;gap:6px;font-size:13px}
+.pt .cz-perks li:before{content:"✓ ";color:#3cabf6;font-weight:800}
+/* barra fija en celular */
+.pt .cz-bar{display:none}
+@media(max-width:980px){
+ .pt .cz-grid{grid-template-columns:1fr}
+ .pt .cz-sum{position:static}
+ .pt .cz-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;align-items:center;justify-content:space-between;gap:12px;background:#0b1b33;color:#fff;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(110%);transition:transform .35s var(--ease)}
+ .pt .cz-bar.show{transform:none}
+ .pt .cz-bar small{display:block;color:#8fb0d6;font-size:12px}
+ .pt .cz-bar b{color:#fff;font-size:22px;font-variant-numeric:tabular-nums}
+ .pt .cz-bar .btn{padding:12px 22px}
+}
+@media(max-width:640px){
+ .pt .cz-prod,.pt .cz-type{grid-template-columns:1fr}
+ .pt .cz-plans{grid-template-columns:1fr 1fr}
+ .pt .cz-step{padding:18px}
+}
+@media(max-width:380px){.pt .cz-plans{grid-template-columns:1fr}}
+.pt .net{font-size:13px;color:var(--m);margin-top:-6px}.pt .net b{color:var(--n)}
+.cz-on .pt .fwa{opacity:0;pointer-events:none}
+.pt .fwa{transition:opacity .3s}
+.pt .cz-prod button,.pt .cz-plans button,.pt .cz-type button{padding-right:38px}
 </style>
 <div class="pt"><header class="nav"><div class="w">
   <a class="brand" href="/"><img src="/wp-content/uploads/protech/logo-protech.svg" alt="ProTech México" width="145" height="30"></a>
