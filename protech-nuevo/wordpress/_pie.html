@@ -1,0 +1,65 @@
+<div class="pt"><section class="band-cta"><div class="w">
+  <div><h2>¿No sabes qué licencia te conviene?</h2><p>Cuéntanos qué diseñas y te recomendamos la opción correcta. Sin compromiso.</p></div>
+  <div class="ctas"><a class="btn btn-wa wa" data-msg="Hola ProTech, necesito asesoría para elegir licencia." href="#"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>Hablar con un asesor</a><a class="btn btn-o" href="/contact-us/">Otras formas de contacto</a></div>
+</div></section>
+<footer><div class="w fgrid">
+  <div class="fcol"><img src="/wp-content/uploads/protech/logo-protech.svg" alt="ProTech" width="126" height="26"><p>Value-Added Distributor exclusivo de ZWSOFT en México.</p><p>WhatsApp y teléfono: <a href="tel:+524426044489">+52 442 604 4489</a><br><a href="mailto:contacto@protechmexico.com">contacto@protechmexico.com</a></p></div>
+  <div class="fcol"><h4>Productos</h4><a href="/product/zwcad/">ZWCAD</a><a href="/product/zw3d-cad-cam/">ZW3D CAD/CAM</a><a href="/productos/">Todos los productos</a><a href="/precios/">Precios y Comprar</a></div>
+  <div class="fcol"><h4>Soporte</h4><a href="/descarga/">Centro de descargas</a><a href="/soporte/">Soporte técnico</a><a href="/faqs/">Preguntas frecuentes</a></div>
+  <div class="fcol"><h4>Compañía</h4><a href="/about-us/">Quiénes somos</a><a href="/contact-us/">Contacto</a><a href="/partner/">Partners</a><a href="/localizador-de-resellers/">Localizador de Resellers</a></div>
+</div>
+<div class="w fbot"><span>© 2026 Prodrawing Technology S.A. de C.V. (ProTech). Todos los derechos reservados.</span><span><a href="/privacy-policy/">Aviso de privacidad</a> · <a href="/terms-of-use/">Términos de uso</a></span></div>
+</footer>
+<a class="fwa wa" data-msg="Hola ProTech, quiero información sobre ZWCAD / ZW3D." href="#" aria-label="WhatsApp"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg><span>¿Dudas? Escríbenos</span></a>
+</div>
+<script>(function(){
+  var WA='524426044489';
+  function link(m){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(m);}
+  function track(ev,p){try{if(window.gtag)gtag('event',ev,p||{});if(window.fbq)fbq('track',ev==='generate_lead'?'Lead':'Contact');}catch(e){}}
+  var root=document;
+  root.querySelectorAll('.wa').forEach(function(a){
+    a.href=link(a.getAttribute('data-msg')||'Hola ProTech');a.target='_blank';a.rel='noopener';
+    a.addEventListener('click',function(){track('whatsapp_click',{label:a.getAttribute('data-msg')});});
+  });
+  // tabs (each .tabs-wrap is independent)
+  root.querySelectorAll('.tabs-wrap').forEach(function(w){
+    var bs=w.querySelectorAll('.tabs button');
+    bs.forEach(function(b){b.addEventListener('click',function(){
+      bs.forEach(function(x){x.classList.toggle('on',x===b);});
+      w.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==b.getAttribute('data-tab');});
+    });});
+  });
+  // forms -> WhatsApp
+  root.querySelectorAll('form[data-wa]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();var parts=[f.getAttribute('data-wa')];
+      f.querySelectorAll('[data-label]').forEach(function(el){if(el.value)parts.push(el.getAttribute('data-label')+': '+el.value);});
+      track('generate_lead',{form:f.id});
+      var a=document.createElement('a');a.href=link(parts.join('\n'));a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove();
+    });
+  });
+  // menu
+  var nav=root.querySelector('.nav'),bg=root.querySelector('.burger');
+  bg.addEventListener('click',function(){var o=nav.classList.toggle('mopen');bg.setAttribute('aria-expanded',o);});
+  root.querySelectorAll('.dd-t').forEach(function(t){t.addEventListener('click',function(){
+    var li=t.parentNode,o=li.classList.toggle('open');t.setAttribute('aria-expanded',o);
+    root.querySelectorAll('.dd.open').forEach(function(x){if(x!==li){x.classList.remove('open');x.querySelector('.dd-t').setAttribute('aria-expanded','false');}});
+  });});
+  document.addEventListener('click',function(e){if(!e.target.closest('.dd'))root.querySelectorAll('.dd.open').forEach(function(x){x.classList.remove('open');});});
+  // single-file preview: hash router
+  var pages=root.querySelectorAll('[data-page]');
+  if(pages.length>1){
+    function show(){
+      var h=(location.hash||'#inicio').slice(1),pg=root.querySelector('[data-page="'+h+'"]'),target=null;
+      if(!pg){target=document.getElementById(h);pg=target?target.closest('[data-page]'):null;}
+      if(!pg)pg=root.querySelector('[data-page="inicio"]');
+      pages.forEach(function(p){p.hidden=p!==pg;});
+      root.querySelectorAll('.menu a').forEach(function(a){if(a.getAttribute('href')==='#'+pg.getAttribute('data-page'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+      nav.classList.remove('mopen');root.querySelectorAll('.dd.open').forEach(function(x){x.classList.remove('open');});
+      if(target)target.scrollIntoView();else window.scrollTo(0,0);
+      document.title=pg.getAttribute('data-title')||document.title;
+    }
+    window.addEventListener('hashchange',show);show();
+  }
+})();
+</script>
