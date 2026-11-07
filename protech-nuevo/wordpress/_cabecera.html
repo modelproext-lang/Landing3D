@@ -342,6 +342,18 @@
 .pt .btn-o.arr:after{content:"→";display:inline-block;transition:transform .3s ease}
 .pt .btn-o.arr:hover:after{transform:translateX(4px)}
 @media(max-width:480px){.pt .hs-slide:first-child .ctas .btn{width:100%;justify-content:center}}
+/* slides 2 y 3: título en dos líneas, precio separado */
+.pt .hs h1.h2l{font-size:clamp(30px,3.3vw,48px);line-height:1.1}
+.pt .hs-in>h1.h2l{max-width:820px}
+.pt .hs-slide:not(:first-child) .hs-in>.lead{max-width:540px}
+.pt .hs-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:-8px 0 28px;padding-top:16px;border-top:1px solid rgba(11,27,51,.12);width:fit-content;min-width:260px}
+.pt .hs-price small{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--m)}
+.pt .hs-price b{font-size:clamp(28px,2.6vw,36px);font-weight:600;letter-spacing:-.02em;color:var(--n);font-variant-numeric:tabular-nums;line-height:1}
+.pt .hs-price span{font-size:14px;color:var(--m)}
+.pt .hs-slide.dark .hs-price{border-top-color:rgba(255,255,255,.2)}
+.pt .hs-slide.dark .hs-price b{color:#fff}.pt .hs-slide.dark .hs-price small,.pt .hs-slide.dark .hs-price span{color:#9fc4ea}
+.pt .hs-slide:not(:first-child) .ctas .btn{min-width:190px;justify-content:center}
+@media(max-width:480px){.pt .hs-slide:not(:first-child) .ctas .btn{width:100%}.pt .hs-price{min-width:0;width:100%}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
