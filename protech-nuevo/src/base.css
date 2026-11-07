@@ -337,3 +337,8 @@
 @media(max-width:560px){.pt .ind{gap:8px;margin-bottom:20px}.pt .ind a{padding:12px}.pt .ind b{font-size:14px;line-height:1.25}.pt .ind small{font-size:12px}.pt .ind em{display:none}.pt .ind-t{margin-bottom:4px}}
 .pt .hs h1.h1-long{font-size:clamp(30px,3.7vw,48px);line-height:1.12;max-width:720px}
 .pt .hs-in>h1.h1-long{max-width:720px}
+/* banner 1: botones por industria */
+.pt .btn-o.arr:after{content:"→";display:inline-block;transition:transform .3s ease}
+.pt .btn-o.arr:hover:after{transform:translateX(4px)}
+.pt #sol-zwcad,.pt #sol-zw3d{scroll-margin-top:130px}
+@media(max-width:480px){.pt .hs-slide:first-child .ctas .btn{width:100%;justify-content:center}}
