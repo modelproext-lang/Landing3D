@@ -326,3 +326,12 @@
 .pt.aos [data-aos="zoom"]{scale:.94}
 .pt.aos [data-aos].in{opacity:1;translate:none;scale:none}
 @media(prefers-reduced-motion:reduce){.pt.aos [data-aos]{opacity:1!important;translate:none!important;scale:none!important}.pt .mq ul,.pt .hs-bg,.pt .hs-slide.on .hs-in>*{animation:none!important;transition:none!important}}
+/* tarjetas por industria en la portada */
+.pt .ind{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 26px}
+.pt .ind a{display:flex;flex-direction:column;gap:3px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.78);border:1px solid rgba(0,150,255,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.pt .ind a:hover{transform:translateY(-4px);border-color:var(--g2);box-shadow:0 16px 32px rgba(10,106,201,.15)}
+.pt .ind-t{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.08em;color:#fff;background:linear-gradient(90deg,var(--g1),var(--g2));border-radius:100px;padding:3px 10px;margin-bottom:6px}
+.pt .ind b{color:var(--n);font-size:15px}
+.pt .ind small{font-size:13px;color:var(--m)}
+.pt .ind em{font-style:normal;font-size:13px;font-weight:600;color:var(--g1);margin-top:6px}
+@media(max-width:560px){.pt .ind{gap:8px;margin-bottom:20px}.pt .ind a{padding:12px}.pt .ind b{font-size:14px;line-height:1.25}.pt .ind small{font-size:12px}.pt .ind em{display:none}.pt .ind-t{margin-bottom:4px}}
