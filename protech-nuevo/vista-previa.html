@@ -624,6 +624,11 @@
 .pt .about-glass span{color:rgba(255,255,255,.92);font-size:14px;line-height:1.4}
 @media(max-width:860px){.pt .about-row{grid-template-columns:1fr}}
 @media(max-width:560px){.pt .about-glass{grid-template-columns:1fr}}
+/* tarjetas con textos más largos */
+@media(min-width:861px){.pt .about-row{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(24px,3vw,44px)}}
+.pt .about-glass li{padding:18px 16px}
+.pt .about-glass b{font-size:18px;line-height:1.25}
+.pt .about-glass span{font-size:13.5px}
 </style>
 <div class="pt"><header class="nav"><div class="w">
   <a class="brand" href="#inicio"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iX+WbvuWxgl8yIiBkYXRhLW5hbWU9IuWbvuWxgiAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTkuMzcgMzMuMDMiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICMzMzM7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogIzAwOTZmZjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9Il/lm77lsYJfMS0yIiBkYXRhLW5hbWU9IuWbvuWxgiAxIj4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01NC42Niw2LjU2Yy03LjMsMC0xMy4yNCw1Ljk0LTEzLjI0LDEzLjI0czUuOTQsMTMuMjQsMTMuMjQsMTMuMjQsMTMuMjQtNS45NCwxMy4yNC0xMy4yNC01Ljk0LTEzLjI0LTEzLjI0LTEzLjI0Wk01NC42NiwyNy4wMWMtMy45OCwwLTcuMjItMy4yNC03LjIyLTcuMjJzMy4yNC03LjIyLDcuMjItNy4yMiw3LjIyLDMuMjQsNy4yMiw3LjIyLTMuMjQsNy4yMi03LjIyLDcuMjJaIi8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSI4Ny44MiAwIDYzLjU5IDAgNjMuNTkgMy45NyA3My43MiAzLjk3IDczLjcyIDMyLjY5IDc3LjY5IDMyLjY5IDc3LjY5IDMuOTcgODcuODIgMy45NyA4Ny44MiAwIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjM5LDBIMHYzMi42OWg2LjAxdi04LjQzaDYuMzhjNi43LDAsMTIuMTMtNS40MywxMi4xMy0xMi4xM1MxOS4wOSwwLDEyLjM5LDBaTTEyLjM5LDE4LjI1aC02LjM4VjYuMDFoNi4zOGMzLjM4LDAsNi4xMiwyLjc0LDYuMTIsNi4xMnMtMi43NCw2LjEyLTYuMTIsNi4xMloiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQ3LjQ5LDYuNTZjLTMuMDQsMC01LjgxLDEuMTYtNy45MSwzLjA0VjBoLTMuOTd2MzIuNjloMy45N3YtMTQuMjVjMC00LjM2LDMuNTUtNy45MSw3LjkxLTcuOTFzNy45MSwzLjU1LDcuOTEsNy45MXYxNC4yNWgzLjk3di0xNC4yNWMwLTYuNTUtNS4zMy0xMS44OC0xMS44OC0xMS44OFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzMuMTYsNi43NGgtNi4wMXYyNS45NWg2LjAxdi0xMi4yNmMwLTQuMzMsMy41My03Ljg2LDcuODYtNy44NnYtNi4wMWMtMi45MiwwLTUuNjIuOTEtNy44NiwyLjQ1di0yLjI3WiIvPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMzAuMjMsMjYuMjljLTEuNzYsMS43OS00LjEsMi43Ny02LjYxLDIuNzctNSwwLTkuMDctMy45OC05LjI1LTguOTNsLTMuMDksNC4zNWMxLjksNC45OSw2LjcsOC41NSwxMi4zNCw4LjU1LDMuNTgsMCw2LjkzLTEuNCw5LjQ0LTMuOTZsLTIuODMtMi43OFoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0xMjMuNjIsNi41NmMtNi41MSwwLTEwLjU5LDUuMzUtMTQuMzIsMTAuODNsLS44MiwxLjJjLTMuNjEsNS4zNS03LjAyLDEwLjQ3LTEyLjE2LDEwLjQ3cy05LjI3LTQuMTYtOS4yNy05LjI3LDQuMTYtOS4yNyw5LjI3LTkuMjdjNC40MywwLDguMTQsMy4xMiw5LjA1LDcuMjhoLTE0LjA3djMuOTdoMTIuODJsNC42MS02LjQ5Yy0xLjg1LTUuMDgtNi43LTguNzMtMTIuNDEtOC43My03LjMsMC0xMy4yNCw1Ljk0LTEzLjI0LDEzLjI0czUuOTQsMTMuMjQsMTMuMjQsMTMuMjRjMTMuOTUsMCwxNy4xMi0yMi41LDI3LjMtMjIuNSwyLjQ4LDAsNC44Ljk2LDYuNTUsMi43MWwyLjgxLTIuODFjLTIuNS0yLjUtNS44Mi0zLjg4LTkuMzYtMy44OFoiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" alt="ProTech México" width="145" height="30"></a>
@@ -710,9 +715,9 @@
         <div><h3>Nuestra misión</h3><p>Acompañar e impulsar la transformación digital de empresas y profesionales mexicanos con soluciones confiables, fáciles de usar y accesibles.</p></div>
       </div>
       <ul class="about-glass">
-        <li><b>Respaldo oficial</b><span>Distribuidor de valor agregado de ZWSOFT</span></li>
-        <li><b>Local</b><span>Soporte técnico en español</span></li>
-        <li><b>Integral</b><span>Implementación y capacitación</span></li>
+        <li><b>Cercanía</b><span>Estamos contigo para resolver tus dudas y ayudarte cuando lo necesites.</span></li>
+        <li><b>Soporte local</b><span>Implementación, capacitación y asistencia técnica especializada en español.</span></li>
+        <li><b>Legalidad y confianza</b><span>Licencias 100% legítimas y respaldo oficial.</span></li>
       </ul>
       </div>
     </div>

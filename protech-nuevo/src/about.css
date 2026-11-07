@@ -42,3 +42,8 @@
 .pt .about-glass span{color:rgba(255,255,255,.92);font-size:14px;line-height:1.4}
 @media(max-width:860px){.pt .about-row{grid-template-columns:1fr}}
 @media(max-width:560px){.pt .about-glass{grid-template-columns:1fr}}
+/* tarjetas con textos más largos */
+@media(min-width:861px){.pt .about-row{grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(24px,3vw,44px)}}
+.pt .about-glass li{padding:18px 16px}
+.pt .about-glass b{font-size:18px;line-height:1.25}
+.pt .about-glass span{font-size:13.5px}
