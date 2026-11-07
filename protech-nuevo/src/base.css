@@ -353,3 +353,6 @@
 .pt .hs-slide.dark .hs-price b{color:#fff}.pt .hs-slide.dark .hs-price small,.pt .hs-slide.dark .hs-price span{color:#9fc4ea}
 .pt .hs-slide:not(:first-child) .ctas .btn{min-width:190px;justify-content:center}
 @media(max-width:480px){.pt .hs-slide:not(:first-child) .ctas .btn{width:100%}.pt .hs-price{min-width:0;width:100%}}
+/* transición logos → sección de renovaciones */
+.pt .logos{border-bottom:0;padding-bottom:56px;background:linear-gradient(180deg,#fff 0%,#fff 45%,var(--l) 100%)}
+.pt .logos+.pain{padding-top:clamp(32px,4vw,56px)}
