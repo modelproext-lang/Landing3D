@@ -23,9 +23,22 @@
  .pt .about-ball{left:-2%}
 }
 /* parámetros de la animación original (AOS: 800 ms, ease-in-out-sine, 100 px) */
-.pt.aos .about-h [data-aos]{transition:opacity .8s cubic-bezier(.445,.05,.55,.95) var(--d,0s),translate .8s cubic-bezier(.445,.05,.55,.95) var(--d,0s)}
+.pt.aos .about-h [data-aos]{transition:opacity .8s cubic-bezier(.445,.05,.55,.95) var(--d,0s),translate .8s cubic-bezier(.445,.05,.55,.95) var(--d,0s),transform .35s var(--ease),background .35s}
 .pt.aos .about-h [data-aos="fade-up"]{translate:0 100px}
 .pt.aos .about-h [data-aos="fade-right"]{translate:-100px 0}
 .pt.aos .about-h [data-aos="fade-in"]{translate:none}
 .pt.aos .about-h [data-aos].in{translate:none}
 @media(max-width:860px){.pt.aos .about-h [data-aos="fade-up"]{translate:0 50px}.pt.aos .about-h [data-aos="fade-right"]{translate:-50px 0}}
+/* opción C: mensaje directo + tarjetas de cristal */
+.pt .about-k{font-size:clamp(20px,1.9vw,26px);line-height:1.4;color:var(--n);font-weight:500;letter-spacing:-.01em}
+.pt .about-k b{background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.pt .about-txt .about-p2{font-size:18px;color:var(--t);margin-top:12px}
+.pt .about-txt .about-p3{font-size:16px;color:var(--m);margin-top:12px}
+.pt .about-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.pt .about-glass{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pt .about-glass li{display:flex;flex-direction:column;gap:6px;background:rgba(4,40,100,.28);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:18px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .35s var(--ease),background .35s}
+.pt .about-glass li:hover{transform:translateY(-4px);background:rgba(4,40,100,.38)}
+.pt .about-glass b{color:#fff;font-size:20px}
+.pt .about-glass span{color:rgba(255,255,255,.92);font-size:14px;line-height:1.4}
+@media(max-width:860px){.pt .about-row{grid-template-columns:1fr}}
+@media(max-width:560px){.pt .about-glass{grid-template-columns:1fr}}
