@@ -68,7 +68,7 @@
       });});
       r.classList.add('aos');
     });
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var rep=e.target.closest('[data-aos-repeat]');if(e.isIntersecting){e.target.classList.add('in');if(!rep)io.unobserve(e.target);}else if(rep&&e.boundingClientRect.top>0){e.target.classList.remove('in');}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
     document.querySelectorAll('.pt [data-aos], .pt .bars').forEach(function(el){io.observe(el);});
     var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);
       var el=e.target,end=parseFloat(el.getAttribute('data-count')),dec=+(el.getAttribute('data-dec')||0),plain=el.hasAttribute('data-plain'),start=plain?end-40:0,t0=null;

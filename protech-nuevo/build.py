@@ -138,7 +138,7 @@ def render(text, url_of, img_of):
 def main():
     pages = load_pages()
     by_id = {p["id"]: p for p in pages}
-    css = (SRC / "base.css").read_text(encoding="utf-8") + (SRC / "cotizador.css").read_text(encoding="utf-8") + (SRC / "zw3d.css").read_text(encoding="utf-8")
+    css = (SRC / "base.css").read_text(encoding="utf-8") + (SRC / "cotizador.css").read_text(encoding="utf-8") + (SRC / "zw3d.css").read_text(encoding="utf-8") + (SRC / "about.css").read_text(encoding="utf-8")
     js = (SRC / "site.js").read_text(encoding="utf-8")
     marker = "  // single-file preview: hash router"
     js = js.replace(marker, (SRC / "cotizador.js").read_text(encoding="utf-8") + marker, 1)
