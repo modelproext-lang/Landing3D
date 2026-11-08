@@ -442,6 +442,17 @@
 .pt .cmp-tag span{background:linear-gradient(90deg,#3cabf6,#9bd6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .pt .cmp .btn-p{box-shadow:0 10px 26px rgba(0,150,255,.35)}
 .pt .cmp .btn-p:hover{box-shadow:0 14px 32px rgba(0,150,255,.5)}
+/* logos: carrusel deslizable, más grande y con hover refinado */
+.pt .logos p{color:var(--b);font-weight:700;margin-bottom:30px}
+.pt .mq{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pt .mq::-webkit-scrollbar{display:none}
+.pt .mq.drag{cursor:grabbing}
+.pt .mq ul{animation:none!important;gap:clamp(28px,3.4vw,52px);padding-right:clamp(28px,3.4vw,52px)}
+.pt .mq li{flex:none;display:flex;align-items:center;justify-content:center;width:clamp(150px,14vw,200px);height:72px}
+.pt .mq img{height:56px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1) contrast(.9);opacity:.55;transition:filter .35s ease,opacity .35s ease,transform .35s ease;user-select:none;-webkit-user-drag:none;pointer-events:auto}
+.pt .mq li:hover img,.pt .mq li.on img{filter:grayscale(0) drop-shadow(0 6px 10px rgba(11,27,51,.12));opacity:1;transform:scale(1.08)}
+@media(max-width:560px){.pt .mq li{width:136px;height:60px}.pt .mq img{height:46px;opacity:.65}.pt .mq ul{gap:36px;padding-right:36px}}
+@media(prefers-reduced-motion:reduce){.pt .mq img{transition:none}.pt .mq li:hover img,.pt .mq li.on img{transform:none}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
@@ -1631,6 +1642,31 @@
     document.querySelectorAll('.pt .how-c').forEach(function(c){c.addEventListener('click',function(){var on=!c.classList.contains('on');document.querySelectorAll('.pt .how-c.on').forEach(function(x){x.classList.remove('on');});if(on)c.classList.add('on');});});
     document.addEventListener('click',function(e){if(!e.target.closest('.how-c'))document.querySelectorAll('.pt .how-c.on').forEach(function(x){x.classList.remove('on');});});
   }
+  // carrusel de logos: autoplay lento por scroll, pausa en hover/toque, arrastre con mouse y dedo
+  document.querySelectorAll('.pt .mq').forEach(function(mq){
+    var first=mq.querySelector('ul'),paused=false,resume=null,acc=0,last=0,touch=window.matchMedia&&matchMedia('(hover: none)').matches,tick=0;
+    var SPEED=reduce?0:28; // px por segundo
+    function loopW(){return first.getBoundingClientRect().width;}
+    function wrap(){var w=loopW();if(w&&mq.scrollLeft>=w)mq.scrollLeft-=w;else if(mq.scrollLeft<=0&&w)mq.scrollLeft+=w;}
+    function hold(ms){paused=true;clearTimeout(resume);if(ms)resume=setTimeout(function(){paused=false;},ms);}
+    function center(){if(!touch)return;var r=mq.getBoundingClientRect(),cx=r.left+r.width/2,best=null,bd=1e9;
+      mq.querySelectorAll('li').forEach(function(li){var b=li.getBoundingClientRect(),d=Math.abs(b.left+b.width/2-cx);if(d<bd){bd=d;best=li;}});
+      mq.querySelectorAll('li.on').forEach(function(li){if(li!==best)li.classList.remove('on');});if(best)best.classList.add('on');}
+    function step(ts){var dt=last?Math.min((ts-last)/1000,.05):0;last=ts;
+      if(!paused&&SPEED&&mq.getBoundingClientRect().bottom>0){acc+=SPEED*dt;var px=Math.floor(acc);if(px){acc-=px;mq.scrollLeft+=px;wrap();}}
+      if(++tick%12===0)center();requestAnimationFrame(step);}
+    mq.scrollLeft=1;
+    mq.addEventListener('mouseenter',function(){hold(0);});
+    mq.addEventListener('mouseleave',function(){paused=false;});
+    mq.addEventListener('touchstart',function(){hold(0);},{passive:true});
+    mq.addEventListener('touchend',function(){hold(2500);},{passive:true});
+    mq.addEventListener('scroll',function(){if(paused)wrap();},{passive:true});
+    var dx=null,sl=0;
+    mq.addEventListener('mousedown',function(e){dx=e.clientX;sl=mq.scrollLeft;mq.classList.add('drag');e.preventDefault();});
+    window.addEventListener('mousemove',function(e){if(dx===null)return;mq.scrollLeft=sl-(e.clientX-dx);wrap();});
+    window.addEventListener('mouseup',function(){if(dx===null)return;dx=null;mq.classList.remove('drag');});
+    requestAnimationFrame(step);
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){

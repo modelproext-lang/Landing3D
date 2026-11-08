@@ -438,3 +438,14 @@
 .pt .cmp-tag span{background:linear-gradient(90deg,#3cabf6,#9bd6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .pt .cmp .btn-p{box-shadow:0 10px 26px rgba(0,150,255,.35)}
 .pt .cmp .btn-p:hover{box-shadow:0 14px 32px rgba(0,150,255,.5)}
+/* logos: carrusel deslizable, más grande y con hover refinado */
+.pt .logos p{color:var(--b);font-weight:700;margin-bottom:30px}
+.pt .mq{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;padding:18px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pt .mq::-webkit-scrollbar{display:none}
+.pt .mq.drag{cursor:grabbing}
+.pt .mq ul{animation:none!important;gap:clamp(28px,3.4vw,52px);padding-right:clamp(28px,3.4vw,52px)}
+.pt .mq li{flex:none;display:flex;align-items:center;justify-content:center;width:clamp(150px,14vw,200px);height:72px}
+.pt .mq img{height:56px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1) contrast(.9);opacity:.55;transition:filter .35s ease,opacity .35s ease,transform .35s ease;user-select:none;-webkit-user-drag:none;pointer-events:auto}
+.pt .mq li:hover img,.pt .mq li.on img{filter:grayscale(0) drop-shadow(0 6px 10px rgba(11,27,51,.12));opacity:1;transform:scale(1.08)}
+@media(max-width:560px){.pt .mq li{width:136px;height:60px}.pt .mq img{height:46px;opacity:.65}.pt .mq ul{gap:36px;padding-right:36px}}
+@media(prefers-reduced-motion:reduce){.pt .mq img{transition:none}.pt .mq li:hover img,.pt .mq li.on img{transform:none}}
