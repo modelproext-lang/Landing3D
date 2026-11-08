@@ -386,3 +386,7 @@
 #soluciones .prods-note{margin-top:18px;text-align:center;font-size:13px;color:var(--m)}
 @media(max-width:560px){#soluciones .prod .bd{padding:22px 20px;gap:14px}#soluciones .prod li{font-size:14.5px}#soluciones .prod .ctas .btn{flex:1;justify-content:center}}
 #soluciones .from .iva{font-size:15px;font-weight:600;color:var(--m)}
+/* transición Productos → calculadora */
+#soluciones{padding-bottom:clamp(40px,4vw,56px)}
+#soluciones+#planes{position:relative;padding-top:clamp(56px,6vw,88px)}
+#soluciones+#planes:before{content:"";position:absolute;left:50%;top:0;width:2px;height:clamp(36px,4vw,56px);transform:translateX(-50%);border-radius:2px;background:linear-gradient(180deg,rgba(0,150,255,0),var(--g2))}
