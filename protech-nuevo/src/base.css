@@ -377,3 +377,11 @@
 .pt .cmp-tag{margin-top:26px;text-align:center;font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.02em;color:var(--n)}
 .pt .cmp-tag span{background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
 @media(max-width:560px){.pt .cmp .vs{grid-template-columns:1fr}.pt .cmp .vs .g{transform:none}.pt .cmp-tag{text-align:left}}
+/* tarjetas de productos del inicio */
+#soluciones .prod ul{gap:11px}
+#soluciones .prod li{position:relative;display:block;padding-left:26px;line-height:1.5}
+#soluciones .prod li:before{content:"✓";position:absolute;left:2px;top:0;color:var(--b);font-weight:800;line-height:1.5}
+#soluciones .prod .tag{font-size:14px;line-height:1.45;margin-top:2px}
+#soluciones .kw{color:var(--g1);font-weight:600}
+#soluciones .prods-note{margin-top:18px;text-align:center;font-size:13px;color:var(--m)}
+@media(max-width:560px){#soluciones .prod .bd{padding:22px 20px;gap:14px}#soluciones .prod li{font-size:14.5px}#soluciones .prod .ctas .btn{flex:1;justify-content:center}}
