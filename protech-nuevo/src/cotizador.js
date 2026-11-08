@@ -28,6 +28,14 @@
       '</aside></div>'+
       '<div class="cz-bar"><div><small>Total</small><b class="cz-b-total"></b></div><a class="btn btn-p cz-go" href="#" target="_blank" rel="noopener">Cotizar</a></div>';
     var $=function(s){return cz.querySelector(s);},$$=function(s){return cz.querySelectorAll(s);};
+    var home=!!cz.closest('.cz-home');
+    if(home){
+      $('.cz-sum').insertAdjacentHTML('afterbegin','<div class="cz-sum-k">Resumen de tu cotización</div>');
+      $('.cz-total small').textContent='Total estimado';
+      $('.cz-total span').textContent='MXN + IVA · licencia perpetua, pago único';
+      $('.cz-bar small').textContent='Total + IVA';
+      $('.cz-hint').insertAdjacentHTML('afterend','<div class="cz-mant"><b>Mantenimiento flexible <i>Opcional</i></b><span>Actualiza a nuevas versiones cuando lo necesites. Pregunta por las opciones al solicitar tu cotización.</span></div>');
+    }
     var prodBox=$('.cz-prod');
     D.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','radio');
       b.innerHTML='<img src="'+p.logo+'" alt="" width="40" height="40"><span><b>'+p.label+'</b><small>'+p.sub+'</small></span>';
@@ -65,7 +73,7 @@
       else if(st.q>=5)h='Para '+st.q+' licencias, pregunta por precio especial por volumen.';
       else if(st.t==='standalone'&&st.q>=3&&pl.net)h='Si tus '+st.q+' usuarios no trabajan al mismo tiempo, una licencia de red compartida puede salirte más barata.';
       $('.cz-hint').textContent=h;$('.cz-hint').hidden=!h;
-      var msg='Hola ProTech, quiero una cotización formal:\n• Producto: '+name+'\n• Tipo: '+type+'\n• Cantidad: '+st.q+(u?'\n• Total de lista: '+money(u*st.q)+' MXN':'')+'\nMi nombre y empresa: ';
+      var msg='Hola ProTech, quiero una cotización formal:\n• Producto: '+name+'\n• Tipo: '+type+'\n• Cantidad: '+st.q+(u?'\n• Total de lista: '+money(u*st.q)+' MXN'+(home?' + IVA':''):'')+'\nMi nombre y empresa: ';
       $$('.cz-go').forEach(function(a){a.href=link(msg);});
       $('.cz-trial').href=link('Hola ProTech, quiero la prueba gratis de 30 días de '+name+'.');
     }
