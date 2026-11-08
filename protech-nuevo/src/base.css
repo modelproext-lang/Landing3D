@@ -449,3 +449,6 @@
 .pt .mq li:hover img,.pt .mq li.on img{filter:grayscale(0) drop-shadow(0 6px 10px rgba(11,27,51,.12));opacity:1;transform:scale(1.08)}
 @media(max-width:560px){.pt .mq li{width:136px;height:60px}.pt .mq img{height:46px;opacity:.65}.pt .mq ul{gap:36px;padding-right:36px}}
 @media(prefers-reduced-motion:reduce){.pt .mq img{transition:none}.pt .mq li:hover img,.pt .mq li.on img{transform:none}}
+/* logos entre Productos y calculadora */
+#soluciones+.logos{margin-top:0;padding:clamp(8px,1.5vw,16px) 0 clamp(8px,1.5vw,16px)}
+.logos+#planes{padding-top:clamp(56px,6vw,88px)}
