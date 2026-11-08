@@ -518,3 +518,12 @@
 .pt .how-txt .lead{color:#e6f3ff}
 .pt .how-txt .btn-p{background:#fff;color:#0a6ac9;box-shadow:0 10px 26px rgba(4,40,100,.25)}
 .pt .how-txt .btn-p:hover{background:#eaf5ff;color:#0a6ac9;box-shadow:0 14px 32px rgba(4,40,100,.3)}
+/* Clientes: logos a color, más grandes, hover solo escala */
+.pt .logos .lg-h{text-align:center;margin-bottom:26px}
+.pt .logos .lg-h h2{font-size:clamp(26px,2.8vw,36px);margin-top:6px}
+.pt .mq li{width:clamp(170px,16vw,230px);height:88px}
+.pt .mq img{height:68px;filter:none;opacity:1;transition:transform .35s ease}
+.pt .mq li:hover img{transform:scale(1.12);filter:none}
+.pt .mq li.on img{transform:none;filter:none}
+@media(max-width:560px){.pt .mq li{width:150px;height:72px}.pt .mq img{height:54px;opacity:1}}
+@media(prefers-reduced-motion:reduce){.pt .mq li:hover img{transform:none}}
