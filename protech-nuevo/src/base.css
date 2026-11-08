@@ -527,3 +527,26 @@
 .pt .mq li.on img{transform:none;filter:none}
 @media(max-width:560px){.pt .mq li{width:150px;height:72px}.pt .mq img{height:54px;opacity:1}}
 @media(prefers-reduced-motion:reduce){.pt .mq li:hover img{transform:none}}
+/* Distribuidores: tarjeta azul cielo con pasos */
+#canal{background:#fff}
+.pt .cn{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;border-radius:clamp(22px,3vw,36px);padding:clamp(28px,5vw,64px);background:radial-gradient(60% 80% at 90% 10%,rgba(255,255,255,.75),transparent 60%),linear-gradient(160deg,#e6f3ff,#d3e9fd);border:1px solid #cfe4f8;position:relative;overflow:hidden}
+.pt .cn:before{content:"";position:absolute;left:-80px;bottom:-110px;width:360px;height:300px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 300'%3E%3Cpath d='M300 20C170 30 60 120 90 190s170 30 150-40-170-40-220 130' fill='none' stroke='%2393cfff' stroke-opacity='.45' stroke-width='34' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain;pointer-events:none}
+.pt .cn>*{position:relative}
+.pt .cn-l h2{font-size:clamp(28px,3.2vw,42px);margin:6px 0 14px}
+.pt .cn-l .lead{color:var(--t);max-width:600px}
+.pt .cn-b{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;margin:26px 0 0;padding:0}
+.pt .cn-b li{display:flex;gap:12px;align-items:flex-start}
+.pt .cn-i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none;background:#fff;color:var(--g1);box-shadow:0 6px 14px rgba(10,106,201,.12)}
+.pt .cn-i svg{width:20px;height:20px}
+.pt .cn-b b{display:block;color:var(--n);font-size:15.5px;margin-bottom:2px}
+.pt .cn-b small{display:block;color:var(--m);font-size:14px;line-height:1.5}
+.pt .cn-card{background:#fff;border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 50px rgba(10,106,201,.15)}
+.pt .cn-k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--b)}
+.pt .cn-s{list-style:none;counter-reset:c;display:grid;gap:14px;margin:4px 0 8px;padding:0}
+.pt .cn-s li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:start}
+.pt .cn-s li:before{content:counter(c);grid-row:span 2;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.pt .cn-s b{color:var(--n);font-size:15.5px}
+.pt .cn-s span{color:var(--m);font-size:14px}
+.pt .cn-card .btn{justify-content:center;width:100%}
+@media(max-width:960px){.pt .cn{grid-template-columns:1fr}}
+@media(max-width:560px){.pt .cn{padding:24px 18px}.pt .cn-b{grid-template-columns:1fr}.pt .cn-card{padding:22px 18px}}
