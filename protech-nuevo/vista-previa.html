@@ -394,6 +394,19 @@
 #soluciones{padding-bottom:clamp(40px,4vw,56px)}
 #soluciones+#planes{position:relative;padding-top:clamp(56px,6vw,88px)}
 #soluciones+#planes:before{content:"";position:absolute;left:50%;top:0;width:2px;height:clamp(36px,4vw,56px);transform:translateX(-50%);border-radius:2px;background:linear-gradient(180deg,rgba(0,150,255,0),var(--g2))}
+/* Cómo trabajamos */
+.pt .how h2{font-size:clamp(28px,3.2vw,42px)}
+.pt .how .lead{max-width:620px;margin:0 auto;color:var(--t)}
+.pt .how-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:48px}
+.pt .how-c{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 26px 28px;display:flex;flex-direction:column;gap:10px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.pt .how-c:hover{transform:translateY(-6px);border-color:#9fd2ff;box-shadow:0 22px 44px rgba(10,106,201,.12)}
+.pt .how-n{position:absolute;top:22px;right:24px;font-size:13px;font-weight:600;letter-spacing:.06em;color:#9aa8bb;font-variant-numeric:tabular-nums}
+.pt .how-i{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 10px 22px rgba(0,150,255,.28);margin-bottom:10px}
+.pt .how-i svg{width:28px;height:28px}
+.pt .how-c h3{font-size:20px;color:var(--n)}
+.pt .how-c p{font-size:15.5px;line-height:1.6;color:var(--t)}
+@media(max-width:1000px){.pt .how-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.pt .how-g{grid-template-columns:1fr;gap:14px;margin-top:32px}.pt .how-c{padding:22px 20px;display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:4px;align-items:start}.pt .how-i{grid-row:span 2;width:50px;height:50px;margin:0}.pt .how-c h3{font-size:18px;padding-right:28px}.pt .how-n{top:20px;right:20px}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
@@ -859,13 +872,13 @@
 </div></section>
 
 <!-- STEPS -->
-<section class="pain"><div class="w">
-  <div class="c"><span class="eb">Cómo trabajamos</span><h2>No te vendemos una licencia y desaparecemos</h2></div>
-  <div class="steps">
-    <div class="step"><h3>Evaluación</h3><p>Revisamos tus archivos y flujo de trabajo actuales.</p></div>
-    <div class="step"><h3>Prueba</h3><p>Instalas la versión completa 30 días con acompañamiento.</p></div>
-    <div class="step"><h3>Implementación</h3><p>Migramos plantillas, configuración y rutinas de tu equipo.</p></div>
-    <div class="step"><h3>Soporte</h3><p>Soporte técnico en México, en tu idioma y en tu horario.</p></div>
+<section class="pain how"><div class="w">
+  <div class="c"><span class="eb">Cómo trabajamos</span><h2>Te acompañamos en cada etapa.</h2><p class="lead">Más que vender software, te ayudamos a elegirlo, implementarlo y aprovecharlo en tus proyectos.</p></div>
+  <div class="how-g">
+    <article class="how-c"><span class="how-n" aria-hidden="true">01</span><div class="how-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-3.9-3.9"/><path d="M8.5 11h5M11 8.5v5"/></svg></div><h3>Evaluación</h3><p>Escuchamos tus necesidades y conocemos cómo trabaja tu equipo.</p></article>
+    <article class="how-c"><span class="how-n" aria-hidden="true">02</span><div class="how-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.8 7L4 20.5l1.5-4.9A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg></div><h3>Asesoría</h3><p>Te ayudamos a elegir el software y las licencias adecuadas.</p></article>
+    <article class="how-c"><span class="how-n" aria-hidden="true">03</span><div class="how-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5a1.8 1.8 0 0 0 2.5 2.5l5.8-5.8a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.1-.4-.4-2.1z"/></svg></div><h3>Implementación</h3><p>Te acompañamos en la instalación, configuración y puesta en marcha.</p></article>
+    <article class="how-c"><span class="how-n" aria-hidden="true">04</span><div class="how-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13.5" width="4" height="6" rx="1.5"/><rect x="17" y="13.5" width="4" height="6" rx="1.5"/><path d="M19 19.5a3 3 0 0 1-3 2.5h-2.5"/></svg></div><h3>Soporte</h3><p>Resolvemos tus dudas técnicas para que sigas trabajando con confianza.</p></article>
   </div>
 </div></section>
 
@@ -1559,14 +1572,14 @@
   });
   // scroll reveal (AOS-like) + counters + bars
   if('IntersectionObserver' in window&&!reduce){
-    var auto=['section h2','section .lead','.feat>div','.prod','.plan','.step','.vs .card','details','.st','.rs>div','.dl>div','.partner','.split>img','form','.z3-adv>a','.z3-ctrl>div','.z3-cases>article','.z3-reviews>figure','.z3-badges','.z3-points>div','.z3-loop','.z3-startup','.about-glass>li'];
+    var auto=['section h2','section .lead','.feat>div','.prod','.plan','.step','.vs .card','details','.st','.rs>div','.dl>div','.partner','.split>img','form','.z3-adv>a','.z3-ctrl>div','.z3-cases>article','.z3-reviews>figure','.z3-badges','.z3-points>div','.z3-loop','.z3-startup','.about-glass>li','.how-c'];
     document.querySelectorAll('.pt').forEach(function(r){
       auto.forEach(function(sel){r.querySelectorAll(sel).forEach(function(el){
         if(el.closest('.hs')||el.hasAttribute('data-aos'))return;
         var a='fade-up';if(el.matches('.split>img,.vs .card.g'))a='fade-left';if(el.matches('.vs .card.x'))a='fade-right';if(el.matches('.partner,.z3-loop'))a='zoom';
         el.setAttribute('data-aos',a);
         var sib=el.parentNode?Array.prototype.indexOf.call(el.parentNode.children,el):0;
-        if(el.matches('.feat>div,.prod,.plan,.step,.st,.rs>div,.dl>div,details,.about-glass>li,.z3-adv>a,.z3-ctrl>div,.z3-cases>article,.z3-reviews>figure,.z3-points>div'))el.style.setProperty('--d',Math.min(sib,5)*0.08+'s');
+        if(el.matches('.feat>div,.prod,.plan,.step,.st,.rs>div,.dl>div,details,.about-glass>li,.how-c,.z3-adv>a,.z3-ctrl>div,.z3-cases>article,.z3-reviews>figure,.z3-points>div'))el.style.setProperty('--d',Math.min(sib,5)*0.08+'s');
       });});
       r.classList.add('aos');
     });
