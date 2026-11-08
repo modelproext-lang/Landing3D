@@ -551,6 +551,14 @@
 .pt .cn-card .btn{justify-content:center;width:100%}
 @media(max-width:960px){.pt .cn{grid-template-columns:1fr}}
 @media(max-width:560px){.pt .cn{padding:24px 18px}.pt .cn-b{grid-template-columns:1fr}.pt .cn-card{padding:22px 18px}}
+/* submenú Productos con íconos */
+.pt .sub-prod{min-width:560px;display:none;grid-template-columns:1fr 1fr;gap:6px;padding:12px}
+.pt .dd:hover .sub-prod,.pt .dd:focus-within .sub-prod,.pt .dd.open .sub-prod{display:grid}
+.pt .sub-prod a{display:flex;gap:12px;align-items:flex-start;padding:14px}
+.pt .sub-prod img{width:28px;height:28px;border-radius:7px;flex:none;margin-top:1px}
+.pt .sub-prod b{font-size:15.5px}
+.pt .sub-prod small{display:block;margin-top:3px;line-height:1.45}
+@media(max-width:1020px){.pt .sub-prod{min-width:0;grid-template-columns:1fr;padding:0 0 10px 8px}.pt .dd:hover .sub-prod,.pt .dd:focus-within .sub-prod{display:none}.pt .dd.open .sub-prod{display:grid}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
@@ -861,10 +869,9 @@
   <nav class="menu" aria-label="Principal">
     <ul>
       <li class="dd"><a href="/productos/">Productos</a><button class="dd-t" type="button" aria-label="Ver submenú de Productos" aria-expanded="false"></button>
-        <ul class="sub">
-          <li><a href="/product/zwcad/"><b>ZWCAD</b><small>CAD 2D/3D compatible con DWG</small></a></li>
-          <li><a href="/product/zw3d-cad-cam/"><b>ZW3D CAD/CAM</b><small>CAD/CAE/CAM 3D todo en uno</small></a></li>
-          <li><a href="/productos/"><b>Todos los productos</b><small>Software y plugins gratuitos</small></a></li>
+        <ul class="sub sub-prod">
+          <li><a href="/product/zwcad/"><img src="/wp-content/uploads/protech/logo-zwcad.webp" alt="" width="28" height="28"><span><b>ZWCAD</b><small>CAD compatible con DWG para mayor productividad</small></span></a></li>
+          <li><a href="/product/zw3d-cad-cam/"><img src="/wp-content/uploads/protech/logo-zw3d.webp" alt="" width="28" height="28"><span><b>ZW3D</b><small>Solución CAD 3D profesional para diseño de maquinaria</small></span></a></li>
         </ul></li>
       <li class="dd"><a href="/soporte/">Soporte</a><button class="dd-t" type="button" aria-label="Ver submenú de Soporte" aria-expanded="false"></button>
         <ul class="sub">

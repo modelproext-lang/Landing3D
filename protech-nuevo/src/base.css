@@ -550,3 +550,11 @@
 .pt .cn-card .btn{justify-content:center;width:100%}
 @media(max-width:960px){.pt .cn{grid-template-columns:1fr}}
 @media(max-width:560px){.pt .cn{padding:24px 18px}.pt .cn-b{grid-template-columns:1fr}.pt .cn-card{padding:22px 18px}}
+/* submenú Productos con íconos */
+.pt .sub-prod{min-width:560px;display:none;grid-template-columns:1fr 1fr;gap:6px;padding:12px}
+.pt .dd:hover .sub-prod,.pt .dd:focus-within .sub-prod,.pt .dd.open .sub-prod{display:grid}
+.pt .sub-prod a{display:flex;gap:12px;align-items:flex-start;padding:14px}
+.pt .sub-prod img{width:28px;height:28px;border-radius:7px;flex:none;margin-top:1px}
+.pt .sub-prod b{font-size:15.5px}
+.pt .sub-prod small{display:block;margin-top:3px;line-height:1.45}
+@media(max-width:1020px){.pt .sub-prod{min-width:0;grid-template-columns:1fr;padding:0 0 10px 8px}.pt .dd:hover .sub-prod,.pt .dd:focus-within .sub-prod{display:none}.pt .dd.open .sub-prod{display:grid}}
