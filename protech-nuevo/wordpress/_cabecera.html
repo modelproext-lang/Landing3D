@@ -389,8 +389,6 @@
 #soluciones .from .iva{font-size:15px;font-weight:600;color:var(--m)}
 /* transición Productos → calculadora */
 #soluciones{padding-bottom:clamp(40px,4vw,56px)}
-#soluciones+#planes{position:relative;padding-top:clamp(56px,6vw,88px)}
-#soluciones+#planes:before{content:"";position:absolute;left:50%;top:0;width:2px;height:clamp(36px,4vw,56px);transform:translateX(-50%);border-radius:2px;background:linear-gradient(180deg,rgba(0,150,255,0),var(--g2))}
 /* Cómo trabajamos */
 .pt .how h2{font-size:clamp(28px,3.2vw,42px)}
 .pt .how .lead{max-width:620px;margin:0 auto;color:var(--t)}
@@ -451,8 +449,7 @@
 @media(max-width:560px){.pt .mq li{width:136px;height:60px}.pt .mq img{height:46px;opacity:.65}.pt .mq ul{gap:36px;padding-right:36px}}
 @media(prefers-reduced-motion:reduce){.pt .mq img{transition:none}.pt .mq li:hover img,.pt .mq li.on img{transform:none}}
 /* logos entre Productos y calculadora */
-#soluciones+.logos{margin-top:0;padding:clamp(8px,1.5vw,16px) 0 clamp(8px,1.5vw,16px)}
-.logos+#planes{padding-top:clamp(56px,6vw,88px)}
+#soluciones+.logos{margin-top:0;padding:clamp(8px,1.5vw,16px) 0 clamp(40px,5vw,72px)}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
