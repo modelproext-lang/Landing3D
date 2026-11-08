@@ -57,7 +57,7 @@
   });
   // scroll reveal (AOS-like) + counters + bars
   if('IntersectionObserver' in window&&!reduce){
-    var auto=['section h2','section .lead','.feat>div','.prod','.plan','.step','.vs .card','details','.st','.rs>div','.dl>div','.partner','.split>img','form','.z3-adv>a','.z3-ctrl>div','.z3-cases>article','.z3-reviews>figure','.z3-badges','.z3-points>div','.z3-loop','.z3-startup','.about-glass>li','.how-c'];
+    var auto=['section h2','section .lead','.feat>div','.prod','.plan','.step','.vs .card','details','.st','.rs>div','.dl>div','.partner','.split>img','form','.z3-adv>a','.z3-ctrl>div','.z3-cases>article','.z3-reviews>figure','.z3-badges','.z3-points>div','.z3-loop','.z3-startup','.about-glass>li','.how-c','#soluciones .pb'];
     document.querySelectorAll('.pt').forEach(function(r){
       auto.forEach(function(sel){r.querySelectorAll(sel).forEach(function(el){
         if(el.closest('.hs')||el.hasAttribute('data-aos'))return;
