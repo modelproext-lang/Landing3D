@@ -404,6 +404,25 @@
 .pt .how-c p{font-size:15.5px;line-height:1.6;color:var(--t)}
 @media(max-width:1000px){.pt .how-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.pt .how-g{grid-template-columns:1fr;gap:14px;margin-top:32px}.pt .how-c{padding:22px 20px;display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:4px;align-items:start}.pt .how-i{grid-row:span 2;width:50px;height:50px;margin:0}.pt .how-c h3{font-size:18px;padding-right:28px}.pt .how-n{top:20px;right:20px}}
+/* Cómo trabajamos: hover tomado de "Ventajas" del sitio original (degradado 0.3s, ícono blanco, sombra azul) */
+.pt .how-c{isolation:isolate;overflow:hidden;cursor:default;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.pt .how-c:after{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s ease;background:radial-gradient(80% 60% at 100% 0%,rgba(124,196,255,.45),transparent 60%),linear-gradient(140deg,var(--g1),var(--g2))}
+.pt .how-c h3,.pt .how-c p,.pt .how-n{transition:color .3s ease}
+.pt .how-i{border-radius:50%;width:60px;height:60px;background:#dfeffd;color:var(--g1);box-shadow:none;transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
+.pt .how-i svg{width:28px;height:28px;transition:transform .3s ease}
+.pt .how-c:hover,.pt .how-c:focus-visible,.pt .how-c.on{transform:translateY(-6px);border-color:transparent;box-shadow:0 18px 30px rgba(151,211,255,.55)}
+.pt .how-c:hover:after,.pt .how-c:focus-visible:after,.pt .how-c.on:after{opacity:1}
+.pt .how-c:hover h3,.pt .how-c:focus-visible h3,.pt .how-c.on h3{color:#fff}
+.pt .how-c:hover p,.pt .how-c:focus-visible p,.pt .how-c.on p{color:rgba(255,255,255,.88)}
+.pt .how-c:hover .how-n,.pt .how-c:focus-visible .how-n,.pt .how-c.on .how-n{color:rgba(255,255,255,.75)}
+.pt .how-c:hover .how-i,.pt .how-c:focus-visible .how-i,.pt .how-c.on .how-i{background:#fff;color:var(--g1);transform:scale(1.08);box-shadow:0 10px 22px rgba(4,40,100,.22)}
+.pt .how-c:hover .how-i svg,.pt .how-c:focus-visible .how-i svg,.pt .how-c.on .how-i svg{transform:rotate(-8deg)}
+.pt .how-c:focus-visible{outline:2px solid var(--g2);outline-offset:3px}
+@media(hover:none){.pt .how-c:hover{transform:none;box-shadow:none;border-color:var(--line)}.pt .how-c:hover:after{opacity:0}.pt .how-c:hover h3{color:var(--n)}.pt .how-c:hover p{color:var(--t)}.pt .how-c:hover .how-n{color:#9aa8bb}.pt .how-c:hover .how-i{background:#dfeffd;transform:none;box-shadow:none}.pt .how-c:hover .how-i svg{transform:none}
+ .pt .how-c.on{transform:translateY(-4px);box-shadow:0 18px 30px rgba(151,211,255,.55)}.pt .how-c.on:after{opacity:1}.pt .how-c.on h3{color:#fff}.pt .how-c.on p{color:rgba(255,255,255,.88)}.pt .how-c.on .how-n{color:rgba(255,255,255,.75)}.pt .how-c.on .how-i{background:#fff;transform:scale(1.08)}}
+@media(max-width:560px){.pt .how-i{width:52px;height:52px}}
+@media(prefers-reduced-motion:reduce){.pt .how-c,.pt .how-c:hover,.pt .how-c.on,.pt .how-c:focus-visible{transform:none!important}.pt .how-i,.pt .how-i svg{transform:none!important}}
+.pt.aos .how-c[data-aos]{transition:opacity .8s var(--ease) var(--d,0s),translate .8s var(--ease) var(--d,0s),transform .3s ease,box-shadow .3s ease,border-color .3s ease}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}

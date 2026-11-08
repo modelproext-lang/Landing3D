@@ -90,6 +90,11 @@
       requestAnimationFrame(step);});},{threshold:.5});
     document.querySelectorAll('.pt [data-count]').forEach(function(el){co.observe(el);});
   }else{document.querySelectorAll('.pt .bars').forEach(function(b){b.classList.add('in');});}
+  // "Cómo trabajamos": en pantallas táctiles, tocar una tarjeta la activa (tocar fuera la regresa)
+  if(window.matchMedia&&matchMedia('(hover: none)').matches){
+    document.querySelectorAll('.pt .how-c').forEach(function(c){c.addEventListener('click',function(){var on=!c.classList.contains('on');document.querySelectorAll('.pt .how-c.on').forEach(function(x){x.classList.remove('on');});if(on)c.classList.add('on');});});
+    document.addEventListener('click',function(e){if(!e.target.closest('.how-c'))document.querySelectorAll('.pt .how-c.on').forEach(function(x){x.classList.remove('on');});});
+  }
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
