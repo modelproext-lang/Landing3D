@@ -450,3 +450,27 @@
 /* logos entre Productos y calculadora */
 #soluciones+.logos{margin-top:0;padding:clamp(8px,1.5vw,16px) 0 clamp(40px,5vw,72px)}
 @media(min-width:761px){.pt .hs-bg-lamina{background-color:#03102c;background-repeat:no-repeat;background-size:auto 88%;background-position:right bottom}}
+/* Habla con un experto: panel azul marino con imagen del sitio original */
+.pt .how{background:#fff;padding-top:clamp(72px,8vw,120px)}
+.pt .how-panel{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;border-radius:clamp(22px,3vw,40px);padding:0 clamp(24px,5vw,72px);background:radial-gradient(60% 80% at 80% 30%,rgba(0,150,255,.35),transparent 65%),radial-gradient(50% 60% at 0% 100%,rgba(10,106,201,.35),transparent 70%),#061a34;color:#b9cde6}
+.pt .how-txt{padding:clamp(48px,6vw,88px) 0 clamp(96px,10vw,140px);max-width:540px}
+.pt .how-txt .eb{color:#7cc4ff}
+.pt .how-txt h2{color:#fff;font-size:clamp(30px,3.4vw,46px);line-height:1.1;margin:6px 0 16px}
+.pt .how-txt .lead{color:#b9cde6;margin:0}
+.pt .how-txt .ctas{margin-top:28px}
+.pt .how-txt .btn-p{box-shadow:0 10px 26px rgba(0,150,255,.4)}
+.pt .how-img{position:relative;align-self:end;margin-top:clamp(-70px,-5vw,-40px);margin-bottom:clamp(64px,7vw,96px)}
+.pt .how-img img{display:block;width:100%;max-width:560px;height:auto;margin-left:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.35));animation:howFloat 6s ease-in-out infinite}
+@keyframes howFloat{50%{transform:translateY(-10px)}}
+.pt .how-ball{position:absolute;pointer-events:none;z-index:2;height:auto}
+.pt .how-ball.b1{width:clamp(44px,5vw,72px);left:4%;top:0;transform:translateY(-50%);animation:howFloat 7s ease-in-out infinite}
+.pt .how-ball.b2{width:clamp(56px,6vw,90px);right:2%;bottom:clamp(60px,7vw,100px);opacity:.9;animation:howFloat 8s ease-in-out infinite reverse}
+.pt .how .how-g{position:relative;z-index:3;margin-top:calc(-1 * clamp(64px,7vw,96px));padding:0 clamp(12px,2vw,28px)}
+.pt .how .how-c{box-shadow:0 18px 40px rgba(11,27,51,.12)}
+@media(max-width:860px){
+ .pt .how-panel{grid-template-columns:1fr;padding:0 22px}
+ .pt .how-txt{padding:44px 0 0}
+ .pt .how-img{margin:8px auto 70px;max-width:380px}
+ .pt .how .how-g{padding:0}
+}
+@media(prefers-reduced-motion:reduce){.pt .how-img img,.pt .how-ball{animation:none}}
