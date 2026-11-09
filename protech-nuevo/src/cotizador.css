@@ -165,3 +165,38 @@
 @media(max-width:960px){.pt .sv-g{grid-template-columns:1fr}}
 @media(max-width:480px){.pt .sv-in,.pt .sv-out{padding:20px 16px}.pt .sv-plans small{padding-right:0}.pt .sv-plans i{position:static;justify-self:start;margin-top:4px}}
 .pt .sv-in label small,.pt .sv-plans small,.pt .sv-plans b{text-align:left;justify-self:start}
+/* calculadora de ahorro v2: pasos */
+.pt .sv-in{background:none;border:0;padding:0;gap:16px}
+.pt .sv-st{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 24px;display:grid;gap:14px}
+.pt .sv-h{display:flex;align-items:center;gap:12px}
+.pt .sv-h span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 6px 14px rgba(0,150,255,.3);flex:none}
+.pt .sv-h h3{font-size:17px;margin:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pt .sv-h h3 em{font-style:normal;font-size:11px;font-weight:700;color:var(--g1);background:#e6f4ff;border-radius:20px;padding:3px 9px;letter-spacing:.02em}
+.pt .sv-qty{display:flex;align-items:center;border:1px solid #cdd8e6;border-radius:100px;overflow:hidden;width:fit-content}
+.pt .sv-qty button{width:44px;height:44px;border:0;background:#fff;font-size:20px;color:var(--g1);cursor:pointer}
+.pt .sv-qty button:hover{background:var(--l)}
+.pt .sv-qty input{width:70px;border:0;border-inline:1px solid var(--line);border-radius:0;text-align:center;font-weight:700;padding:10px 4px;-moz-appearance:textfield}
+.pt .sv-qty input::-webkit-inner-spin-button{-webkit-appearance:none}
+.pt .sv-money em{font-style:normal;font-size:12.5px;color:var(--m);padding-right:14px;white-space:nowrap}
+.pt .sv-pl{position:relative;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;cursor:pointer;display:grid;gap:3px;transition:border-color .25s,box-shadow .25s,background .25s}
+.pt .sv-pl:hover{border-color:#9fd2ff}
+.pt .sv-pl:focus-visible{outline:2px solid var(--g2);outline-offset:2px}
+.pt .sv-pl b{font-size:14.5px;color:var(--n)}
+.pt .sv-pl small{font-size:12.5px;color:var(--m);line-height:1.45;padding-right:84px}
+.pt .sv-pl i{position:absolute;top:12px;right:12px;font-style:normal;font-size:10.5px;font-weight:700;color:#fff;background:#22c08a;border-radius:20px;padding:3px 8px}
+.pt .sv-pl.on{border-color:var(--g2);background:linear-gradient(180deg,#f2f9ff,#fff);box-shadow:0 0 0 3px rgba(0,150,255,.12)}
+.pt .sv-yrs{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pt .sv-yrs>span{font-size:12.5px;color:var(--n);font-weight:600;margin-right:2px}
+.pt .sv-yrs button{border:1.5px solid var(--line);background:#fff;border-radius:100px;padding:6px 12px;font:600 12.5px inherit;font-family:inherit;color:var(--t);cursor:pointer}
+.pt .sv-yrs button:hover{border-color:var(--g2);color:var(--g1)}
+.pt .sv-pl.on .sv-yrs button.on{background:linear-gradient(90deg,var(--g1),var(--g2));border-color:transparent;color:#fff}
+.pt .sv-pl:not(.on) .sv-yrs{opacity:.7}
+.pt .sv-adv{display:grid;gap:12px;padding:22px;border-radius:18px;background:rgba(255,255,255,.07);border:1px dashed rgba(124,196,255,.5)}
+.pt .sv-adv[hidden]{display:none}
+.pt .sv-adv b{color:#fff;font-size:20px}
+.pt .sv-adv p{color:#cfe0f5;font-size:15px;line-height:1.6;margin:0}
+.pt .sv-adv .btn{justify-self:start}
+.pt .sv-out [hidden]{display:none!important}
+.pt .sv-out{position:sticky;top:calc(90px + env(safe-area-inset-top,0px))}
+@media(max-width:960px){.pt .sv-out{position:static}}
+@media(max-width:480px){.pt .sv-st{padding:18px 16px}.pt .sv-pl small{padding-right:0}.pt .sv-pl i{position:static;justify-self:start;margin-top:4px}}
