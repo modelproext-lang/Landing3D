@@ -579,3 +579,23 @@
 .pt .cmp .vs .x{margin-block:16px;padding:26px 22px}
 .pt .cmp .vs .g{transform:none;padding:32px 26px}
 @media(max-width:560px){.pt .cmp .vs{grid-template-columns:1fr}.pt .cmp .vs .x{margin-block:0 0;margin-inline:10px}}
+/* portada ZWCAD: banner BIM oficial con textos en español */
+.pt .zb{position:relative;overflow:hidden;background:#030d24 no-repeat right center/auto 100%;min-height:clamp(560px,48vw,720px);display:flex;align-items:center;padding:0}
+.pt .zb:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#030d24 0%,rgba(3,13,36,.92) 38%,rgba(3,13,36,.2) 62%,rgba(3,13,36,0) 75%)}
+.pt .zb-in{position:relative;z-index:1;padding-block:56px 72px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;width:100%}
+.pt .zb .crumbs{color:#8fb0d6;margin:0}.pt .zb .crumbs a:hover{color:#fff}
+.pt .zb-logo{font-weight:800;font-size:clamp(34px,3.4vw,48px);letter-spacing:-.02em;color:#fff;line-height:1}
+.pt .zb-k{font-size:clamp(15px,1.4vw,19px);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.pt .zb-k sup{font-size:.7em;color:#7cc4ff;margin-left:2px}
+.pt .zb h1{font-size:clamp(40px,5vw,72px);line-height:1.04;color:#fff;margin:4px 0 6px;max-width:680px;letter-spacing:-.03em}
+.pt .zb h1 span{color:#1a8cff}
+.pt .zb-lead{font-size:clamp(17px,1.5vw,21px);color:#d6e4f5;max-width:520px;line-height:1.5}
+.pt .zb-pr{color:#a9c1df;font-size:15px}.pt .zb-pr b{color:#fff;font-size:24px}
+.pt .zb .ctas{margin-top:6px}
+.pt .zb-o{background:linear-gradient(#030d24,#030d24) padding-box,linear-gradient(to right,#3cabf6,#9bd6ff) border-box;color:#fff}
+.pt .zb-note{font-size:12.5px;color:#8fa9c9;max-width:520px;margin-top:4px}
+.pt .zb-badge{position:absolute;right:max(24px,4vw);bottom:clamp(28px,5vw,64px);z-index:2;display:flex;gap:16px;align-items:center;max-width:380px;padding:18px 22px;border-radius:16px;background:linear-gradient(135deg,#0a52d6,#1a6dff);border:1px solid rgba(124,196,255,.6);box-shadow:0 20px 50px rgba(0,60,200,.4)}
+.pt .zb-ring{flex:none;width:86px;height:86px;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:700;font-size:18px;line-height:1.1;color:#fff;border:4px solid transparent;background:linear-gradient(#0a52d6,#0a52d6) padding-box,linear-gradient(135deg,#3cf0a0,#3cabf6) border-box}
+.pt .zb-badge b{display:block;color:#fff;font-size:19px;margin-bottom:4px}.pt .zb-badge small{color:#dbe9ff;font-size:14.5px;line-height:1.45}
+@media(max-width:1100px) and (min-width:901px){.pt .zb-badge{max-width:320px;padding:14px 16px}.pt .zb-ring{width:70px;height:70px;font-size:15px}}
+@media(max-width:900px){.pt .zb{background-size:cover;background-position:70% center;flex-direction:column;align-items:stretch}.pt .zb:before{background:linear-gradient(180deg,rgba(3,13,36,.9),rgba(3,13,36,.82))}.pt .zb-badge{position:relative;right:auto;bottom:auto;margin:0 16px 32px}}
