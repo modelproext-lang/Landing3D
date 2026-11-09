@@ -572,6 +572,11 @@
 .pt .cmp .eb:before,.pt .z3-dark .eb:before,.pt .how-txt .eb:before,.pt .hs-slide.dark .eb:before{background:linear-gradient(90deg,#7cc4ff,#fff)}
 .pt .hs .eb{font-size:13px}
 .pt .cn-l h2,.pt .logos .lg-h h2,.pt .cz-home h2,.pt .how h2{color:transparent}
+/* slide 1: que "Licencias perpetuas." no se encime con el edificio */
+.pt .hs-slide:first-child h1{font-size:clamp(34px,4.1vw,58px)}
+.pt .hs-slide:first-child .hs-in>*{max-width:560px}
+@media(min-width:761px){.pt .hs-slide:first-child .hs-bg{background-position:calc(100% + 6vw) center}
+ .pt .hs-slide:first-child:after{background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 38%,rgba(255,255,255,.35) 52%,rgba(255,255,255,0) 64%)}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
