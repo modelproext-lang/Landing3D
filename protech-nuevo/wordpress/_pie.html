@@ -223,6 +223,12 @@
     nav.querySelector('.pnav-b').addEventListener('click',function(e){var s=secs[0];if(s){e.preventDefault();s.scrollIntoView({behavior:reduce?'auto':'smooth'});}});
     addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);addEventListener('hashchange',function(){cur=-1;setTimeout(upd,60);});upd();
   });
+  // misión, visión y valores: la tarjeta activa se expande (hover, foco o toque)
+  document.querySelectorAll('.pt .mv-g').forEach(function(g){
+    var cs=g.querySelectorAll('.mv-c');
+    function act(c){cs.forEach(function(x){x.classList.toggle('on',x===c);});}
+    cs.forEach(function(c){c.addEventListener('mouseenter',function(){act(c);});c.addEventListener('focus',function(){act(c);});c.addEventListener('click',function(){act(c);});});
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
