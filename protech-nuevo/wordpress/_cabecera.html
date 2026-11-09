@@ -855,6 +855,23 @@
 .pt .mv-b li{font-size:clamp(16px,1.35vw,18.5px);line-height:1.45;padding-left:20px}
 .pt .mv-b li:before{top:10px;width:8px;height:8px}
 @media(max-width:860px){.pt .mv-b p{font-size:18px}.pt .mv-b li{font-size:16px}}
+/* oficinas v2 */
+.pt .of{background:linear-gradient(180deg,#fff,#f4f8fd)}
+.pt .of-txt{display:grid;gap:22px;justify-items:start}
+.pt .of-txt h2{font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin:0;max-width:520px}
+.pt .of-card{display:flex;gap:18px;align-items:center;padding:22px 26px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 16px 40px rgba(10,106,201,.1);position:relative;overflow:hidden}
+.pt .of-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--g1),var(--g2))}
+.pt .of-ci{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;flex:none;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 10px 22px rgba(0,150,255,.3)}
+.pt .of-ci svg{width:28px;height:28px}
+.pt .of-card small{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--b);margin-bottom:4px}
+.pt .of-card address{font-style:normal;font-size:17px;line-height:1.55;color:var(--t)}
+.pt .of-card address b{font-size:20px;color:var(--n)}
+.pt .of-lead{display:flex;align-items:center;gap:10px;margin:0;font-size:clamp(17px,1.5vw,20px);font-weight:500;color:var(--n)}
+.pt .of-dot{width:10px;height:10px;border-radius:50%;background:#22c08a;box-shadow:0 0 0 5px rgba(34,192,138,.18);flex:none}
+.pt .of-txt .ctas{margin-top:4px}
+.pt .of-lead{white-space:normal}
+@media(min-width:901px){.pt .of-lead{white-space:nowrap}}
+.pt .of-map b{font-size:24px}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
