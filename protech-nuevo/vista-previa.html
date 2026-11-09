@@ -837,6 +837,59 @@
  .pt .cz-home .cz-chips button{flex:1}
  .pt .cz-note-top{font-size:13px;text-align:left}
 }
+/* ===== calculadora de ahorro ===== */
+.pt .svs{background:var(--l)}
+.pt .sv{margin-top:40px;text-align:left}
+.pt .sv-g{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:24px;align-items:start}
+.pt .sv-in{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;gap:18px}
+.pt .sv-in label,.pt .sv-f{display:grid;gap:8px;font-size:14.5px;font-weight:600;color:var(--n)}
+.pt .sv-in label small{font-weight:400;color:var(--m);font-size:13px;display:block}
+.pt .sv-l{font-size:14.5px;font-weight:600;color:var(--n)}
+.pt .sv-l em{font-style:normal;font-size:11px;font-weight:700;color:var(--g1);background:#e6f4ff;border-radius:20px;padding:2px 8px;margin-left:6px}
+.pt .sv-in select,.pt .sv-in input{font:inherit;font-weight:500;padding:12px 14px;border:1px solid #cdd8e6;border-radius:12px;background:#fff;color:var(--n);width:100%}
+.pt .sv-money{display:flex;align-items:center;border:1px solid #cdd8e6;border-radius:12px;overflow:hidden}
+.pt .sv-money span{padding:0 4px 0 14px;color:var(--m);font-weight:600}
+.pt .sv-money input{border:0;padding-left:4px}
+.pt .sv-in input:focus,.pt .sv-in select:focus,.pt .sv-money:focus-within{outline:2px solid var(--g2);outline-offset:1px}
+.pt .sv-money input:focus{outline:0}
+.pt .sv-seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:var(--l);border-radius:14px}
+.pt .sv-seg button{border:0;background:none;padding:10px;border-radius:10px;font:600 14px inherit;font-family:inherit;color:var(--m);cursor:pointer}
+.pt .sv-seg button.on{background:#fff;color:var(--g1);box-shadow:0 4px 12px rgba(10,106,201,.12)}
+.pt .sv-plans{display:grid;gap:8px}
+.pt .sv-plans button{position:relative;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;cursor:pointer;font-family:inherit;display:grid;gap:3px;transition:border-color .25s,box-shadow .25s}
+.pt .sv-plans b{font-size:14.5px;color:var(--n)}.pt .sv-plans small{font-size:12.5px;color:var(--m);font-weight:400;line-height:1.45;padding-right:80px}
+.pt .sv-plans i{position:absolute;top:12px;right:12px;font-style:normal;font-size:10.5px;font-weight:700;color:#fff;background:#22c08a;border-radius:20px;padding:3px 8px}
+.pt .sv-plans button.on{border-color:var(--g2);box-shadow:0 0 0 3px rgba(0,150,255,.12)}
+.pt .sv-out{border-radius:24px;padding:28px;color:#cfe0f5;background:radial-gradient(120% 70% at 100% 0%,rgba(0,150,255,.3),transparent 60%),linear-gradient(160deg,#0b1b33,#0a2a55);display:grid;gap:18px;box-shadow:0 30px 60px rgba(11,27,51,.22);position:relative}
+.pt .sv-k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7cc4ff}
+.pt .sv-big{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pt .sv-big>div{display:grid;gap:2px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(124,196,255,.2)}
+.pt .sv-big small{font-size:13px;color:#9fb4cf}
+.pt .sv-big b{font-size:clamp(26px,2.8vw,36px);font-weight:600;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums;line-height:1.15}
+.pt .sv-big span{font-size:13px;font-weight:600;color:#5ee0b0}
+.pt .sv.neg3 .sv-p3,.pt .sv.neg5 .sv-p5{color:#ffb39e}
+.pt .sv-ch{position:relative}
+.pt .sv-leg{display:flex;gap:16px;font-size:12.5px;margin-bottom:6px}
+.pt .sv-leg span,.pt .sv-tip span{display:inline-flex;align-items:center;gap:6px}
+.pt .sv-leg i,.pt .sv-tip i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.pt .sv i.a{background:#e0644f}.pt .sv i.b{background:#3c9bff}
+.pt .sv-svg{width:100%;display:block;overflow:visible}
+.pt .sv-svg .gr{stroke:rgba(255,255,255,.08)}.pt .sv-svg .base{stroke:rgba(255,255,255,.3)}
+.pt .sv-svg .ax{fill:#8fa9c9;font-size:11px;font-family:inherit}
+.pt .sv-svg .ba{fill:#e0644f}.pt .sv-svg .bb{fill:#3c9bff}
+.pt .sv-svg .hit{fill:transparent;cursor:pointer}.pt .sv-svg .hit.on{fill:rgba(255,255,255,.05)}
+.pt .sv-tip{position:absolute;top:24px;transform:translateX(-50%);background:#fff;color:var(--n);border-radius:12px;padding:10px 12px;font-size:12.5px;display:grid;gap:4px;box-shadow:0 12px 30px rgba(0,0,0,.3);pointer-events:none;min-width:170px;font-variant-numeric:tabular-nums}
+.pt .sv-tip b{font-size:12px;color:var(--m)}.pt .sv-tsv{font-weight:700;color:#0f9a6a}
+.pt .sv-tbl{width:100%;min-width:0;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.pt .sv-tbl th,.pt .sv-tbl td{padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.1);text-align:right;background:none;color:#cfe0f5}
+.pt .sv-tbl th{font-size:11.5px;color:#8fa9c9;text-transform:uppercase;letter-spacing:.06em}
+.pt .sv-tbl td:first-child,.pt .sv-tbl th:first-child{text-align:left}
+.pt .sv-go{justify-content:center}
+.pt .sv-note{margin:22px auto 0;max-width:900px;font-size:14px;line-height:1.6;color:var(--t);text-align:center}
+.pt .sv-note b{color:var(--n)}
+@media(max-width:960px){.pt .sv-g{grid-template-columns:1fr}}
+@media(max-width:480px){.pt .sv-in,.pt .sv-out{padding:20px 16px}.pt .sv-plans small{padding-right:0}.pt .sv-plans i{position:static;justify-self:start;margin-top:4px}}
+.pt .sv-in label small,.pt .sv-plans small,.pt .sv-plans b{text-align:left;justify-self:start}
 /* ===== página ZW3D (adaptada del diseño oficial ZW3D 2027) ===== */
 .pt .z3-hero{position:relative;overflow:hidden;padding:0;min-height:clamp(520px,42vw,720px);display:flex;align-items:center;background:#e9f2fc}
 .pt .z3-hero-bg{position:absolute;inset:0;background-size:cover;background-position:right center;animation:z3Zoom 14s var(--ease) both}
@@ -1441,6 +1494,10 @@
   <p class="lead">Elige el tipo de licencia y compara precios. Todas son perpetuas: pagas una vez y la licencia es tuya.</p>
   <div class="lic" data-lic-wrap><div class="lic-sw" role="radiogroup" aria-label="Tipo de licencia"><button type="button" class="on" data-lic="sa" role="radio" aria-checked="true"><b>Standalone</b><small>Se instala en una computadora</small></button><button type="button" data-lic="net" role="radio" aria-checked="false"><b>Red (flotante)</b><small>Se comparte en la red de tu empresa</small></button></div><div class="lic-info"><p data-for="sa"><b>Standalone:</b> cada licencia se activa en una sola computadora. Ideal para usuarios que trabajan siempre en el mismo equipo.</p><p data-for="net" hidden><b>Red (flotante):</b> las licencias se instalan en un servidor y cualquier equipo de la red las usa. Si compras 3, pueden trabajar 3 personas al mismo tiempo, sin importar en qué computadora. Cuesta solo $1,000 MXN más por licencia.</p></div><div class="plans"><div class="plan" data-name="ZWCAD Standard" data-sa="17980" data-net="18980"><h3>ZWCAD Standard</h3><div class="pr"><span class="lic-amt">$17,980</span> <small>MXN + IVA</small></div><div class="lic-type">Licencia perpetua <b class="lic-lbl">Standalone</b></div><p>Dibujo 2D y visualización 3D básica.</p><ul><li>Herramientas completas de dibujo 2D</li><li>Visualización de modelos 3D</li><li>Extensión LISP</li></ul><a class="btn btn-p wa lic-go" data-msg="Hola ProTech, quiero ZWCAD Standard con licencia Standalone ($17,980 MXN + IVA)." href="#">Cotizar este plan</a><a class="trial wa" data-msg="Hola ProTech, quiero la prueba gratis de 30 días de ZWCAD Standard." href="#">o pruébalo gratis 30 días</a></div><div class="plan hot" data-name="ZWCAD Professional" data-sa="23980" data-net="24980"><span class="badge">Recomendado</span><h3>ZWCAD Professional</h3><div class="pr"><span class="lic-amt">$23,980</span> <small>MXN + IVA</small></div><div class="lic-type">Licencia perpetua <b class="lic-lbl">Standalone</b></div><p>CAD 2D/3D completo con modelado.</p><ul><li>Todo lo de Standard</li><li>Modelado 3D</li><li>Nube de puntos y GIS</li><li>Vectorización de imágenes</li><li>APIs completas (VBA, ZRX, .NET)</li></ul><a class="btn btn-p wa lic-go" data-msg="Hola ProTech, quiero ZWCAD Professional con licencia Standalone ($23,980 MXN + IVA)." href="#">Cotizar este plan</a><a class="trial wa" data-msg="Hola ProTech, quiero la prueba gratis de 30 días de ZWCAD Professional." href="#">o pruébalo gratis 30 días</a></div><div class="plan" data-name="ZWCAD MFG (Mecánico)" data-sa="27980" data-net="28980"><h3>ZWCAD MFG (Mecánico)</h3><div class="pr"><span class="lic-amt">$27,980</span> <small>MXN + IVA</small></div><div class="lic-type">Licencia perpetua <b class="lic-lbl">Standalone</b></div><p>Professional con módulo mecánico.</p><ul><li>Todo lo de Professional</li><li>Biblioteca de piezas estándar</li><li>Compatible con AutoCAD® Mechanical</li><li>Generación de BOM</li><li>Cotas, anotaciones y cálculo mecánico</li></ul><a class="btn btn-p wa lic-go" data-msg="Hola ProTech, quiero ZWCAD MFG (Mecánico) con licencia Standalone ($27,980 MXN + IVA)." href="#">Cotizar este plan</a><a class="trial wa" data-msg="Hola ProTech, quiero la prueba gratis de 30 días de ZWCAD MFG (Mecánico)." href="#">o pruébalo gratis 30 días</a></div></div></div>
   <p style="margin-top:22px;font-size:14px;color:var(--m)">ZWCAD es gratuito para estudiantes y docentes. <a class="wa" data-msg="Hola ProTech, soy estudiante/docente y quiero la licencia educativa de ZWCAD." href="#" style="color:var(--b);font-weight:700">Solicitar licencia educativa →</a></p>
+</div></section>
+<section class="svs" id="zwcad-ahorro"><div class="w">
+  <div class="c"><span class="eb">Calculadora de ahorro</span><h2>Calcula tu posible ahorro</h2><p class="lead">Compara lo que pagas hoy por tu suscripción CAD contra una licencia perpetua de ZWCAD, a 3 y 5 años.</p></div>
+  <div class="sv" data-sv='[{"name": "ZWCAD Standard", "sa": 17980, "net": 18980}, {"name": "ZWCAD Professional", "sa": 23980, "net": 24980}, {"name": "ZWCAD MFG (Mecánico)", "sa": 27980, "net": 28980}]'></div>
 </div></section>
 
 <section class="alt"><div class="w c">
@@ -2179,6 +2236,87 @@
       function upd(){var on=inMain&&!sumVis;bar.classList.toggle('show',on);document.documentElement.classList.toggle('cz-on',!!document.querySelector('.pt .cz-bar.show'));}
       new IntersectionObserver(function(es){inMain=es[0].isIntersecting;upd();}).observe($('.cz-main'));
       new IntersectionObserver(function(es){sumVis=es[0].isIntersecting;upd();},{threshold:.35}).observe($('.cz-sum'));}
+  });
+  // ===== calculadora de ahorro ZWCAD vs suscripción =====
+  document.querySelectorAll('.pt .sv').forEach(function(sv){
+    var D=JSON.parse(sv.getAttribute('data-sv')),st={v:1,t:'sa',n:1,cur:30000,plan:'mant',up:3};
+    function fmt(n){return '$'+Math.round(n).toLocaleString('es-MX');}
+    var opts=D.map(function(p,i){return '<option value="'+i+'"'+(i===1?' selected':'')+'>'+p.name+'</option>';}).join('');
+    sv.innerHTML=
+      '<div class="sv-g"><form class="sv-in" onsubmit="return false">'+
+        '<label for="sv-v">Versión de ZWCAD<select id="sv-v">'+opts+'</select></label>'+
+        '<div class="sv-f"><span class="sv-l">Tipo de licencia</span><div class="sv-seg" role="radiogroup" aria-label="Tipo de licencia"><button type="button" data-t="sa" class="on" role="radio" aria-checked="true">Standalone</button><button type="button" data-t="net" role="radio" aria-checked="false">Red (flotante)</button></div></div>'+
+        '<label for="sv-n">Número de licencias<input id="sv-n" type="number" min="1" max="200" value="1" inputmode="numeric"></label>'+
+        '<label for="sv-c">¿Cuánto pagas hoy al año por licencia? <small>Tu suscripción CAD actual, en MXN</small><span class="sv-money"><span>$</span><input id="sv-c" type="text" inputmode="numeric" value="30,000"></span></label>'+
+        '<div class="sv-f"><span class="sv-l">Mantenimiento y actualizaciones <em>Opcional</em></span><div class="sv-plans" role="radiogroup" aria-label="Plan de mantenimiento">'+
+          '<button type="button" data-p="mant" class="on" role="radio" aria-checked="true"><b>Mantenimiento anual</b><small>20 % del valor de la licencia al año, a partir del año 2. Siempre en la última versión.</small><i>Recomendado</i></button>'+
+          '<button type="button" data-p="up" role="radio" aria-checked="false"><b>Actualización flexible</b><small>30 % del valor de la licencia, solo en el año que decidas actualizar.</small></button>'+
+          '<button type="button" data-p="none" role="radio" aria-checked="false"><b>Sin mantenimiento</b><small>Usa tu versión el tiempo que quieras, sin pagos adicionales.</small></button>'+
+        '</div><label for="sv-y" class="sv-yr" hidden>Actualizar en el año<select id="sv-y"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label></div>'+
+      '</form>'+
+      '<div class="sv-out" aria-live="polite">'+
+        '<div class="sv-k">Tu ahorro estimado</div>'+
+        '<div class="sv-big"><div><small>A 3 años</small><b class="sv-s3"></b><span class="sv-p3"></span></div><div><small>A 5 años</small><b class="sv-s5"></b><span class="sv-p5"></span></div></div>'+
+        '<div class="sv-ch"><div class="sv-leg"><span><i class="a"></i>Suscripción actual</span><span><i class="b"></i>ZWCAD</span></div><svg class="sv-svg" role="img" aria-label="Costo acumulado por año"></svg><div class="sv-tip" hidden></div></div>'+
+        '<table class="sv-tbl"><thead><tr><th></th><th>3 años</th><th>5 años</th></tr></thead><tbody><tr><td>Suscripción actual</td><td class="sv-c3"></td><td class="sv-c5"></td></tr><tr><td>ZWCAD</td><td class="sv-z3"></td><td class="sv-z5"></td></tr></tbody></table>'+
+        '<a class="btn btn-p sv-go" href="#" target="_blank" rel="noopener">Quiero esta cotización</a>'+
+      '</div></div>'+
+      '<p class="sv-note"><b>Los mantenimientos son opcionales y las actualizaciones flexibles</b>, pero muy recomendables: con mantenimiento anual mantienes tu software actualizado año con año por una fracción de su valor, y aun así ahorras frente a una suscripción. Cálculo estimado con precios de lista + IVA; el costo de tu suscripción lo capturas tú. Funciones y precios sujetos a la edición y versión.</p>';
+    var $=function(s){return sv.querySelector(s);},$$=function(s){return sv.querySelectorAll(s);};
+    var svg=$('.sv-svg'),tip=$('.sv-tip'),rows=[];
+    function num(s){return Math.max(0,parseFloat(String(s).replace(/[^0-9.]/g,''))||0);}
+    function calc(){
+      var P=D[st.v],lic=(st.t==='net'?P.net:P.sa),n=st.n,a=[],b=[],ca=0,cb=0;
+      for(var y=1;y<=5;y++){
+        ca+=st.cur*n;
+        var add=y===1?lic*n:0;
+        if(st.plan==='mant'&&y>=2)add+=lic*.2*n;
+        if(st.plan==='up'&&y===st.up)add+=lic*.3*n;
+        cb+=add;a.push(ca);b.push(cb);}
+      return {a:a,b:b,lic:lic,P:P};
+    }
+    function draw(r){
+      var W=svg.clientWidth||520,H=230,pl=58,pr=10,pt=14,pb=28,iw=W-pl-pr,ih=H-pt-pb;
+      var max=Math.max.apply(null,r.a.concat(r.b))||1,step=Math.pow(10,Math.floor(Math.log10(max/4))),nice=[1,2,2.5,5,10].map(function(m){return m*step;}).find(function(s){return max/s<=5;})||step*10,top=Math.ceil(max/nice)*nice;
+      var g='',k;
+      for(k=0;k<=top+1e-6;k+=nice){var yy=pt+ih-ih*k/top;g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" class="gr"/><text x="'+(pl-8)+'" y="'+(yy+4)+'" class="ax" text-anchor="end">'+(k>=1e6?'$'+(k/1e6).toFixed(k%1e6?1:0)+'M':'$'+Math.round(k/1e3)+'k')+'</text>';}
+      var gw=iw/5,bw=Math.min(28,(gw-14)/2);rows=[];
+      for(var i=0;i<5;i++){var x0=pl+gw*i+gw/2,ha=ih*r.a[i]/top,hb=ih*r.b[i]/top;
+        g+='<path class="ba" d="'+bar(x0-bw-1,pt+ih,bw,ha)+'"/><path class="bb" d="'+bar(x0+1,pt+ih,bw,hb)+'"/>';
+        g+='<text x="'+x0+'" y="'+(H-8)+'" class="ax" text-anchor="middle">Año '+(i+1)+'</text>';
+        g+='<rect class="hit" x="'+(pl+gw*i)+'" y="'+pt+'" width="'+gw+'" height="'+ih+'" data-i="'+i+'"/>';}
+      g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+(pt+ih)+'" y2="'+(pt+ih)+'" class="base"/>';
+      svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('height',H);svg.innerHTML=g;
+      svg.querySelectorAll('.hit').forEach(function(h){
+        function show(){var i=+h.getAttribute('data-i');svg.querySelectorAll('.hit').forEach(function(x){x.classList.toggle('on',x===h);});
+          tip.innerHTML='<b>Año '+(i+1)+' · acumulado</b><span><i class="a"></i>Suscripción '+fmt(r.a[i])+'</span><span><i class="b"></i>ZWCAD '+fmt(r.b[i])+'</span><span class="sv-tsv">Ahorro '+fmt(r.a[i]-r.b[i])+'</span>';
+          tip.hidden=false;var bx=h.getBoundingClientRect(),cx=sv.querySelector('.sv-ch').getBoundingClientRect();var left=bx.left-cx.left+bx.width/2;tip.style.left=Math.max(70,Math.min(cx.width-70,left))+'px';}
+        h.addEventListener('mouseenter',show);h.addEventListener('click',show);});
+      svg.addEventListener('mouseleave',function(){tip.hidden=true;svg.querySelectorAll('.hit').forEach(function(x){x.classList.remove('on');});});
+    }
+    function bar(x,base,w,h){if(h<=0)return '';var r=Math.min(4,h,w/2);return 'M'+x+','+base+'V'+(base-h+r)+'Q'+x+','+(base-h)+' '+(x+r)+','+(base-h)+'H'+(x+w-r)+'Q'+(x+w)+','+(base-h)+' '+(x+w)+','+(base-h+r)+'V'+base+'Z';}
+    function pct(a,b){return a>0?Math.round((a-b)/a*100):0;}
+    function render(){
+      var r=calc(),s3=r.a[2]-r.b[2],s5=r.a[4]-r.b[4];
+      $('.sv-s3').textContent=fmt(s3);$('.sv-s5').textContent=fmt(s5);
+      $('.sv-p3').textContent=s3>0?pct(r.a[2],r.b[2])+' % menos':'Sin ahorro en este plazo';
+      $('.sv-p5').textContent=s5>0?pct(r.a[4],r.b[4])+' % menos':'Sin ahorro en este plazo';
+      sv.classList.toggle('neg3',s3<=0);sv.classList.toggle('neg5',s5<=0);
+      $('.sv-c3').textContent=fmt(r.a[2]);$('.sv-c5').textContent=fmt(r.a[4]);$('.sv-z3').textContent=fmt(r.b[2]);$('.sv-z5').textContent=fmt(r.b[4]);
+      draw(r);
+      var plan={mant:'mantenimiento anual',up:'actualización flexible en el año '+st.up,none:'sin mantenimiento'}[st.plan];
+      $('.sv-go').href=link('Hola ProTech, calculé mi ahorro con ZWCAD:\n• '+r.P.name+' · '+(st.t==='net'?'Red (flotante)':'Standalone')+' · '+st.n+' licencia(s)\n• Plan: '+plan+'\n• Hoy pago '+fmt(st.cur)+' por licencia al año\n• Ahorro estimado a 5 años: '+fmt(s5)+'\nQuiero una cotización formal.');
+    }
+    $('#sv-v').addEventListener('change',function(e){st.v=+e.target.value;render();});
+    $$('.sv-seg button').forEach(function(b){b.addEventListener('click',function(){st.t=b.getAttribute('data-t');$$('.sv-seg button').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-checked',on);});render();});});
+    $('#sv-n').addEventListener('input',function(e){st.n=Math.max(1,Math.min(200,parseInt(e.target.value)||1));render();});
+    $('#sv-c').addEventListener('input',function(e){st.cur=num(e.target.value);render();});
+    $('#sv-c').addEventListener('blur',function(e){e.target.value=st.cur.toLocaleString('es-MX');});
+    $$('.sv-plans button').forEach(function(b){b.addEventListener('click',function(){st.plan=b.getAttribute('data-p');$$('.sv-plans button').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-checked',on);});$('.sv-yr').hidden=st.plan!=='up';render();});});
+    $('#sv-y').addEventListener('change',function(e){st.up=+e.target.value;render();});
+    $('.sv-go').addEventListener('click',function(){track('generate_lead',{form:'ahorro'});});
+    render();
+    if('ResizeObserver' in window)new ResizeObserver(function(){render();}).observe(svg);
   });
   // single-file preview: hash router
   var pages=root.querySelectorAll('[data-page]');

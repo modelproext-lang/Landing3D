@@ -121,6 +121,13 @@ def plans_lic_html(key):
     return f'<div class="lic" data-lic-wrap>{sw}{info}<div class="{grid}">' + "".join(cards) + "</div></div>"
 
 
+def ahorro_html(key):
+    import json as _j
+    data = [{"name": n, "sa": p, "net": NETWORK.get(n) or p} for n, p, d, f, h in PLANS[key]]
+    js = _j.dumps(data, ensure_ascii=False).replace("'", "&#39;")
+    return f"<div class=\"sv\" data-sv='{js}'></div>"
+
+
 def terms_html():
     rows = [l.split("\t", 1) for l in (SRC / "terminos.txt").read_text(encoding="utf-8").splitlines()]
     out = []
@@ -154,6 +161,7 @@ def load_pages():
 
 def render(text, url_of, img_of):
     text = text.replace("{{wa-icon}}", WA_ICON)
+    text = re.sub(r"\{\{ahorro:(\w+)\}\}", lambda m: ahorro_html(m.group(1)), text)
     text = re.sub(r"\{\{plans-lic:(\w+)\}\}", lambda m: plans_lic_html(m.group(1)), text)
     text = re.sub(r"\{\{plans:(\w+)(?::(\d+))?\}\}", lambda m: plans_html(m.group(1), int(m.group(2)) if m.group(2) else None), text)
     text = text.replace("{{terminos}}", terms_html())
@@ -169,7 +177,7 @@ def main():
     css = (SRC / "base.css").read_text(encoding="utf-8") + (SRC / "cotizador.css").read_text(encoding="utf-8") + (SRC / "zw3d.css").read_text(encoding="utf-8") + (SRC / "about.css").read_text(encoding="utf-8")
     js = (SRC / "site.js").read_text(encoding="utf-8")
     marker = "  // single-file preview: hash router"
-    js = js.replace(marker, (SRC / "cotizador.js").read_text(encoding="utf-8") + marker, 1)
+    js = js.replace(marker, (SRC / "cotizador.js").read_text(encoding="utf-8") + (SRC / "ahorro.js").read_text(encoding="utf-8") + marker, 1)
     header = (SRC / "header.html").read_text(encoding="utf-8")
     footer = (SRC / "footer.html").read_text(encoding="utf-8")
 

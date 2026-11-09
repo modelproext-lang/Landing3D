@@ -834,6 +834,59 @@
  .pt .cz-home .cz-chips button{flex:1}
  .pt .cz-note-top{font-size:13px;text-align:left}
 }
+/* ===== calculadora de ahorro ===== */
+.pt .svs{background:var(--l)}
+.pt .sv{margin-top:40px;text-align:left}
+.pt .sv-g{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:24px;align-items:start}
+.pt .sv-in{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;gap:18px}
+.pt .sv-in label,.pt .sv-f{display:grid;gap:8px;font-size:14.5px;font-weight:600;color:var(--n)}
+.pt .sv-in label small{font-weight:400;color:var(--m);font-size:13px;display:block}
+.pt .sv-l{font-size:14.5px;font-weight:600;color:var(--n)}
+.pt .sv-l em{font-style:normal;font-size:11px;font-weight:700;color:var(--g1);background:#e6f4ff;border-radius:20px;padding:2px 8px;margin-left:6px}
+.pt .sv-in select,.pt .sv-in input{font:inherit;font-weight:500;padding:12px 14px;border:1px solid #cdd8e6;border-radius:12px;background:#fff;color:var(--n);width:100%}
+.pt .sv-money{display:flex;align-items:center;border:1px solid #cdd8e6;border-radius:12px;overflow:hidden}
+.pt .sv-money span{padding:0 4px 0 14px;color:var(--m);font-weight:600}
+.pt .sv-money input{border:0;padding-left:4px}
+.pt .sv-in input:focus,.pt .sv-in select:focus,.pt .sv-money:focus-within{outline:2px solid var(--g2);outline-offset:1px}
+.pt .sv-money input:focus{outline:0}
+.pt .sv-seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:var(--l);border-radius:14px}
+.pt .sv-seg button{border:0;background:none;padding:10px;border-radius:10px;font:600 14px inherit;font-family:inherit;color:var(--m);cursor:pointer}
+.pt .sv-seg button.on{background:#fff;color:var(--g1);box-shadow:0 4px 12px rgba(10,106,201,.12)}
+.pt .sv-plans{display:grid;gap:8px}
+.pt .sv-plans button{position:relative;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 14px;cursor:pointer;font-family:inherit;display:grid;gap:3px;transition:border-color .25s,box-shadow .25s}
+.pt .sv-plans b{font-size:14.5px;color:var(--n)}.pt .sv-plans small{font-size:12.5px;color:var(--m);font-weight:400;line-height:1.45;padding-right:80px}
+.pt .sv-plans i{position:absolute;top:12px;right:12px;font-style:normal;font-size:10.5px;font-weight:700;color:#fff;background:#22c08a;border-radius:20px;padding:3px 8px}
+.pt .sv-plans button.on{border-color:var(--g2);box-shadow:0 0 0 3px rgba(0,150,255,.12)}
+.pt .sv-out{border-radius:24px;padding:28px;color:#cfe0f5;background:radial-gradient(120% 70% at 100% 0%,rgba(0,150,255,.3),transparent 60%),linear-gradient(160deg,#0b1b33,#0a2a55);display:grid;gap:18px;box-shadow:0 30px 60px rgba(11,27,51,.22);position:relative}
+.pt .sv-k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7cc4ff}
+.pt .sv-big{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pt .sv-big>div{display:grid;gap:2px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(124,196,255,.2)}
+.pt .sv-big small{font-size:13px;color:#9fb4cf}
+.pt .sv-big b{font-size:clamp(26px,2.8vw,36px);font-weight:600;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums;line-height:1.15}
+.pt .sv-big span{font-size:13px;font-weight:600;color:#5ee0b0}
+.pt .sv.neg3 .sv-p3,.pt .sv.neg5 .sv-p5{color:#ffb39e}
+.pt .sv-ch{position:relative}
+.pt .sv-leg{display:flex;gap:16px;font-size:12.5px;margin-bottom:6px}
+.pt .sv-leg span,.pt .sv-tip span{display:inline-flex;align-items:center;gap:6px}
+.pt .sv-leg i,.pt .sv-tip i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.pt .sv i.a{background:#e0644f}.pt .sv i.b{background:#3c9bff}
+.pt .sv-svg{width:100%;display:block;overflow:visible}
+.pt .sv-svg .gr{stroke:rgba(255,255,255,.08)}.pt .sv-svg .base{stroke:rgba(255,255,255,.3)}
+.pt .sv-svg .ax{fill:#8fa9c9;font-size:11px;font-family:inherit}
+.pt .sv-svg .ba{fill:#e0644f}.pt .sv-svg .bb{fill:#3c9bff}
+.pt .sv-svg .hit{fill:transparent;cursor:pointer}.pt .sv-svg .hit.on{fill:rgba(255,255,255,.05)}
+.pt .sv-tip{position:absolute;top:24px;transform:translateX(-50%);background:#fff;color:var(--n);border-radius:12px;padding:10px 12px;font-size:12.5px;display:grid;gap:4px;box-shadow:0 12px 30px rgba(0,0,0,.3);pointer-events:none;min-width:170px;font-variant-numeric:tabular-nums}
+.pt .sv-tip b{font-size:12px;color:var(--m)}.pt .sv-tsv{font-weight:700;color:#0f9a6a}
+.pt .sv-tbl{width:100%;min-width:0;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.pt .sv-tbl th,.pt .sv-tbl td{padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.1);text-align:right;background:none;color:#cfe0f5}
+.pt .sv-tbl th{font-size:11.5px;color:#8fa9c9;text-transform:uppercase;letter-spacing:.06em}
+.pt .sv-tbl td:first-child,.pt .sv-tbl th:first-child{text-align:left}
+.pt .sv-go{justify-content:center}
+.pt .sv-note{margin:22px auto 0;max-width:900px;font-size:14px;line-height:1.6;color:var(--t);text-align:center}
+.pt .sv-note b{color:var(--n)}
+@media(max-width:960px){.pt .sv-g{grid-template-columns:1fr}}
+@media(max-width:480px){.pt .sv-in,.pt .sv-out{padding:20px 16px}.pt .sv-plans small{padding-right:0}.pt .sv-plans i{position:static;justify-self:start;margin-top:4px}}
+.pt .sv-in label small,.pt .sv-plans small,.pt .sv-plans b{text-align:left;justify-self:start}
 /* ===== página ZW3D (adaptada del diseño oficial ZW3D 2027) ===== */
 .pt .z3-hero{position:relative;overflow:hidden;padding:0;min-height:clamp(520px,42vw,720px);display:flex;align-items:center;background:#e9f2fc}
 .pt .z3-hero-bg{position:absolute;inset:0;background-size:cover;background-position:right center;animation:z3Zoom 14s var(--ease) both}
