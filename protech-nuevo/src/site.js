@@ -198,7 +198,7 @@
         secs=links.map(function(a){return page.querySelector(a.getAttribute('href'));}),hero=page.querySelector('.zb, .z3-hero, .phero, .hs'),cur=-1;
     function vis(){return !nav.closest('[hidden]');}
     function upd(){
-      if(!vis()){document.documentElement.classList.remove('pnav-show');return;}
+      if(!vis())return;
       var h=hero?hero.getBoundingClientRect().bottom:0,show=h<80;
       nav.classList.toggle('show',show);document.documentElement.classList.toggle('pnav-show',show);
       var y=innerHeight*.35,k=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)k=i;});
@@ -207,7 +207,7 @@
     }
     links.forEach(function(a,i){a.addEventListener('click',function(e){var s=secs[i];if(!s)return;e.preventDefault();s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});});});
     nav.querySelector('.pnav-b').addEventListener('click',function(e){var s=secs[0];if(s){e.preventDefault();s.scrollIntoView({behavior:reduce?'auto':'smooth'});}});
-    addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);addEventListener('hashchange',function(){cur=-1;setTimeout(upd,60);});upd();
+    addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);addEventListener('hashchange',function(){cur=-1;document.documentElement.classList.remove('pnav-show');setTimeout(upd,60);});upd();
   });
   // misión, visión y valores: la tarjeta activa se expande (hover, foco o toque)
   document.querySelectorAll('.pt .mv-g').forEach(function(g){

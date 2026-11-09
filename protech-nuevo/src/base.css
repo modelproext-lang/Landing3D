@@ -904,3 +904,7 @@
 .pt .pl-a .btn{width:100%;padding-block:16px;font-size:16px;box-shadow:0 14px 34px rgba(0,150,255,.35)}
 .pt .pl-a small{color:#8fa9c9;font-size:13px}
 @media(max-width:860px){.pt .pl-a{align-items:stretch}}
+
+/* menú flotante del inicio: marca ProTech */
+.pt .pnav-b-pt img{width:auto;height:24px;border-radius:0;margin:0 6px}
+@media(max-width:900px){.pt .pnav-b-pt img{height:20px;margin:0 2px}}
