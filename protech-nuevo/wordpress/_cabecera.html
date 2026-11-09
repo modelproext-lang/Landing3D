@@ -720,6 +720,25 @@
 .pt .lic-type{font-size:13px;color:var(--m);margin-top:-6px}
 .pt .lic-type b{color:var(--g1)}
 @media(max-width:560px){.pt .lic-sw{display:grid;width:100%}.pt .lic-sw button{padding:10px 8px}}
+
+/* menú flotante de secciones (página de producto) */
+.pt .pnav{position:fixed;left:0;right:0;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;display:flex;justify-content:center;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));pointer-events:none;transform:translateY(140%);opacity:0;transition:transform .45s var(--ease),opacity .3s}
+.pt .pnav.show{transform:none;opacity:1}
+.pt .pnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;width:min(1200px,100%);padding:10px 10px 10px 18px;border-radius:100px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(207,228,248,.9);box-shadow:0 18px 44px rgba(11,27,51,.16)}
+.pt .pnav-b{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--n);flex:none}
+.pt .pnav-b img{width:34px;height:34px;border-radius:9px}
+.pt .pnav-l{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.pt .pnav-l::-webkit-scrollbar{display:none}
+.pt .pnav-l a{flex:none;font-size:14.5px;font-weight:500;color:var(--m);padding:9px 14px;border-radius:100px;transition:color .25s,background .25s}
+.pt .pnav-l a:hover{color:var(--g1)}
+.pt .pnav-l a.on{color:var(--n);font-weight:700;background:#eaf5ff}
+.pt .pnav-cta{flex:none;padding:12px 20px;font-size:14.5px}
+.cz-on .pt .pnav,.pnav-hide .pt .pnav{transform:translateY(140%);opacity:0}
+.pt [id^="zwcad-"]{scroll-margin-top:90px}
+.pnav-show .pt .fwa{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+@media(max-width:900px){.pt .pnav-b span{display:none}.pt .pnav-in{gap:8px;padding:8px}.pt .pnav-cta{padding:10px 14px;font-size:13.5px}.pt .pnav-l a{padding:8px 11px;font-size:13.5px}}
+@media(max-width:560px){.pt .pnav{bottom:calc(10px + env(safe-area-inset-bottom,0px))}.pt .pnav-b{display:none}.pnav-show .pt .fwa{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){.pt .pnav{transition:none}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
