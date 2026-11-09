@@ -26,7 +26,7 @@
         '<div class="sv-k">Tu ahorro estimado</div>'+
         '<div class="sv-adv" hidden><b>Hablemos de un plan a tu medida</b><p>Con el presupuesto que indicas, lo mejor es que un asesor te ayude a encontrar un plan flexible. Tenemos diversas opciones para que ZWCAD entre en tu presupuesto.</p><a class="btn btn-p sv-adv-go" href="#" target="_blank" rel="noopener">Hablar con un asesor</a></div>'+
         '<div class="sv-big"><div><small>A 3 años</small><b class="sv-s3"></b><span class="sv-p3"></span></div><div><small>A 5 años</small><b class="sv-s5"></b><span class="sv-p5"></span></div></div>'+
-        '<div class="sv-ch"><div class="sv-leg"><span><i class="a"></i>Suscripción actual</span><span><i class="b"></i>ZWCAD</span></div><svg class="sv-svg" role="img" aria-label="Costo acumulado por año"></svg><div class="sv-tip" hidden></div></div>'+
+        '<div class="sv-ch"><div class="sv-cht">Lo que pagas cada año</div><div class="sv-leg"><span><i class="a"></i>Suscripción actual</span><span><i class="b"></i>ZWCAD</span></div><svg class="sv-svg" role="img" aria-label="Pago de cada año"></svg><div class="sv-tip" hidden></div></div>'+
         '<table class="sv-tbl"><thead><tr><th></th><th>3 años</th><th>5 años</th></tr></thead><tbody><tr><td>Suscripción actual</td><td class="sv-c3"></td><td class="sv-c5"></td></tr><tr><td>ZWCAD</td><td class="sv-z3"></td><td class="sv-z5"></td></tr></tbody></table>'+
         '<a class="btn btn-p sv-go" href="#" target="_blank" rel="noopener">Quiero esta cotización</a>'+
       '</div></div>'+
@@ -35,30 +35,31 @@
     var svg=$('.sv-svg'),tip=$('.sv-tip'),rows=[];
     function num(s){return Math.max(0,parseFloat(String(s).replace(/[^0-9.]/g,''))||0);}
     function calc(){
-      var P=D[st.v],lic=(st.t==='net'?P.net:P.sa),n=st.n,a=[],b=[],ca=0,cb=0;
+      var P=D[st.v],lic=(st.t==='net'?P.net:P.sa),n=st.n,a=[],b=[],ya=[],yb=[],ca=0,cb=0;
       for(var y=1;y<=5;y++){
         ca+=st.cur*n;
         var add=y===1?lic*n:0;
         if(st.plan==='mant'&&y>=2)add+=lic*.2*n;
         if(st.plan==='up'&&y===st.up)add+=lic*.3*n;
-        cb+=add;a.push(ca);b.push(cb);}
-      return {a:a,b:b,lic:lic,P:P};
+        cb+=add;a.push(ca);b.push(cb);ya.push(st.cur*n);yb.push(add);}
+      return {a:a,b:b,ya:ya,yb:yb,lic:lic,P:P};
     }
     function draw(r){
       var W=svg.clientWidth||520,H=230,pl=58,pr=10,pt=14,pb=28,iw=W-pl-pr,ih=H-pt-pb;
-      var max=Math.max.apply(null,r.a.concat(r.b))||1,step=Math.pow(10,Math.floor(Math.log10(max/4))),nice=[1,2,2.5,5,10].map(function(m){return m*step;}).find(function(s){return max/s<=5;})||step*10,top=Math.ceil(max/nice)*nice;
+      var max=Math.max.apply(null,r.ya.concat(r.yb))||1,step=Math.pow(10,Math.floor(Math.log10(max/4))),nice=[1,2,2.5,5,10].map(function(m){return m*step;}).find(function(s){return max/s<=5;})||step*10,top=Math.ceil(max/nice)*nice;
       var g='',k;
       for(k=0;k<=top+1e-6;k+=nice){var yy=pt+ih-ih*k/top;g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" class="gr"/><text x="'+(pl-8)+'" y="'+(yy+4)+'" class="ax" text-anchor="end">'+(k>=1e6?'$'+(k/1e6).toFixed(k%1e6?1:0)+'M':'$'+Math.round(k/1e3)+'k')+'</text>';}
       var gw=iw/5,bw=Math.min(28,(gw-14)/2);rows=[];
-      for(var i=0;i<5;i++){var x0=pl+gw*i+gw/2,ha=ih*r.a[i]/top,hb=ih*r.b[i]/top;
+      for(var i=0;i<5;i++){var x0=pl+gw*i+gw/2,ha=ih*r.ya[i]/top,hb=ih*r.yb[i]/top;
         g+='<path class="ba" d="'+bar(x0-bw-1,pt+ih,bw,ha)+'"/><path class="bb" d="'+bar(x0+1,pt+ih,bw,hb)+'"/>';
+        if(!r.yb[i])g+='<rect class="bz" x="'+(x0+1)+'" y="'+(pt+ih-2)+'" width="'+bw+'" height="2" rx="1"/><text x="'+(x0+1+bw/2)+'" y="'+(pt+ih-8)+'" class="z0" text-anchor="middle">$0</text>';
         g+='<text x="'+x0+'" y="'+(H-8)+'" class="ax" text-anchor="middle">Año '+(i+1)+'</text>';
         g+='<rect class="hit" x="'+(pl+gw*i)+'" y="'+pt+'" width="'+gw+'" height="'+ih+'" data-i="'+i+'"/>';}
       g+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+(pt+ih)+'" y2="'+(pt+ih)+'" class="base"/>';
       svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('height',H);svg.innerHTML=g;
       svg.querySelectorAll('.hit').forEach(function(h){
         function show(){var i=+h.getAttribute('data-i');svg.querySelectorAll('.hit').forEach(function(x){x.classList.toggle('on',x===h);});
-          tip.innerHTML='<b>Año '+(i+1)+' · acumulado</b><span><i class="a"></i>Suscripción '+fmt(r.a[i])+'</span><span><i class="b"></i>ZWCAD '+fmt(r.b[i])+'</span><span class="sv-tsv">Ahorro '+fmt(r.a[i]-r.b[i])+'</span>';
+          tip.innerHTML='<b>Pago en el año '+(i+1)+'</b><span><i class="a"></i>Suscripción '+fmt(r.ya[i])+'</span><span><i class="b"></i>ZWCAD '+(r.yb[i]?fmt(r.yb[i]):'$0 · sin pago')+'</span><span class="sv-tsv">Ahorro acumulado '+fmt(r.a[i]-r.b[i])+'</span>';
           tip.hidden=false;var bx=h.getBoundingClientRect(),cx=sv.querySelector('.sv-ch').getBoundingClientRect();var left=bx.left-cx.left+bx.width/2;tip.style.left=Math.max(70,Math.min(cx.width-70,left))+'px';}
         h.addEventListener('mouseenter',show);h.addEventListener('click',show);});
       svg.addEventListener('mouseleave',function(){tip.hidden=true;svg.querySelectorAll('.hit').forEach(function(x){x.classList.remove('on');});});
