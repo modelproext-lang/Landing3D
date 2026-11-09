@@ -229,6 +229,16 @@
     function act(c){cs.forEach(function(x){x.classList.toggle('on',x===c);});}
     cs.forEach(function(c){c.addEventListener('mouseenter',function(){act(c);});c.addEventListener('focus',function(){act(c);});c.addEventListener('click',function(){act(c);});});
   });
+  // mapa de oficinas: en el sitio publicado se carga Google Maps al acercarse; en la vista previa queda la tarjeta
+  document.querySelectorAll('.pt .of-map[data-map]').forEach(function(a){
+    if(document.querySelector('[data-page]'))return;
+    function load(){var w=document.createElement('div');w.className='of-map of-map-live';
+      var f=document.createElement('iframe');f.src='https://www.google.com/maps?q='+encodeURIComponent(a.getAttribute('data-map'))+'&z=16&output=embed';
+      f.title='Mapa de oficinas ProTech en Querétaro';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';f.setAttribute('allowfullscreen','');
+      var l=document.createElement('a');l.className='of-map-open';l.href=a.href;l.target='_blank';l.rel='noopener';l.textContent='Abrir en Google Maps →';
+      w.appendChild(f);w.appendChild(l);a.replaceWith(w);}
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();load();}},{rootMargin:'300px'});io.observe(a);}else load();
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
