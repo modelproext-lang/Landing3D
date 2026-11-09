@@ -180,7 +180,7 @@ def main():
 
     def pv_img(name):
         if name not in cache:
-            mime = "image/svg+xml" if name.endswith(".svg") else "image/webp"
+            mime = "image/svg+xml" if name.endswith(".svg") else ("video/mp4" if name.endswith(".mp4") else "image/webp")
             cache[name] = f"data:{mime};base64," + base64.b64encode((ROOT / "img" / name).read_bytes()).decode()
         return cache[name]
 

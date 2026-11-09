@@ -641,6 +641,32 @@
 @media(max-width:900px){.pt .vd-g{grid-template-columns:1fr}.pt .vd-frame{order:-1}}
 @media(max-width:560px){.pt .vd-btn{width:64px;height:64px;margin:-32px 0 0 -32px}.pt .vd-btn svg{width:26px;height:26px}}
 .pt .vd-msg{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;background:rgba(6,26,52,.9);color:#fff;font-size:14px;font-weight:600;text-align:center;border-radius:12px;padding:10px 14px}
+/* ZWCAD: acordeón con imagen/video (estilo ZWSOFT) */
+.pt .zf{background:var(--l)}
+.pt .ac{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px;background:#fff;border-radius:28px;padding:clamp(20px,3.5vw,48px);box-shadow:0 20px 50px rgba(11,27,51,.07)}
+.pt .ac-list{display:flex;flex-direction:column}
+.pt .ac-i{position:relative;border-bottom:1px solid var(--line)}
+.pt .ac-h{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 2px;font-weight:600;font-size:clamp(16px,1.4vw,19px);color:var(--n);transition:color .3s}
+.pt .ac-h:hover,.pt .ac-i.on .ac-h{color:var(--g1)}
+.pt .ac-h:focus-visible{outline:2px solid var(--g2);outline-offset:2px;border-radius:6px}
+.pt .ac-chev{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .35s var(--ease);flex:none;margin-top:-4px}
+.pt .ac-i.on .ac-chev{transform:rotate(-135deg);margin-top:4px}
+.pt .ac-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.pt .ac-b>div{overflow:hidden}
+.pt .ac-i.on .ac-b{grid-template-rows:1fr}
+.pt .ac-b p{color:var(--t);font-size:15.5px;line-height:1.6;padding:0 2px 22px;margin:0}
+.pt .ac-bar{position:absolute;left:0;right:0;bottom:-1px;height:2px;overflow:hidden}
+.pt .ac-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#3cd0a0,var(--g2))}
+.pt .ac-i.on .ac-bar i{animation:acBar var(--acdur,6s) linear forwards}
+.pt .ac.paused .ac-i.on .ac-bar i{animation-play-state:paused}
+@keyframes acBar{to{width:100%}}
+.pt .ac-media{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#f4f8fd,#e9f2fc)}
+.pt .ac-m{position:absolute;inset:0;opacity:0;transform:scale(1.03);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+.pt .ac-m.on{opacity:1;transform:none}
+.pt .ac-m img,.pt .ac-m video{width:100%;height:100%;object-fit:cover;display:block}
+.pt .ac-m video{object-fit:cover;background:#141a24}
+@media(max-width:900px){.pt .ac{grid-template-columns:1fr}.pt .ac-media{order:-1}}
+@media(prefers-reduced-motion:reduce){.pt .ac-m{transition:none;transform:none}.pt .ac-b{transition:none}.pt .ac-i.on .ac-bar i{animation:none;width:100%}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}

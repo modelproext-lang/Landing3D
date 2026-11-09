@@ -141,6 +141,19 @@
       i.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';i.allowFullscreen=true;f.innerHTML='';f.appendChild(i);
       track('video_play',{video:id});});
   });
+  // acordeón con medios (ZWCAD): avanza solo, pausa al pasar el mouse
+  document.querySelectorAll('.pt [data-ac]').forEach(function(ac){
+    var items=ac.querySelectorAll('.ac-i'),media=ac.querySelectorAll('.ac-m'),cur=0,t=null,DUR=6000,seen=false;
+    ac.style.setProperty('--acdur',DUR/1000+'s');
+    function vid(k,play){var v=media[k]&&media[k].querySelector('video');if(!v)return;if(play){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}}
+    function go(k,user){items[cur].classList.remove('on');media[cur].classList.remove('on');items[cur].querySelector('.ac-h').setAttribute('aria-expanded','false');vid(cur,false);
+      cur=(k+items.length)%items.length;var it=items[cur];it.classList.remove('on');void it.offsetWidth;it.classList.add('on');media[cur].classList.add('on');it.querySelector('.ac-h').setAttribute('aria-expanded','true');vid(cur,true);
+      clearTimeout(t);if(!reduce&&!ac.classList.contains('paused')&&seen)t=setTimeout(function(){go(cur+1);},DUR);}
+    items.forEach(function(it,k){it.querySelector('.ac-h').addEventListener('click',function(){go(k,true);});});
+    ac.addEventListener('mouseenter',function(){ac.classList.add('paused');clearTimeout(t);});
+    ac.addEventListener('mouseleave',function(){ac.classList.remove('paused');clearTimeout(t);if(!reduce&&seen)t=setTimeout(function(){go(cur+1);},DUR/2);});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!seen){seen=true;go(cur);}else if(!v){clearTimeout(t);}else if(v&&!t){go(cur);}},{threshold:.35}).observe(ac);
+  });
   // single-file preview: hash router
   var pages=root.querySelectorAll('[data-page]');
   if(pages.length>1){
