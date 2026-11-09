@@ -643,6 +643,7 @@
 .pt .vd-play:focus-visible{outline:3px solid var(--g2);outline-offset:-3px}
 @media(max-width:900px){.pt .vd-g{grid-template-columns:1fr}.pt .vd-frame{order:-1}}
 @media(max-width:560px){.pt .vd-btn{width:64px;height:64px;margin:-32px 0 0 -32px}.pt .vd-btn svg{width:26px;height:26px}}
+.pt .vd-msg{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;background:rgba(6,26,52,.9);color:#fff;font-size:14px;font-weight:600;text-align:center;border-radius:12px;padding:10px 14px}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
@@ -1232,7 +1233,6 @@
     <h2>¿Qué hace diferente a ZWCAD?</h2>
     <p class="lead">Descubre en pocos minutos por qué ZWCAD es la alternativa CAD que tu equipo puede usar desde el primer día.</p>
     <ul class="vd-pts"><li>Rendimiento superior</li><li>Licencia perpetua</li><li>Compatibilidad DWG</li></ul>
-    <a class="vd-yt" href="https://www.youtube.com/watch?v=Lj_SVURC89Q" target="_blank" rel="noopener">Ver en YouTube →</a>
   </div>
   <div class="vd-frame" data-yt="Lj_SVURC89Q">
     <button type="button" class="vd-play" aria-label="Reproducir video: ¿Qué hace diferente a ZWCAD?">
@@ -1884,7 +1884,9 @@
   // videos de YouTube: el reproductor solo se carga al hacer clic
   document.querySelectorAll('.pt .vd-frame').forEach(function(f){
     var b=f.querySelector('.vd-play');if(!b)return;
-    b.addEventListener('click',function(){var id=f.getAttribute('data-yt'),i=document.createElement('iframe');
+    b.addEventListener('click',function(){var id=f.getAttribute('data-yt');
+      if(document.querySelector('[data-page]')){if(!f.querySelector('.vd-msg')){var m=document.createElement('div');m.className='vd-msg';m.textContent='Vista previa: el video se reproduce aquí mismo en el sitio publicado.';f.appendChild(m);}return;}
+      var i=document.createElement('iframe');
       i.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';i.title=b.getAttribute('aria-label');
       i.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';i.allowFullscreen=true;f.innerHTML='';f.appendChild(i);
       track('video_play',{video:id});});
