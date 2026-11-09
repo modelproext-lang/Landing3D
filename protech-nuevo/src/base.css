@@ -825,3 +825,15 @@
 .pt .mv-c:focus-visible{outline:3px solid #9bd6ff;outline-offset:3px}
 @media(max-width:860px){.pt .mv-g{flex-direction:column;height:auto}.pt .mv-c{flex:none!important;min-height:0}.pt .mv-b{opacity:1;transform:none;margin-top:18px;pointer-events:auto}.pt .mv-i{display:none}.pt .mv-c h3{white-space:normal}.pt .mv-c h3 br{display:none}}
 @media(prefers-reduced-motion:reduce){.pt .mv-c,.pt .mv-c:before,.pt .mv-b{transition:none}}
+/* cita del CEO de ZWSOFT */
+.pt .qt{position:relative;overflow:hidden;background:radial-gradient(60% 90% at 85% 10%,rgba(155,214,255,.4),transparent 60%),linear-gradient(135deg,#0a6ac9,#0096ff);padding:clamp(56px,7vw,96px) 0}
+.pt .qt:before{content:"";position:absolute;right:-60px;bottom:-90px;width:420px;height:320px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 300'%3E%3Cpath d='M300 20C170 30 60 120 90 190s170 30 150-40-170-40-220 130' fill='none' stroke='%23ffffff' stroke-opacity='.14' stroke-width='34' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain;pointer-events:none}
+.pt .qt-f{position:relative;max-width:860px;margin:0 auto;text-align:center;display:grid;gap:30px}
+.pt .qt blockquote{margin:0;position:relative;font-size:clamp(20px,2.4vw,30px);line-height:1.45;font-weight:600;color:#fff;letter-spacing:-.01em;padding:0 clamp(28px,5vw,56px)}
+.pt .qt blockquote:before,.pt .qt blockquote:after{position:absolute;font-size:clamp(60px,7vw,96px);line-height:1;color:rgba(255,255,255,.55);font-family:Georgia,serif}
+.pt .qt blockquote:before{content:"\201C";left:0;top:-14px}
+.pt .qt blockquote:after{content:"\201D";right:0;bottom:-54px}
+.pt .qt figcaption{display:flex;justify-content:center;align-items:center;gap:14px;text-align:left}
+.pt .qt-av{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:18px;color:var(--g1);background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.3)}
+.pt .qt figcaption b{display:block;color:#fff;font-size:18px}
+.pt .qt figcaption small{color:#dbeeff;font-size:14px}
