@@ -558,3 +558,13 @@
 .pt .sub-prod b{font-size:15.5px}
 .pt .sub-prod small{display:block;margin-top:3px;line-height:1.45}
 @media(max-width:1020px){.pt .sub-prod{min-width:0;grid-template-columns:1fr;padding:0 0 10px 8px}.pt .dd:hover .sub-prod,.pt .dd:focus-within .sub-prod{display:none}.pt .dd.open .sub-prod{display:grid}}
+/* ===== títulos de sección: degradado como el carrusel + antetítulos más visibles ===== */
+.pt h2{background-image:linear-gradient(90deg,#0b1b33 0%,#0b1b33 18%,#0a6ac9 68%,#0096ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding-bottom:.06em}
+.pt h2 .grad{-webkit-text-fill-color:transparent}
+.pt .cmp-l h2,.pt .z3-dark h2,.pt .speed h2,.pt .how-txt h2{color:transparent;background-image:linear-gradient(90deg,#fff 0%,#fff 25%,#9bd6ff 80%,#7cc4ff 100%)}
+.pt .eb{display:inline-flex;align-items:center;gap:10px;font-size:14px;letter-spacing:.12em;font-weight:700;margin-bottom:14px}
+.pt .eb:before{content:"";width:28px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g1),var(--g2));flex:none}
+.pt .c .eb:after{content:"";width:28px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g2),var(--g1));flex:none}
+.pt .cmp .eb:before,.pt .z3-dark .eb:before,.pt .how-txt .eb:before,.pt .hs-slide.dark .eb:before{background:linear-gradient(90deg,#7cc4ff,#fff)}
+.pt .hs .eb{font-size:13px}
+.pt .cn-l h2,.pt .logos .lg-h h2,.pt .cz-home h2,.pt .how h2{color:transparent}

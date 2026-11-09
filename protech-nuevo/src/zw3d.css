@@ -58,7 +58,8 @@
 @media(max-width:860px){.pt .z3-panel{grid-template-columns:1fr;gap:28px}}
 /* secciones oscuras */
 .pt .z3-dark{background:radial-gradient(50% 60% at 15% 20%,rgba(0,150,255,.18),transparent 70%),#061a34;color:#b9cde6}
-.pt .z3-dark h2,.pt .z3-dark h3{color:#fff}
+.pt .z3-dark h3{color:#fff}
+.pt .z3-dark h2{color:transparent}
 .pt .z3-dark .lead{color:#9fb4cf}
 .pt .z3-dark .eb{color:#7cc4ff}
 /* diagrama del ciclo */
