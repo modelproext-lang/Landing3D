@@ -705,3 +705,17 @@
 @media(prefers-reduced-motion:reduce){.pt .fx-lb,.pt .fx-lb-in,.pt .fx-p{animation:none}}
 .pt .fx .prods-note{text-align:center;margin-top:20px;font-size:13px;color:var(--m)}
 @media(min-width:901px){.pt .fx-chips{flex-wrap:wrap;overflow:visible}}
+/* planes con selector Standalone / Red */
+.pt .lic{margin-top:30px}
+.pt .lic-sw{display:inline-grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px;border-radius:20px;background:var(--l);border:1px solid var(--line)}
+.pt .lic-sw button{border:0;background:none;cursor:pointer;font-family:inherit;padding:12px 22px;border-radius:15px;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--m);transition:background .3s,color .3s,box-shadow .3s}
+.pt .lic-sw b{font-size:16px;color:inherit}.pt .lic-sw small{font-size:12.5px;color:inherit;opacity:.85}
+.pt .lic-sw button.on{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;box-shadow:0 8px 20px rgba(0,150,255,.25)}
+.pt .lic-sw button:focus-visible{outline:2px solid var(--g2);outline-offset:2px}
+.pt .lic-info{max-width:680px;margin:18px auto 34px;font-size:15px;color:var(--t);line-height:1.6}
+.pt .lic-info b{color:var(--n)}
+.pt .lic .pr .lic-amt{display:inline-block;transition:transform .35s var(--ease),color .35s}
+.pt .lic .pr .lic-amt.bump{transform:translateY(-4px);color:var(--g1)}
+.pt .lic-type{font-size:13px;color:var(--m);margin-top:-6px}
+.pt .lic-type b{color:var(--g1)}
+@media(max-width:560px){.pt .lic-sw{display:grid;width:100%}.pt .lic-sw button{padding:10px 8px}}

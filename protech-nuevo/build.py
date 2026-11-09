@@ -94,6 +94,33 @@ def plans_html(key, limit=None):
     return f'<div class="{grid}">' + "".join(out) + "</div>"
 
 
+def plans_lic_html(key):
+    """Planes con selector Standalone / Red (solo productos con precio de red)."""
+    items = PLANS[key]
+    cards = []
+    for name, price, desc, feats, hot in items:
+        net = NETWORK.get(name)
+        cls = "plan hot" if hot else "plan"
+        badge = '<span class="badge">Recomendado</span>' if hot else ""
+        lis = "".join(f"<li>{f}</li>" for f in feats)
+        cards.append(
+            f'<div class="{cls}" data-name="{name}" data-sa="{price}" data-net="{net or ""}">{badge}<h3>{name}</h3>'
+            f'<div class="pr"><span class="lic-amt">${price:,}</span> <small>MXN + IVA</small></div>'
+            f'<div class="lic-type">Licencia perpetua <b class="lic-lbl">Standalone</b></div>'
+            f'<p>{desc}</p><ul>{lis}</ul>'
+            f'<a class="btn btn-p wa lic-go" data-msg="Hola ProTech, quiero {name} con licencia Standalone (${price:,} MXN + IVA)." href="#">Cotizar este plan</a>'
+            f'<a class="trial wa" data-msg="Hola ProTech, quiero la prueba gratis de 30 días de {name}." href="#">o pruébalo gratis 30 días</a></div>')
+    sw = ('<div class="lic-sw" role="radiogroup" aria-label="Tipo de licencia">'
+          '<button type="button" class="on" data-lic="sa" role="radio" aria-checked="true"><b>Standalone</b><small>Se instala en una computadora</small></button>'
+          '<button type="button" data-lic="net" role="radio" aria-checked="false"><b>Red (flotante)</b><small>Se comparte en la red de tu empresa</small></button>'
+          '</div>')
+    info = ('<div class="lic-info"><p data-for="sa"><b>Standalone:</b> cada licencia se activa en una sola computadora. Ideal para usuarios que trabajan siempre en el mismo equipo.</p>'
+            '<p data-for="net" hidden><b>Red (flotante):</b> las licencias se instalan en un servidor y cualquier equipo de la red las usa. Si compras 3, pueden trabajar 3 personas al mismo tiempo, sin importar en qué computadora. Cuesta solo $1,000 MXN más por licencia.</p></div>')
+    n = len(items)
+    grid = {2: "plans two", 3: "plans", 4: "plans four"}.get(n, "plans")
+    return f'<div class="lic" data-lic-wrap>{sw}{info}<div class="{grid}">' + "".join(cards) + "</div></div>"
+
+
 def terms_html():
     rows = [l.split("\t", 1) for l in (SRC / "terminos.txt").read_text(encoding="utf-8").splitlines()]
     out = []
@@ -127,6 +154,7 @@ def load_pages():
 
 def render(text, url_of, img_of):
     text = text.replace("{{wa-icon}}", WA_ICON)
+    text = re.sub(r"\{\{plans-lic:(\w+)\}\}", lambda m: plans_lic_html(m.group(1)), text)
     text = re.sub(r"\{\{plans:(\w+)(?::(\d+))?\}\}", lambda m: plans_html(m.group(1), int(m.group(2)) if m.group(2) else None), text)
     text = text.replace("{{terminos}}", terms_html())
     text = re.sub(r"\{\{cotizador(?::(\w+))?\}\}", lambda m: cotizador_html(img_of, m.group(1)), text)

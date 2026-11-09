@@ -191,6 +191,21 @@
     lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb();});
   }
+  // planes: selector Standalone / Red
+  document.querySelectorAll('.pt [data-lic-wrap]').forEach(function(w){
+    var bs=w.querySelectorAll('.lic-sw button');
+    function fmt(n){return '$'+Number(n).toLocaleString('es-MX');}
+    function set(t){
+      bs.forEach(function(b){var on=b.getAttribute('data-lic')===t;b.classList.toggle('on',on);b.setAttribute('aria-checked',on);});
+      w.querySelectorAll('.lic-info p').forEach(function(p){p.hidden=p.getAttribute('data-for')!==t;});
+      var lbl=t==='net'?'Red (flotante)':'Standalone';
+      w.querySelectorAll('.plan[data-sa]').forEach(function(c){var v=t==='net'&&c.getAttribute('data-net')?c.getAttribute('data-net'):c.getAttribute('data-sa');
+        var a=c.querySelector('.lic-amt');a.textContent=fmt(v);a.classList.remove('bump');void a.offsetWidth;a.classList.add('bump');setTimeout(function(){a.classList.remove('bump');},350);
+        c.querySelector('.lic-lbl').textContent=lbl;
+        var go=c.querySelector('.lic-go');go.href=link('Hola ProTech, quiero '+c.getAttribute('data-name')+' con licencia '+lbl+' ('+fmt(v)+' MXN + IVA).');});
+    }
+    bs.forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-lic'));});});
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
