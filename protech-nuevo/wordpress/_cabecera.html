@@ -622,6 +622,24 @@
 /* portada ZWCAD: red de datos interactiva */
 .pt .zb-data{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 55%);mask-image:linear-gradient(90deg,transparent 30%,#000 55%)}
 @media(max-width:900px){.pt .zb-data{-webkit-mask-image:none;mask-image:none;opacity:.5}}
+/* video YouTube (carga al hacer clic) */
+.pt .vd{background:#fff}
+.pt .vd-g{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(28px,4vw,56px);align-items:center}
+.pt .vd-txt h2{font-size:clamp(28px,3.2vw,42px);margin:4px 0 14px}
+.pt .vd-pts{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:22px 0;padding:0}
+.pt .vd-pts li{font-size:14px;font-weight:600;color:var(--g1);background:#eaf5ff;border:1px solid #cfe8ff;border-radius:100px;padding:7px 14px}
+.pt .vd-yt{font-weight:700;color:var(--g1)}.pt .vd-yt:hover{color:var(--g2)}
+.pt .vd-frame{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:22px;overflow:hidden;background:#061a34;box-shadow:0 30px 60px rgba(11,27,51,.2)}
+.pt .vd-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pt .vd-play{all:unset;cursor:pointer;position:absolute;inset:0;display:block}
+.pt .vd-play img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pt .vd-play:hover img{transform:scale(1.03)}
+.pt .vd-btn{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 0 0 10px rgba(255,255,255,.25),0 18px 40px rgba(0,60,160,.45);transition:transform .3s ease}
+.pt .vd-btn svg{width:34px;height:34px;margin-left:4px}
+.pt .vd-play:hover .vd-btn,.pt .vd-play:focus-visible .vd-btn{transform:scale(1.1)}
+.pt .vd-play:focus-visible{outline:3px solid var(--g2);outline-offset:-3px}
+@media(max-width:900px){.pt .vd-g{grid-template-columns:1fr}.pt .vd-frame{order:-1}}
+@media(max-width:560px){.pt .vd-btn{width:64px;height:64px;margin:-32px 0 0 -32px}.pt .vd-btn svg{width:26px;height:26px}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}

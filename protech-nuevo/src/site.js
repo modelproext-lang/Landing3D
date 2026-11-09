@@ -131,6 +131,14 @@
     size();requestAnimationFrame(draw);
     if('ResizeObserver' in window)new ResizeObserver(function(){var r=host.getBoundingClientRect();if(r.width&&(Math.abs(r.width-W)>2||Math.abs(r.height-H)>2||!pts.length)){size();vis=true;requestAnimationFrame(draw);}}).observe(host);
   });
+  // videos de YouTube: el reproductor solo se carga al hacer clic
+  document.querySelectorAll('.pt .vd-frame').forEach(function(f){
+    var b=f.querySelector('.vd-play');if(!b)return;
+    b.addEventListener('click',function(){var id=f.getAttribute('data-yt'),i=document.createElement('iframe');
+      i.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';i.title=b.getAttribute('aria-label');
+      i.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';i.allowFullscreen=true;f.innerHTML='';f.appendChild(i);
+      track('video_play',{video:id});});
+  });
   // single-file preview: hash router
   var pages=root.querySelectorAll('[data-page]');
   if(pages.length>1){
