@@ -120,6 +120,31 @@
     window.addEventListener('mouseup',function(){if(dx===null)return;dx=null;mq.classList.remove('drag');});
     requestAnimationFrame(step);
   });
+  // portada ZWCAD: red de puntos de datos que reacciona al mouse
+  document.querySelectorAll('.pt .zb-data').forEach(function(cv){
+    var host=cv.parentNode,ctx=cv.getContext('2d'),W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2),pts=[],mx=-1e4,my=-1e4,run=true,vis=true;
+    function size(){var r=host.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+      var n=Math.round(Math.min(110,W*H/9000));pts=[];for(var i=0;i<n;i++)pts.push({x:W*(.3+Math.random()*.7),y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.8,b:Math.random()});}
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<pts.length;i++){var p=pts[i];
+        if(!reduce){var dx=p.x-mx,dy=p.y-my,d2=dx*dx+dy*dy;if(d2<5200){var f=(5200-d2)/5200*.9;p.vx+=dx/Math.sqrt(d2+1)*f*.18;p.vy+=dy/Math.sqrt(d2+1)*f*.18;}
+          p.vx*=.985;p.vy*=.985;if(Math.abs(p.vx)<.08)p.vx+=(Math.random()-.5)*.04;if(Math.abs(p.vy)<.08)p.vy+=(Math.random()-.5)*.04;
+          p.x+=p.vx;p.y+=p.vy;if(p.x<W*.25||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+        for(var k=i+1;k<pts.length;k++){var q=pts[k],ex=p.x-q.x,ey=p.y-q.y,e=ex*ex+ey*ey;if(e<9000){ctx.strokeStyle='rgba(90,184,255,'+(1-e/9000)*.35+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
+        var near=(p.x-mx)*(p.x-mx)+(p.y-my)*(p.y-my)<32000;
+        ctx.fillStyle=near?'rgba(155,230,255,.95)':'rgba(90,184,255,'+(.45+p.b*.4)+')';ctx.beginPath();ctx.arc(p.x,p.y,near?p.r+1:p.r,0,6.283);ctx.fill();}
+      if(mx>0){for(var t=0;t<pts.length;t++){var a=pts[t],gx=a.x-mx,gy=a.y-my,g=gx*gx+gy*gy;if(g<32000){ctx.strokeStyle='rgba(60,240,200,'+(1-g/32000)*.6+')';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(mx,my);ctx.stroke();}}}
+      if(run&&vis&&!reduce)requestAnimationFrame(draw);}
+    host.addEventListener('mousemove',function(e){var r=host.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+    host.addEventListener('mouseleave',function(){mx=my=-1e4;});
+    host.addEventListener('touchmove',function(e){var r=host.getBoundingClientRect(),t=e.touches[0];mx=t.clientX-r.left;my=t.clientY-r.top;},{passive:true});
+    host.addEventListener('touchend',function(){mx=my=-1e4;},{passive:true});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){var was=vis;vis=es[0].isIntersecting&&!host.closest('[hidden]');if(vis&&!was&&!reduce)requestAnimationFrame(draw);}).observe(host);
+    window.addEventListener('resize',function(){size();if(reduce)draw();});
+    size();requestAnimationFrame(draw);
+    if('ResizeObserver' in window)new ResizeObserver(function(){var r=host.getBoundingClientRect();if(r.width&&(Math.abs(r.width-W)>2||Math.abs(r.height-H)>2||!pts.length)){size();vis=true;requestAnimationFrame(draw);}}).observe(host);
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
