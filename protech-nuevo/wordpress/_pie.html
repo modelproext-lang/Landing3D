@@ -168,6 +168,29 @@
     ac.addEventListener('mouseleave',function(){ac.classList.remove('paused');clearTimeout(t);if(!reduce&&seen)t=setTimeout(function(){go(cur+1);},DUR/2);});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!seen){seen=true;go(cur);}else if(!v){clearTimeout(t);}else if(v&&!t){go(cur);}},{threshold:.35}).observe(ac);
   });
+  // funciones ZWCAD: chips, video visible se reproduce, clic abre vista ampliada
+  document.querySelectorAll('.pt .fx').forEach(function(sec){
+    function playVisible(){sec.querySelectorAll('.fx-tab').forEach(function(t){t.querySelectorAll('.fx-p').forEach(function(p){var v=p.querySelector('video');if(!v)return;
+      if(!t.hidden&&!p.hidden&&inView){v.preload='auto';var r=v.play();if(r&&r.catch)r.catch(function(){});}else v.pause();});});}
+    var inView=false;
+    sec.querySelectorAll('.fx-tab').forEach(function(t){t.querySelectorAll('.fx-chip').forEach(function(c){c.addEventListener('click',function(){var i=c.getAttribute('data-i');
+      t.querySelectorAll('.fx-chip').forEach(function(x){var on=x===c;x.classList.toggle('on',on);x.setAttribute('aria-selected',on);});
+      t.querySelectorAll('.fx-p').forEach(function(p){var on=p.getAttribute('data-i')===i;p.hidden=!on;p.classList.toggle('on',on);});
+      c.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});playVisible();});});});
+    sec.querySelectorAll('.fx-tabs button').forEach(function(b){b.addEventListener('click',function(){setTimeout(playVisible,0);});});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){inView=es[0].isIntersecting;playVisible();},{threshold:.25}).observe(sec);
+  });
+  var lb=document.querySelector('.pt .fx-lb');
+  if(lb){var lbIn=lb.querySelector('.fx-lb-in'),last=null;
+    function closeLb(){lb.hidden=true;lbIn.innerHTML='';document.documentElement.style.overflow='';if(last)last.focus();}
+    document.querySelectorAll('.pt .fx-media').forEach(function(m){m.addEventListener('click',function(){last=m;var v=m.querySelector('video'),im=m.querySelector('img'),n;
+      if(v){n=document.createElement('video');n.src=v.currentSrc||v.src;n.controls=true;n.autoplay=true;n.loop=true;n.muted=true;n.playsInline=true;n.currentTime=v.currentTime||0;}
+      else{n=document.createElement('img');n.src=im.src;n.alt=im.alt;}
+      lbIn.innerHTML='';lbIn.appendChild(n);lb.hidden=false;document.documentElement.style.overflow='hidden';lb.querySelector('.fx-lb-x').focus();track('feature_zoom',{feature:m.getAttribute('aria-label')});});});
+    lb.querySelector('.fx-lb-x').addEventListener('click',closeLb);
+    lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb();});
+  }
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
