@@ -704,3 +704,4 @@
 @keyframes fxFade{from{opacity:0}}@keyframes fxZoom{from{transform:scale(.94);opacity:0}}
 @media(prefers-reduced-motion:reduce){.pt .fx-lb,.pt .fx-lb-in,.pt .fx-p{animation:none}}
 .pt .fx .prods-note{text-align:center;margin-top:20px;font-size:13px;color:var(--m)}
+@media(min-width:901px){.pt .fx-chips{flex-wrap:wrap;overflow:visible}}
