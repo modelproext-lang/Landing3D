@@ -137,7 +137,7 @@
     b.addEventListener('click',function(){var id=f.getAttribute('data-yt');
       if(document.querySelector('[data-page]')){if(!f.querySelector('.vd-msg')){var m=document.createElement('div');m.className='vd-msg';m.textContent='Vista previa: el video se reproduce aquí mismo en el sitio publicado.';f.appendChild(m);}return;}
       var i=document.createElement('iframe');
-      i.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';i.title=b.getAttribute('aria-label');
+      i.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1'+(f.getAttribute('data-start')?'&start='+f.getAttribute('data-start'):'');i.title=b.getAttribute('aria-label');
       i.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';i.allowFullscreen=true;f.innerHTML='';f.appendChild(i);
       track('video_play',{video:id});});
   });

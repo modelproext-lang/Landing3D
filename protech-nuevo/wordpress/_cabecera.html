@@ -739,6 +739,36 @@
 @media(max-width:900px){.pt .pnav-b span{display:none}.pt .pnav-in{gap:8px;padding:8px}.pt .pnav-cta{padding:10px 14px;font-size:13.5px}.pt .pnav-l a{padding:8px 11px;font-size:13.5px}}
 @media(max-width:560px){.pt .pnav{bottom:calc(10px + env(safe-area-inset-bottom,0px))}.pt .pnav-b{display:none}.pnav-show .pt .fwa{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 @media(prefers-reduced-motion:reduce){.pt .pnav{transition:none}}
+/* caso de éxito */
+.pt .cs{background:#fff}
+.pt .cs h2{max-width:820px;margin-left:auto;margin-right:auto}
+.pt .cs-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,48px);align-items:start;margin-top:40px}
+.pt .cs-l{display:grid;gap:22px}
+.pt .cs-id{display:flex;gap:20px;align-items:center}
+.pt .cs-id img{width:120px;height:auto;flex:none}
+.pt .cs-id p{color:var(--t);font-size:16px;line-height:1.6;margin:0}
+.pt .cs-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pt .cs-kpi div{border-radius:16px;padding:16px;background:var(--l);border:1px solid var(--line);display:grid;gap:2px}
+.pt .cs-kpi b{font-size:clamp(26px,2.6vw,34px);font-weight:600;letter-spacing:-.02em;background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.pt .cs-kpi span{font-size:13px;color:var(--m)}
+.pt .cs-ch{border-radius:20px;padding:22px 24px;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.pt .cs-ch h3{color:#fff;font-size:18px;margin-bottom:10px}
+.pt .cs-ch ul{list-style:none;display:grid;gap:8px;margin:0;padding:0}
+.pt .cs-ch li{position:relative;padding-left:26px;font-size:15px;color:#e6f3ff}
+.pt .cs-ch li:before{content:"✕";position:absolute;left:0;top:0;font-weight:700;color:#cfe8ff}
+.pt .cs-r{display:grid;gap:16px}
+.pt .cs-pj{border-left:3px solid var(--g2);padding:4px 0 4px 16px}
+.pt .cs-pj span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--b)}
+.pt .cs-pj p{margin:4px 0 0;font-size:16px;color:var(--t)}.pt .cs-pj b{color:var(--n)}
+.pt .cs-res{margin-top:40px}
+.pt .cs-res h3{font-size:22px;margin-bottom:16px}
+.pt .cs-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pt .cs-cards>div{border-radius:20px;padding:22px;background:#061a34;color:#b9cde6;display:grid;gap:6px;position:relative;transition:transform .3s ease,box-shadow .3s ease}
+.pt .cs-cards>div:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(6,26,52,.25)}
+.pt .cs-n{font-size:13px;font-weight:700;color:#7cc4ff;letter-spacing:.06em}
+.pt .cs-cards b{color:#fff;font-size:17px}.pt .cs-cards p{margin:0;font-size:14.5px;line-height:1.55}
+@media(max-width:900px){.pt .cs-g{grid-template-columns:1fr}.pt .cs-r{order:-1}.pt .cs-cards{grid-template-columns:1fr}}
+@media(max-width:480px){.pt .cs-id{flex-direction:column;align-items:flex-start}.pt .cs-kpi{grid-template-columns:1fr 1fr 1fr;gap:8px}.pt .cs-kpi div{padding:12px 10px}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
