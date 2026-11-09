@@ -573,3 +573,9 @@
 .pt .hs-slide:first-child .hs-in>*{max-width:560px}
 @media(min-width:761px){.pt .hs-slide:first-child .hs-bg{background-position:calc(100% + 6vw) center}
  .pt .hs-slide:first-child:after{background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 38%,rgba(255,255,255,.35) 52%,rgba(255,255,255,0) 64%)}}
+/* comparativa: tarjetas proporcionadas (perpetua ligeramente más grande) */
+.pt .cmp .vs{grid-template-columns:1fr 1.08fr;align-items:stretch;gap:16px}
+.pt .cmp .vs .card{display:flex;flex-direction:column}
+.pt .cmp .vs .x{margin-block:16px;padding:26px 22px}
+.pt .cmp .vs .g{transform:none;padding:32px 26px}
+@media(max-width:560px){.pt .cmp .vs{grid-template-columns:1fr}.pt .cmp .vs .x{margin-block:0 0;margin-inline:10px}}
