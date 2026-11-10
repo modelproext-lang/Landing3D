@@ -1308,6 +1308,16 @@
 .pt .sv-sp b{color:#fff}
 .pt .sv-sp a{font-weight:700;color:#ffd38a;white-space:nowrap}
 .pt .sv-sp a:hover{color:#fff}
+
+/* calculadora: el ahorro a 5 años destaca en el rango Professional */
+.pt .sv-best{display:none;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#062a1d;background:#5ee0b0;border-radius:100px;padding:2px 8px;margin-left:6px;vertical-align:1px}
+.pt .sv-big.hl5{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);align-items:stretch}
+.pt .sv-big.hl5 .sv-5{position:relative;background:radial-gradient(90% 120% at 100% 0%,rgba(94,224,176,.22),transparent 60%),linear-gradient(140deg,rgba(26,163,255,.28),rgba(10,106,201,.18));border:1px solid rgba(94,224,176,.55);box-shadow:0 0 0 1px rgba(94,224,176,.15),0 16px 36px rgba(0,0,0,.25);transform:scale(1.03)}
+.pt .sv-big.hl5 .sv-5 b{font-size:clamp(32px,3.6vw,46px)}
+.pt .sv-big.hl5 .sv-5 small{color:#e6f3ff;font-weight:600}
+.pt .sv-big.hl5 .sv-best{display:inline-block}
+.pt .sv-big.hl5>div:first-child{opacity:.85}
+@media(max-width:480px){.pt .sv-big.hl5{grid-template-columns:1fr}.pt .sv-big.hl5 .sv-5{order:-1;transform:none}}
 /* ===== página ZW3D (adaptada del diseño oficial ZW3D 2027) ===== */
 .pt .z3-hero{position:relative;overflow:hidden;padding:0;min-height:clamp(520px,42vw,720px);display:flex;align-items:center;background:#e9f2fc}
 .pt .z3-hero-bg{position:absolute;inset:0;background-size:cover;background-position:right center;animation:z3Zoom 14s var(--ease) both}

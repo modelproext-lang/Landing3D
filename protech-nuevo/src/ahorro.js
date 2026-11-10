@@ -27,7 +27,7 @@
         '<div class="sv-k">Tu ahorro estimado</div>'+
         '<div class="sv-adv" hidden><b class="sv-adv-t">Hablemos de un plan a tu medida</b><p class="sv-adv-p">Con el presupuesto que indicas, lo mejor es que un asesor te ayude a encontrar un plan flexible. Tenemos diversas opciones para que ZWCAD entre en tu presupuesto.</p><a class="btn btn-p sv-adv-go" href="#" target="_blank" rel="noopener">Hablar con un asesor</a></div>'+
         '<div class="sv-sp" hidden><span><b>¿Buscas una opción más accesible?</b> Tenemos planes especiales para ti.</span><a class="sv-sp-go" href="#" target="_blank" rel="noopener">Conocer planes especiales →</a></div>'+
-        '<div class="sv-big"><div><small class="sv-k3">A 3 años</small><b class="sv-s3"></b><span class="sv-p3"></span></div><div><small>A 5 años</small><b class="sv-s5"></b><span class="sv-p5"></span></div></div>'+
+        '<div class="sv-big"><div><small class="sv-k3">A 3 años</small><b class="sv-s3"></b><span class="sv-p3"></span></div><div class="sv-5"><small>A 5 años <i class="sv-best">Mayor ahorro</i></small><b class="sv-s5"></b><span class="sv-p5"></span></div></div>'+
         '<div class="sv-ch"><div class="sv-cht">Lo que pagas cada año</div><div class="sv-leg"><span><i class="a"></i>Suscripción actual</span><span><i class="b"></i>ZWCAD</span></div><svg class="sv-svg" role="img" aria-label="Pago de cada año"></svg><div class="sv-tip" hidden></div></div>'+
         '<table class="sv-tbl"><thead><tr><th></th><th>3 años</th><th>5 años</th></tr></thead><tbody><tr><td>Suscripción actual</td><td class="sv-c3"></td><td class="sv-c5"></td></tr><tr><td>ZWCAD</td><td class="sv-z3"></td><td class="sv-z5"></td></tr></tbody></table>'+
         '<a class="btn btn-p sv-go" href="#" target="_blank" rel="noopener">Quiero esta cotización</a>'+
@@ -90,6 +90,7 @@
       $('.sv-s5').textContent=fmt(s5);
       if(pay===1&&s3>0){$('.sv-k3').textContent='A 3 años';$('.sv-s3').textContent=fmt(s3);$('.sv-p3').textContent=pct(r.a[2],r.b[2])+' % menos · desde el primer año';}else{$('.sv-k3').textContent='Recuperas tu inversión';$('.sv-s3').textContent='Año '+pay;$('.sv-p3').textContent='Desde ahí, todo es ahorro';}
       $('.sv-p5').textContent=pct(r.a[4],r.b[4])+' % menos';
+      $('.sv-big').classList.toggle('hl5',tr==='hi');
       
       $('.sv-c3').textContent=fmt(r.a[2]);$('.sv-c5').textContent=fmt(r.a[4]);$('.sv-z3').textContent=fmt(r.b[2]);$('.sv-z5').textContent=fmt(r.b[4]);
       draw(r);
