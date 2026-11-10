@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Pro – Menú</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f6f6f4;--card:#fff;--ink:#111;--muted:#6b6b6b;--line:#e6e6e3;--pill:#efefec;--accent:#111}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- HEADER / NAV ---------- */
+  header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+  .bar{max-width:1180px;margin:auto;display:flex;align-items:center;gap:32px;height:68px;padding:0 20px}
+  .logo{font-weight:700;font-size:20px;letter-spacing:.5px}
+  .logo span{color:#888;font-weight:500}
+  nav.main{display:flex;gap:4px;flex:1}
+  .item{position:relative}
+  .item>button{all:unset;cursor:pointer;padding:10px 16px;border-radius:999px;font-weight:500;font-size:15px;color:#444;display:flex;gap:6px;align-items:center}
+  .item>button:after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.6}
+  .item:hover>button,.item.open>button{background:var(--pill);color:var(--ink)}
+  .cta{background:var(--accent);color:#fff;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap}
+  .icon-btn{all:unset;cursor:pointer;width:38px;height:38px;display:grid;place-items:center;border-radius:50%}
+  .icon-btn:hover{background:var(--pill)}
+
+  /* ---------- MEGA MENU ---------- */
+  .mega{position:absolute;top:calc(100% + 10px);left:0;width:720px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 50px -20px rgba(0,0,0,.25);padding:22px;display:none;grid-template-columns:1fr 1fr;gap:10px}
+  .item:hover .mega,.item.open .mega{display:grid}
+  .mega.narrow{width:520px}
+  .mega-head{grid-column:1/-1;margin-bottom:4px}
+  .mega-head h4{font-size:16px}
+  .mega-head p{font-size:13px;color:var(--muted)}
+  .opt{border:1px solid var(--line);border-radius:14px;padding:14px;transition:.15s}
+  .opt:hover{border-color:#bbb;background:#fafaf8}
+  .opt h5{font-size:15px;display:flex;gap:8px;align-items:center}
+  .opt p{font-size:12.5px;color:var(--muted);margin:3px 0 10px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tags a{font-size:12px;background:var(--pill);padding:4px 10px;border-radius:999px}
+  .tags a:hover{background:#111;color:#fff}
+  .mega-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;background:#111;color:#fff;border-radius:14px;padding:14px 18px;margin-top:6px}
+  .mega-foot b{display:block;font-size:14px}
+  .mega-foot small{color:#bbb;font-size:12px}
+  .mega-foot a{background:#fff;color:#111;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600}
+  .ico{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7}
+
+  /* ---------- MOBILE ---------- */
+  .burger{display:none}
+  .drawer{display:none}
+  @media (max-width:900px){
+    nav.main,.bar .cta{display:none}
+    .burger{display:grid}
+    .bar{justify-content:space-between}
+    .drawer.show{display:block;position:fixed;inset:68px 0 0;background:#fff;overflow:auto;padding:16px}
+    .tabs{display:flex;gap:4px;background:var(--pill);padding:4px;border-radius:999px;overflow-x:auto}
+    .tabs button{all:unset;cursor:pointer;flex:1;text-align:center;padding:9px 12px;border-radius:999px;font-size:13.5px;color:#777;white-space:nowrap}
+    .tabs button.on{background:#fff;color:#111;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+    .panel{display:none;margin-top:16px;gap:10px;flex-direction:column}
+    .panel.on{display:flex}
+    .panel .mega-foot{flex-direction:column;align-items:stretch;gap:10px;text-align:left}
+    .panel .mega-foot a{text-align:center}
+  }
+
+  /* ---------- DEMO HERO ---------- */
+  .hero{max-width:1180px;margin:60px auto;padding:0 20px;color:#999;font-size:14px}
+  .hero h1{color:#111;font-size:40px;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="logo">MODEL <span>PRO</span></div>
+    <nav class="main" id="desk"></nav>
+    <button class="icon-btn" aria-label="Buscar"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+    <a class="cta" href="#">Cotizar ahora</a>
+    <button class="icon-btn burger" id="burger" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div class="drawer" id="drawer">
+    <div class="tabs" id="tabs"></div>
+    <div id="panels"></div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Vista previa del menú</h1>
+  <p>Pasa el cursor por las pestañas (escritorio) o abre el menú ☰ (móvil) para ver los submenús.</p>
+</section>
+
+<script>
+const I = {
+  cube:'<path d="M12 3 4 7.5v9L12 21l8-4.5v-9z"/><path d="M4 7.5 12 12l8-4.5M12 12v9"/>',
+  scan:'<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M4 12h16"/>',
+  compass:'<circle cx="12" cy="5" r="2"/><path d="m11 7-6 14M13 7l6 14M7 15h10"/>',
+  vr:'<path d="M3 9h18v7a1 1 0 0 1-1 1h-5l-3-3-3 3H4a1 1 0 0 1-1-1z"/>',
+  hand:'<path d="M8 11V5a2 2 0 0 1 4 0v6M12 10V4a2 2 0 0 1 4 0v7M16 9a2 2 0 0 1 4 0v4a8 8 0 0 1-8 8 7 7 0 0 1-6-4l-2-4a2 2 0 0 1 3-2l1 2"/>',
+  arm:'<path d="M4 20h8M8 20v-5l4-6 6 2M12 9l-2-4"/><circle cx="18" cy="11" r="2"/>',
+  wrench:'<path d="M14 6a4 4 0 0 0 5 5l-9 9a2 2 0 0 1-3-3l9-9a4 4 0 0 0-2-2z"/>',
+  school:'<path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+  doc:'<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/>',
+  users:'<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.7"/>',
+  pin:'<path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  star:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'
+};
+const MENU = [
+  {name:'Software', title:'Software por aplicación', sub:'Elige lo que necesitas hacer y conoce las opciones disponibles.',
+   opts:[
+    {i:'cube',t:'Ingeniería inversa',d:'De escaneos 3D a modelos CAD editables',tags:['EXModel Pro','Geomagic Design X']},
+    {i:'scan',t:'Inspección y metrología 3D',d:'Control de calidad y comparación dimensional',tags:['Geomagic Control X','SHINING3D Inspect']},
+    {i:'compass',t:'Diseño CAD/CAM',d:'Diseño 2D, modelado 3D y manufactura',tags:['ZWCAD','ZW3D']},
+    {i:'vr',t:'Realidad virtual',d:'Visualización y experiencias 3D interactivas',tags:['SimLab VR Studio']}],
+   foot:['¿Qué software necesitas?','Te ayudamos a elegir según tu proyecto y presupuesto.','Ayúdame a elegir →']},
+  {name:'Escáneres 3D', title:'Escáneres por tipo de uso', sub:'Encuentra el equipo según el tamaño y precisión de tus piezas.',
+   opts:[
+    {i:'hand',t:'Escáneres de mano',d:'Portátiles para piezas medianas y grandes',tags:['FreeScan','EinScan H2']},
+    {i:'scan',t:'Escáneres metrológicos',d:'Alta precisión para inspección industrial',tags:['FreeScan Trak','OptimScan']},
+    {i:'cube',t:'Escáneres de escritorio',d:'Piezas pequeñas con detalle fino',tags:['AutoScan','EinScan SP']},
+    {i:'arm',t:'Automatización',d:'Celdas robotizadas para inspección en línea',tags:['RobotScan','Soluciones a medida']}],
+   foot:['¿No sabes qué escáner elegir?','Agenda una demo con tu propia pieza.','Agendar demo →']},
+  {name:'Servicios', title:'Servicios', sub:'Te acompañamos antes, durante y después de la compra.',
+   opts:[
+    {i:'scan',t:'Escaneo 3D bajo pedido',d:'Digitalizamos tus piezas sin que compres equipo',tags:['Cotizar servicio']},
+    {i:'cube',t:'Ingeniería inversa',d:'Te entregamos el modelo CAD listo',tags:['Ver casos']},
+    {i:'school',t:'Capacitación',d:'Cursos en software y equipos',tags:['Calendario','In-company']},
+    {i:'wrench',t:'Soporte técnico',d:'Calibración, garantía y renovaciones',tags:['Abrir ticket']}],
+   foot:['¿Tienes un proyecto urgente?','Respuesta en menos de 24 h.','Hablar con un experto →']},
+  {name:'Nosotros', title:'Nosotros', sub:'Distribuidor autorizado de soluciones 3D.', narrow:true,
+   opts:[
+    {i:'users',t:'Quiénes somos',d:'Historia, equipo y marcas',tags:['Conócenos']},
+    {i:'star',t:'Casos de éxito',d:'Resultados reales de clientes',tags:['Ver casos']},
+    {i:'doc',t:'Blog y recursos',d:'Guías, webinars y comparativas',tags:['Blog','Webinars']},
+    {i:'pin',t:'Contacto',d:'Oficinas, WhatsApp y correo',tags:['WhatsApp','Ubicación']}],
+   foot:['¿Quieres trabajar con nosotros?','Conoce nuestras alianzas.','Contactar →']}
+];
+const svg = k => `<svg class="ico" viewBox="0 0 24 24">${I[k]}</svg>`;
+const card = o => `<a class="opt" href="#"><h5>${svg(o.i)}${o.t}</h5><p>${o.d}</p><div class="tags">${o.tags.map(t=>`<a href="#">${t}</a>`).join('')}</div></a>`;
+const foot = f => `<div class="mega-foot"><div><b>${f[0]}</b><small>${f[1]}</small></div><a href="#">${f[2]}</a></div>`;
+
+document.getElementById('desk').innerHTML = MENU.map(m=>`
+  <div class="item"><button>${m.name}</button>
+    <div class="mega ${m.narrow?'narrow':''}">
+      <div class="mega-head"><h4>${m.title}</h4><p>${m.sub}</p></div>
+      ${m.opts.map(card).join('')}${foot(m.foot)}
+    </div></div>`).join('');
+
+document.getElementById('tabs').innerHTML = MENU.map((m,i)=>`<button class="${i?'':'on'}" data-i="${i}">${m.name}</button>`).join('');
+document.getElementById('panels').innerHTML = MENU.map((m,i)=>`
+  <div class="panel ${i?'':'on'}"><div class="mega-head"><h4>${m.title}</h4><p>${m.sub}</p></div>
+  ${m.opts.map(card).join('')}${foot(m.foot)}</div>`).join('');
+
+document.getElementById('tabs').onclick = e=>{
+  const i = e.target.dataset.i; if(i==null) return;
+  document.querySelectorAll('.tabs button').forEach((b,j)=>b.classList.toggle('on',j==i));
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('on',j==i));
+};
+document.getElementById('burger').onclick = ()=>document.getElementById('drawer').classList.toggle('show');
+// touch: abrir mega con clic
+document.querySelectorAll('.item>button').forEach(b=>b.onclick=()=>{
+  const it=b.parentElement, was=it.classList.contains('open');
+  document.querySelectorAll('.item').forEach(x=>x.classList.remove('open'));
+  if(!was) it.classList.add('open');
+});
+</script>
+</body>
+</html>
