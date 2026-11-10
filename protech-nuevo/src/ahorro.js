@@ -79,12 +79,12 @@
     function render(){
       var r=calc(),s3=r.a[2]-r.b[2],s5=r.a[4]-r.b[4];
       var tr=tier(),bad=tr==='low'||s5<=0;
-      $('.sv-adv-t').textContent=tr==='low'?'Tenemos planes especiales para ti':'Hablemos de un plan a tu medida';
-      $('.sv-adv-p').textContent=tr==='low'?'Un asesor te puede ofrecer un plan especial para que ZWCAD se ajuste a tu presupuesto. Platica con nosotros.':'Con el presupuesto que indicas, lo mejor es que un asesor te ayude a encontrar un plan flexible. Tenemos diversas opciones para que ZWCAD entre en tu presupuesto.';
+      $('.sv-adv-t').textContent=tr==='low'?'Hablemos de tus necesidades':'Hablemos de un plan a tu medida';
+      $('.sv-adv-p').textContent=tr==='low'?'Cada empresa es distinta. Cuéntanos cuántos usuarios son y cómo trabajan, y te diremos con claridad si ZWCAD es una buena opción para ti.':'Con el presupuesto que indicas, lo mejor es que un asesor te ayude a encontrar un plan flexible. Tenemos diversas opciones para que ZWCAD entre en tu presupuesto.';
       $('.sv-adv-go').textContent=tr==='low'?'Platica con un asesor':'Hablar con un asesor';
       $('.sv-sp').hidden=bad||tr!=='mid';
       $('.sv-sp-go').href=link('Hola ProTech, hoy pago '+fmt(st.cur)+' al año por licencia de CAD (sin IVA) y me interesan los planes especiales de ZWCAD ('+st.n+' licencia(s)).');$('.sv-adv').hidden=!bad;$('.sv-big').hidden=bad;$('.sv-ch').hidden=bad;$('.sv-tbl').hidden=bad;$('.sv-go').hidden=bad;
-      $('.sv-adv-go').href=link('Hola ProTech, hoy pago '+fmt(st.cur)+' al año por licencia de CAD (sin IVA) y me interesa ZWCAD ('+st.n+' licencia(s)). '+(tr==='low'?'¿Qué planes especiales tienen?':'¿Qué plan flexible me recomiendan?'));
+      $('.sv-adv-go').href=link('Hola ProTech, hoy pago '+fmt(st.cur)+' al año por licencia de CAD (sin IVA) y me interesa ZWCAD ('+st.n+' licencia(s)). '+(tr==='low'?'Me gustaría platicar mi caso con un asesor.':'¿Qué plan flexible me recomiendan?'));
       if(bad)return;
       var pay=5;for(var yy=0;yy<5;yy++){if(r.a[yy]>=r.b[yy]){pay=yy+1;break;}}
       $('.sv-s5').textContent=fmt(s5);
