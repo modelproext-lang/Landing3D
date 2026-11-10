@@ -35,8 +35,13 @@
   .mega-head p{font-size:13px;color:var(--muted)}
   .opt{border:1px solid var(--line);border-radius:14px;padding:14px;transition:.15s}
   .opt:hover{border-color:#bbb;background:#fafaf8}
-  .opt h5{font-size:15px;display:flex;gap:8px;align-items:center}
-  .opt p{font-size:12.5px;color:var(--muted);margin:3px 0 10px}
+  .opt{display:flex;align-items:center;gap:14px}
+  .opt>.ico{width:22px;height:22px;flex:none}
+  .opt span{flex:1;min-width:0}
+  .opt h5{font-size:15px}
+  .go{font-style:normal;color:var(--muted);transition:.15s}
+  .opt:hover .go{transform:translateX(3px);color:var(--ink)}
+  .opt p{font-size:13px;color:var(--muted);margin-top:2px}
   .tags{display:flex;flex-wrap:wrap;gap:6px}
   .tags a{font-size:12px;background:var(--pill);padding:4px 10px;border-radius:999px}
   .tags a:hover{background:#111;color:#fff}
@@ -135,7 +140,7 @@ const MENU = [
    foot:['¿Quieres trabajar con nosotros?','Conoce nuestras alianzas.','Contactar →']}
 ];
 const svg = k => `<svg class="ico" viewBox="0 0 24 24">${I[k]}</svg>`;
-const card = o => `<div class="opt"><h5>${svg(o.i)}${o.t}</h5><p>${o.d}</p><div class="tags">${o.tags.map(t=>`<a href="#">${t}</a>`).join('')}</div></div>`;
+const card = o => `<a class="opt" href="#">${svg(o.i)}<span><h5>${o.t}</h5><p>${o.d}</p></span><i class="go">→</i></a>`;
 const foot = f => `<div class="mega-foot"><div><b>${f[0]}</b><small>${f[1]}</small></div><a href="#">${f[2]}</a></div>`;
 
 document.getElementById('desk').innerHTML = MENU.map(m=>`
