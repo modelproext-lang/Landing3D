@@ -159,7 +159,8 @@
   });
   // acordeón con medios (ZWCAD): avanza solo, pausa al pasar el mouse
   document.querySelectorAll('.pt [data-ac]').forEach(function(ac){
-    var items=ac.querySelectorAll('.ac-i'),media=ac.querySelectorAll('.ac-m'),cur=0,t=null,DUR=6000,seen=false;
+    var items=ac.querySelectorAll('.ac-i'),mm=ac.querySelectorAll('.ac-m'),cur=0,t=null,DUR=6000,seen=false,nil={classList:{add:function(){},remove:function(){}},querySelector:function(){return null;}};
+    var media=mm.length>1?mm:[].map.call(items,function(){return nil;});
     ac.style.setProperty('--acdur',DUR/1000+'s');
     function vid(k,play){var v=media[k]&&media[k].querySelector('video');if(!v)return;if(play){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}}
     function go(k,user){items[cur].classList.remove('on');media[cur].classList.remove('on');items[cur].querySelector('.ac-h').setAttribute('aria-expanded','false');vid(cur,false);

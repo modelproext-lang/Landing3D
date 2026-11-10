@@ -1102,3 +1102,15 @@
 @media(max-width:1000px){.pt .sp2-r{grid-template-columns:1fr 1fr}.pt .sp2-hw{grid-column:1/-1;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
 @media(max-width:560px){.pt .sp2-r{grid-template-columns:1fr}.pt .sp2-hw{grid-template-columns:1fr}}
 .pt .sp2-race{align-content:space-between}
+
+/* Por qué ZW3D: acordeón que avanza solo + video */
+.pt .z3w{margin-top:0;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.pt .z3w-media{aspect-ratio:16/9;background:#061a34}
+.pt .z3w-media .vd-frame{position:absolute;inset:0;border-radius:20px;box-shadow:none}
+.pt .z3w-n{font-size:13px;font-weight:700;color:var(--g2);letter-spacing:.06em;margin-right:12px}
+.pt .z3w-go{display:inline-block;margin-top:10px;font-weight:600;font-size:14px;color:var(--g1)}
+.pt .z3w-go:hover{color:var(--b)}
+.pt .z3w-cap{position:absolute;left:18px;bottom:16px;font-size:13px;font-weight:700;color:#fff;background:rgba(6,26,52,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:100px;padding:7px 14px}
+.pt .z3w .ac-h{justify-content:flex-start;text-align:left}
+.pt .z3w .ac-chev{margin-left:auto}
+@media(max-width:900px){.pt .z3w{grid-template-columns:1fr}}
