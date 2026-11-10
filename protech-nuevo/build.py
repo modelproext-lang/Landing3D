@@ -115,7 +115,7 @@ def plans_lic_html(key):
           '<button type="button" data-lic="net" role="radio" aria-checked="false"><b>Red (flotante)</b><small>Se comparte en la red de tu empresa</small></button>'
           '</div>')
     info = ('<div class="lic-info"><p data-for="sa"><b>Standalone:</b> cada licencia se activa en una sola computadora. Ideal para usuarios que trabajan siempre en el mismo equipo.</p>'
-            '<p data-for="net" hidden><b>Red (flotante):</b> las licencias se instalan en un servidor y cualquier equipo de la red las usa. Si compras 3, pueden trabajar 3 personas al mismo tiempo, sin importar en qué computadora. Cuesta solo $1,000 MXN más por licencia.</p></div>')
+            '<p data-for="net" hidden><b>Licencia de red (flotante):</b> se instala en un servidor, que puede ser una computadora de la red, y permite compartir el software entre varios equipos. El número de usuarios simultáneos depende de las licencias adquiridas.</p></div>')
     n = len(items)
     grid = {2: "plans two", 3: "plans", 4: "plans four"}.get(n, "plans")
     return f'<div class="lic" data-lic-wrap>{sw}{info}<div class="{grid}">' + "".join(cards) + "</div></div>"
