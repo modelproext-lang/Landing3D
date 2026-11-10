@@ -169,3 +169,4 @@
 /* capacidades ZW3D: video por pestaña */
 .pt .z3-vid{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#141a24;box-shadow:0 30px 60px rgba(11,27,51,.18)}
 .pt .z3-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pt .z3-head .lead b{color:var(--n);font-weight:600}
