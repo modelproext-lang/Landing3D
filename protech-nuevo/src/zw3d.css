@@ -141,3 +141,5 @@
 @media(prefers-reduced-motion:reduce){.pt .z3-ring,.pt .z3-core,.pt .z3-hero-bg,.pt .z3-hero-in>*,.pt .z3-panel{animation:none!important}.pt .z3-dot{display:none}}
 .pt .z3-hero-in{width:100%}
 @media(min-width:761px) and (max-width:1280px){.pt .z3-hero-in>*{max-width:min(560px,52vw)}.pt .z3-hero-bg{background-position:calc(100% + 22vw) center}.pt .z3-hero:after{background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 48%,rgba(255,255,255,.45) 62%,rgba(255,255,255,0) 76%)}}
+.pt .z3-compat{margin:14px 0 0;font-size:13.5px;color:var(--m);display:flex;align-items:center;gap:8px}
+.pt .z3-compat:before{content:"";width:18px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g1),var(--g2));flex:none}
