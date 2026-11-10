@@ -1518,6 +1518,10 @@
 @media(hover:none){.pt .z3-light{display:none}}
 @media(prefers-reduced-motion:reduce){.pt .z3-tag{animation:none}.pt .z3-hero-bg,.pt .z3-tag{translate:none;transition:none}}
 .pt .z3-fx{z-index:1}
+
+/* capacidades ZW3D: video por pestaña */
+.pt .z3-vid{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#141a24;box-shadow:0 30px 60px rgba(11,27,51,.18)}
+.pt .z3-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 /* ===== Quiénes somos (réplica de la sección original, animación AOS 800ms ease-in-out-sine) ===== */
 .pt .about-h{position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) 0 clamp(40px,4vw,64px);background:#fff}
 .pt .about-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;position:relative;z-index:3}

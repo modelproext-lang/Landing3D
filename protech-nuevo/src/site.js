@@ -13,7 +13,10 @@
     bs.forEach(function(b){b.addEventListener('click',function(){
       bs.forEach(function(x){x.classList.toggle('on',x===b);});
       w.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==b.getAttribute('data-tab');});
+      w.querySelectorAll('[data-panel] video').forEach(function(v){if(v.closest('[hidden]'))v.pause();else{v.preload='auto';var r=v.play();if(r&&r.catch)r.catch(function(){});}});
     });});
+    // el video de la pestaña visible se reproduce solo cuando la sección está en pantalla
+    if(w.querySelector('[data-panel] video')&&'IntersectionObserver' in window)new IntersectionObserver(function(es){w.querySelectorAll('[data-panel] video').forEach(function(v){if(es[0].isIntersecting&&!v.closest('[hidden]')){v.preload='auto';var r=v.play();if(r&&r.catch)r.catch(function(){});}else v.pause();});},{threshold:.25}).observe(w);
   });
   // forms -> WhatsApp
   root.querySelectorAll('form[data-wa]').forEach(function(f){
