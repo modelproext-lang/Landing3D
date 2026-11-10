@@ -943,31 +943,6 @@
 @media(max-width:1000px){#soluciones .pc-s{grid-template-columns:1fr;gap:28px}}
 @media(max-width:600px){#soluciones .pc-tabs{width:100%}#soluciones .pc-tab{flex:1;justify-content:center;padding:9px 10px}#soluciones .pc-tab small{display:none}#soluciones .pc-s{padding:20px;border-radius:24px}#soluciones .pc-vp{border-radius:24px}}
 @media(prefers-reduced-motion:reduce){#soluciones .pc-tr,#soluciones .pc-s .pb-txt>*{transition:none}}
-
-/* submenú de producto (ZWCAD): pestañas fijas bajo el menú principal */
-.pt .zs{position:sticky;top:calc(var(--navh,64px) + env(safe-area-inset-top,0px));z-index:55;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(11,27,51,.05)}
-.pt .zs-in{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;height:56px}
-.pt .zs-b{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--n);font-size:15px;margin-right:14px;padding-right:18px;border-right:1px solid var(--line);flex:none}
-.pt .zs-b img{width:24px;height:24px;border-radius:6px}
-.pt .zs-l{display:flex;align-items:stretch;height:100%;overflow-x:auto;scrollbar-width:none}
-.pt .zs-l::-webkit-scrollbar{display:none}
-.pt .zs-t{position:relative;display:flex;align-items:center;white-space:nowrap;font-size:14.5px;color:var(--m);font-weight:600;padding:0 14px;transition:color .25s}
-.pt .zs-t:hover{color:var(--n)}
-.pt .zs-t.on{color:var(--g1)}
-.pt .zs-t.on:after{content:"";position:absolute;left:14px;right:14px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,var(--g1),var(--g2))}
-.pt .zs-t small{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:20px;padding:2px 7px;margin-left:7px}
-.pt .zs-cta{margin-left:auto;padding:9px 18px;font-size:13.5px;flex:none;opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .3s,transform .3s,visibility .3s}
-.pt .zs.stuck .zs-cta{opacity:1;visibility:visible;transform:none}
-.pt .zs-h{padding:44px 0 40px}
-.pt .zs-h .lead b{color:var(--n)}
-.pt .zs-next{padding:clamp(36px,5vw,64px) 0}
-.pt .zs-nx{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3vw,36px) clamp(22px,4vw,44px);background:linear-gradient(160deg,#f3f9ff,#e6f3ff)}
-.pt .zs-nx h2{font-size:clamp(22px,2.4vw,30px);margin:0}
-.pt .zs-nx .eb{margin-bottom:8px}
-@media(max-width:760px){.pt .zs-in{padding:0 8px;height:50px}.pt .zs-b,.pt .zs-cta{display:none}.pt .zs-t{padding:0 11px;font-size:13.5px}.pt .zs-t.on:after{left:11px;right:11px}}
-.pt .zs-sh{display:none}
-@media(max-width:760px){.pt .zs-lg{display:none}.pt .zs-sh{display:inline}.pt .zs-l{margin:0 auto}}
-@media(max-width:380px){.pt .zs-t small{display:none}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
