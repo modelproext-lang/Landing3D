@@ -997,3 +997,14 @@
 .pt .cs-cta .btn{padding:16px 30px;font-size:16px;box-shadow:0 14px 30px rgba(0,150,255,.3)}
 @media(max-width:480px){.pt .cs-cta .btn{width:100%;justify-content:center}}
 .pt .cs-rh .eb:after{content:"";width:28px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g2),var(--g1));flex:none}
+
+/* caso Coconal: banda de cotización */
+.pt .csb{margin-top:36px;position:relative;overflow:hidden;border-radius:28px;padding:clamp(26px,3.5vw,40px) clamp(24px,4vw,52px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#e6f3ff;background:radial-gradient(60% 120% at 100% 0%,rgba(255,255,255,.25),transparent 60%),linear-gradient(120deg,var(--g1),var(--g2));box-shadow:0 24px 50px rgba(10,106,201,.3)}
+.pt .csb:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/36px 36px;-webkit-mask:linear-gradient(90deg,transparent,#000);mask:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.pt .csb>*{position:relative}
+.pt .csb>div{flex:1 1 420px;min-width:0}
+.pt .csb h3{color:#fff;font-size:clamp(22px,2.4vw,30px);margin:0 0 6px}
+.pt .csb p{margin:0;font-size:16px;color:#dcecff;max-width:620px}
+.pt .csb .btn{background:#fff;color:var(--g1);padding:16px 30px;font-size:16px;box-shadow:0 12px 28px rgba(6,26,52,.25);flex:none}
+.pt .csb .btn:hover{background:#f0f7ff;color:var(--g1)}
+@media(max-width:600px){.pt .csb .btn{width:100%;justify-content:center}}

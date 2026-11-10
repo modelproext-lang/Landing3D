@@ -1001,6 +1001,17 @@
 .pt .cs-cta .btn{padding:16px 30px;font-size:16px;box-shadow:0 14px 30px rgba(0,150,255,.3)}
 @media(max-width:480px){.pt .cs-cta .btn{width:100%;justify-content:center}}
 .pt .cs-rh .eb:after{content:"";width:28px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g2),var(--g1));flex:none}
+
+/* caso Coconal: banda de cotización */
+.pt .csb{margin-top:36px;position:relative;overflow:hidden;border-radius:28px;padding:clamp(26px,3.5vw,40px) clamp(24px,4vw,52px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;color:#e6f3ff;background:radial-gradient(60% 120% at 100% 0%,rgba(255,255,255,.25),transparent 60%),linear-gradient(120deg,var(--g1),var(--g2));box-shadow:0 24px 50px rgba(10,106,201,.3)}
+.pt .csb:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/36px 36px;-webkit-mask:linear-gradient(90deg,transparent,#000);mask:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.pt .csb>*{position:relative}
+.pt .csb>div{flex:1 1 420px;min-width:0}
+.pt .csb h3{color:#fff;font-size:clamp(22px,2.4vw,30px);margin:0 0 6px}
+.pt .csb p{margin:0;font-size:16px;color:#dcecff;max-width:620px}
+.pt .csb .btn{background:#fff;color:var(--g1);padding:16px 30px;font-size:16px;box-shadow:0 12px 28px rgba(6,26,52,.25);flex:none}
+.pt .csb .btn:hover{background:#f0f7ff;color:var(--g1)}
+@media(max-width:600px){.pt .csb .btn{width:100%;justify-content:center}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
@@ -1837,7 +1848,7 @@
       <div><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6 6 4-4 8 8"/><path d="M14 17h7v-7"/></svg></span><span class="cs-n">02</span><b>Reducción de costos</b><p>Ahorro al cambiar suscripciones anuales por licencias perpetuas.</p></div>
       <div><span class="cs-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><span class="cs-n">03</span><b>Mejor colaboración</b><p>Mejor coordinación y control de proyectos entre los equipos de oficina y obra.</p></div>
     </div>
-    <div class="cs-cta"><a class="btn btn-p wa" data-msg="Hola ProTech, quiero cotizar ZWCAD." href="#">Cotiza ZWCAD</a></div>
+    <div class="csb"><div><h3>¿Buscas una licencia CAD a tu medida?</h3><p>Perpetua o suscripción: un especialista te ayuda a elegir la opción que mejor se adapta a tu equipo y presupuesto.</p></div><a class="btn btn-p wa" data-msg="Hola ProTech, quiero cotizar ZWCAD." href="#">Cotiza ZWCAD</a></div>
   </div>
 </div></section>
 
