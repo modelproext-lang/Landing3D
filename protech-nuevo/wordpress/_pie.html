@@ -264,7 +264,7 @@
       (function step(t){var e=t-t0,pz=Math.min(1,e/tz),po=Math.min(1,e/to);
         zu.style.width=(pz*100)+'%';ou.style.width=(po*100)+'%';show(pz);
         if(pz>=1&&!z.classList.contains('done')){z.classList.add('done');c.classList.add('pop');}
-        if(po>=1){o.classList.add('done');if(on)tm=setTimeout(run,1800);return;}
+        if(po>=1){o.classList.add('done');if(on)tm=setTimeout(run,4000);return;}
         raf=requestAnimationFrame(step);})(t0);}
     if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){on=e.isIntersecting;if(on)run();else{cancelAnimationFrame(raf);clearTimeout(tm);}});},{threshold:.3}).observe(c);}else fin();
   });
