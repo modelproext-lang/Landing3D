@@ -28,6 +28,7 @@
   /* ---------- MEGA MENU ---------- */
   .mega{position:absolute;top:calc(100% + 10px);left:0;width:720px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 50px -20px rgba(0,0,0,.25);padding:22px;display:none;grid-template-columns:1fr 1fr;gap:10px}
   .item:hover .mega,.item.open .mega{display:grid}
+  .mega::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
   .mega.narrow{width:520px}
   .mega-head{grid-column:1/-1;margin-bottom:4px}
   .mega-head h4{font-size:16px}
@@ -134,7 +135,7 @@ const MENU = [
    foot:['¿Quieres trabajar con nosotros?','Conoce nuestras alianzas.','Contactar →']}
 ];
 const svg = k => `<svg class="ico" viewBox="0 0 24 24">${I[k]}</svg>`;
-const card = o => `<a class="opt" href="#"><h5>${svg(o.i)}${o.t}</h5><p>${o.d}</p><div class="tags">${o.tags.map(t=>`<a href="#">${t}</a>`).join('')}</div></a>`;
+const card = o => `<div class="opt"><h5>${svg(o.i)}${o.t}</h5><p>${o.d}</p><div class="tags">${o.tags.map(t=>`<a href="#">${t}</a>`).join('')}</div></div>`;
 const foot = f => `<div class="mega-foot"><div><b>${f[0]}</b><small>${f[1]}</small></div><a href="#">${f[2]}</a></div>`;
 
 document.getElementById('desk').innerHTML = MENU.map(m=>`
