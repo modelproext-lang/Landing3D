@@ -159,7 +159,20 @@ def load_pages():
     return pages
 
 
+ZSUB_TABS = [("gen", "zwcad", '<span class="zs-lg">Descripción general</span><span class="zs-sh">General</span>', ""), ("nov", "zwcad-novedades", "Novedades 2026", '<small>Nuevo</small>'), ("pre", "zwcad-precios", "Precios", "")]
+
+
+def zsub_html(active):
+    tabs = "".join(f'<a class="zs-t{" on" if k == active else ""}" href="{{{{u:{pid}}}}}"' + (' aria-current="page"' if k == active else "") + f'>{label}{extra}</a>'
+                   for k, pid, label, extra in ZSUB_TABS)
+    return ('<nav class="zs" aria-label="Secciones de ZWCAD"><div class="zs-in">'
+            '<a class="zs-b" href="{{u:zwcad}}"><img src="{{img:logo-zwcad.webp}}" alt="" width="24" height="24"><span>ZWCAD</span></a>'
+            f'<div class="zs-l">{tabs}</div>'
+            '<a class="btn btn-p wa zs-cta" data-msg="Hola ProTech, quiero cotizar ZWCAD." href="#">Cotiza ZWCAD</a></div></nav>')
+
+
 def render(text, url_of, img_of):
+    text = re.sub(r"\{\{zsub:(\w+)\}\}", lambda m: zsub_html(m.group(1)), text)
     text = text.replace("{{wa-icon}}", WA_ICON)
     text = re.sub(r"\{\{ahorro:(\w+)\}\}", lambda m: ahorro_html(m.group(1)), text)
     text = re.sub(r"\{\{plans-lic:(\w+)\}\}", lambda m: plans_lic_html(m.group(1)), text)

@@ -239,6 +239,14 @@
     c.querySelector('.pc-vp').addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(i+(dx<0?1:-1));x0=null;});
     go(0);
   });
+  // submenú de producto: se pega bajo el menú principal y muestra "Cotiza" al bajar
+  (function(){
+    var nav=document.querySelector('.pt .nav'),zs=[].slice.call(document.querySelectorAll('.pt .zs'));if(!zs.length)return;
+    function upd(){if(nav)document.documentElement.style.setProperty('--navh',nav.offsetHeight+'px');
+      zs.forEach(function(z){z.classList.toggle('stuck',scrollY>260);});}
+    zs.forEach(function(z){var l=z.querySelector('.zs-l'),a=z.querySelector('.zs-t.on');if(l&&a&&l.scrollWidth>l.clientWidth)l.scrollLeft=a.offsetLeft-l.clientWidth/2+a.clientWidth/2;});
+    addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);addEventListener('hashchange',function(){setTimeout(upd,60);});upd();
+  })();
   // single-file preview: hash router
   var pages=root.querySelectorAll('[data-page]');
   if(pages.length>1){
