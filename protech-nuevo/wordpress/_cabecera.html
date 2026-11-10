@@ -943,6 +943,14 @@
 @media(max-width:1000px){#soluciones .pc-s{grid-template-columns:1fr;gap:28px}}
 @media(max-width:600px){#soluciones .pc-tabs{width:100%}#soluciones .pc-tab{flex:1;justify-content:center;padding:9px 10px}#soluciones .pc-tab small{display:none}#soluciones .pc-s{padding:20px;border-radius:24px}#soluciones .pc-vp{border-radius:24px}}
 @media(prefers-reduced-motion:reduce){#soluciones .pc-tr,#soluciones .pc-s .pb-txt>*{transition:none}}
+
+/* simbología IA / Smart: texto de referencia, no parecen botones */
+.pt .fx-legend{gap:0;margin:-4px 0 22px;font-size:13px;color:var(--m);align-items:center}
+.pt .fx-legend>span{padding:0 18px;line-height:1}
+.pt .fx-legend>span+span:not(.fx-leg-k){border-left:1px solid var(--line)}
+.pt .fx-legend .fx-leg-k{padding-right:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a99ae}
+.pt .fx-legend>span>.fx-badge{margin-right:4px;font-size:10px;padding:3px 7px;pointer-events:none}
+@media(max-width:560px){.pt .fx-legend{flex-direction:column;gap:10px}.pt .fx-legend>span{padding:0}.pt .fx-legend>span+span:not(.fx-leg-k){border:0}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
