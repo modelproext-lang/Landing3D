@@ -239,6 +239,20 @@
       w.appendChild(f);w.appendChild(l);a.replaceWith(w);}
     if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();load();}},{rootMargin:'300px'});io.observe(a);}else load();
   });
+  // productos del inicio: carrusel con pestañas, flechas, puntos y deslizamiento táctil
+  document.querySelectorAll('.pt [data-pc]').forEach(function(c){
+    var tr=c.querySelector('.pc-tr'),ss=[].slice.call(c.querySelectorAll('.pc-s')),tabs=[].slice.call(c.querySelectorAll('.pc-tab')),
+        dots=[].slice.call(c.querySelectorAll('.pc-dots span')),i=0,n=ss.length;
+    function go(k){i=(k+n)%n;tr.style.transform='translateX('+(-100*i)+'%)';
+      ss.forEach(function(s,x){s.classList.toggle('on',x===i);s.setAttribute('aria-hidden',x===i?'false':'true');s.querySelectorAll('a,button').forEach(function(e){e.tabIndex=x===i?0:-1;});});
+      tabs.forEach(function(t,x){t.classList.toggle('on',x===i);t.setAttribute('aria-selected',x===i);});
+      dots.forEach(function(d,x){d.classList.toggle('on',x===i);});}
+    tabs.forEach(function(t,x){t.addEventListener('click',function(){go(x);});});
+    c.querySelectorAll('.pc-ar').forEach(function(b){b.addEventListener('click',function(){go(i+ +b.dataset.d);});});
+    var x0=null,y0=0;c.querySelector('.pc-vp').addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+    c.querySelector('.pc-vp').addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(i+(dx<0?1:-1));x0=null;});
+    go(0);
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
