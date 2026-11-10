@@ -31,6 +31,13 @@
   .mega::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
   .opt{display:block;padding:10px 12px;border-radius:8px;font-size:14.5px;white-space:nowrap}
   .opt:hover{background:var(--pill)}
+  .sub-wrap{position:relative}
+  .has-sub{display:flex;justify-content:space-between;gap:16px}
+  .has-sub:after{content:"›";color:var(--muted)}
+  .flyout{position:absolute;left:100%;top:-6px;margin-left:8px;min-width:200px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px -12px rgba(0,0,0,.2);padding:6px;display:none;flex-direction:column}
+  .flyout:before{content:"";position:absolute;top:0;bottom:0;left:-12px;width:12px}
+  .sub-wrap:hover .flyout,.sub-wrap:focus-within .flyout{display:flex}
+  .sub-wrap:hover>.has-sub{background:var(--pill)}
   .tags{display:flex;flex-wrap:wrap;gap:6px}
   .tags a{font-size:12px;background:var(--pill);padding:4px 10px;border-radius:999px}
   .tags a:hover{background:#111;color:#fff}
@@ -49,6 +56,9 @@
     .tabs button.on{background:#fff;color:#111;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
     .panel{display:none;margin-top:12px;flex-direction:column}
     .panel .opt{padding:14px 12px;font-size:16px;border-bottom:1px solid var(--line);border-radius:0}
+    .panel .has-sub:after{content:""}
+    .panel .flyout{position:static;display:flex;margin:0;border:0;box-shadow:none;padding:0 0 0 16px;min-width:0;background:none}
+    .panel .flyout .opt{font-size:14.5px;color:var(--muted);padding:11px 12px}
     .panel.on{display:flex}
   }
 
@@ -96,7 +106,7 @@ const I = {
 const MENU = [
   {name:'Software', title:'Software por aplicación', sub:'Elige lo que necesitas hacer y conoce las opciones disponibles.',
    opts:[
-    {i:'cube',t:'Ingeniería inversa',d:'De escaneos 3D a modelos CAD editables',tags:['EXModel Pro','Geomagic Design X']},
+    {i:'cube',t:'Ingeniería inversa',d:'De escaneos 3D a modelos CAD editables',tags:['Geomagic Design X','EXModel Pro'],sub:true},
     {i:'scan',t:'Inspección y metrología 3D',d:'Control de calidad y comparación dimensional',tags:['Geomagic Control X','SHINING3D Inspect']},
     {i:'compass',t:'Diseño CAD/CAM',d:'Diseño 2D, modelado 3D y manufactura',tags:['ZWCAD','ZW3D']},
     {i:'vr',t:'Realidad virtual',d:'Visualización y experiencias 3D interactivas',tags:['SimLab VR Studio']}],
@@ -124,7 +134,9 @@ const MENU = [
    foot:['¿Quieres trabajar con nosotros?','Conoce nuestras alianzas.','Contactar →']}
 ];
 const svg = k => `<svg class="ico" viewBox="0 0 24 24">${I[k]}</svg>`;
-const card = o => `<a class="opt" href="#">${o.t}</a>`;
+const card = o => o.sub
+  ? `<div class="sub-wrap"><a class="opt has-sub" href="#">${o.t}</a><div class="flyout">${o.tags.map(t=>`<a class="opt" href="#">${t}</a>`).join('')}</div></div>`
+  : `<a class="opt" href="#">${o.t}</a>`;
 
 document.getElementById('desk').innerHTML = MENU.map(m=>`
   <div class="item"><button>${m.name}</button>
