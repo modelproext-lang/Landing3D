@@ -1085,3 +1085,10 @@
 .pt .sp2-race.fin .sp2-res{opacity:1;transform:none}
 .pt .sp2-rep{white-space:nowrap;flex:none}
 .pt .sp2-res{opacity:1;transform:none}
+
+/* comparación: el número cuenta junto con la barra y "explota" al llegar */
+.pt .sp2-race .sp2-h b{display:inline-block;justify-self:start;transform-origin:left 70%;font-variant-numeric:tabular-nums}
+.pt .sp2-race.pop .sp2-h b{animation:spPop .7s cubic-bezier(.3,1.5,.5,1) both}
+.pt .sp2-race.pop{border-color:rgba(94,224,176,.55);box-shadow:0 0 0 1px rgba(94,224,176,.25),0 18px 44px rgba(22,199,132,.18)}
+@keyframes spPop{0%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(26,163,255,0))}40%{transform:scale(1.22);filter:drop-shadow(0 0 18px rgba(26,163,255,.85))}100%{transform:scale(1.08);filter:drop-shadow(0 0 10px rgba(26,163,255,.5))}}
+@media(prefers-reduced-motion:reduce){.pt .sp2-race.pop .sp2-h b{animation:none}}
