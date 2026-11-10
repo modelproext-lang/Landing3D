@@ -1009,6 +1009,42 @@
 .pt .csb .btn{background:#fff;color:var(--g1);padding:16px 30px;font-size:16px;box-shadow:0 12px 28px rgba(6,26,52,.25);flex:none}
 .pt .csb .btn:hover{background:#f0f7ff;color:var(--g1)}
 @media(max-width:600px){.pt .csb .btn{width:100%;justify-content:center}}
+
+/* comparación con AutoCAD: velocidad 2D/3D y requisitos de hardware */
+.pt .sp2{position:relative;overflow:hidden;background:radial-gradient(50% 70% at 90% 10%,rgba(0,150,255,.2),transparent 70%),radial-gradient(40% 60% at 0% 100%,rgba(10,106,201,.22),transparent 70%),var(--n)}
+.pt .sp2-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(28px,5vw,64px);align-items:center}
+.pt .sp2 .lead{color:#b9cde6}
+.pt .sp2 .lead b{color:#fff;font-weight:600}
+.pt .sp2-r{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pt .sp2-c{border-radius:22px;padding:22px 22px 24px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(124,196,255,.2);display:grid;gap:16px;align-content:start;transition:transform .3s,border-color .3s}
+.pt .sp2-c:hover{transform:translateY(-4px);border-color:rgba(124,196,255,.45)}
+.pt .sp2-hw{grid-column:1/-1;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center}
+.pt .sp2-h{display:grid;gap:2px}
+.pt .sp2-h span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7cc4ff}
+.pt .sp2-h b{font-size:clamp(40px,4.4vw,56px);line-height:1.05;font-weight:700;letter-spacing:-.03em;color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(90deg,#fff 20%,#7cc4ff)}
+.pt .sp2-h small{font-size:14px;color:#cfe0f5;font-weight:600}
+.pt .sp2-bars{display:grid;gap:10px}
+.pt .sp2-bars div{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:10px}
+.pt .sp2-bars em{font-style:normal;font-size:12.5px;font-weight:700;color:#fff}
+.pt .sp2-bars .o em{color:#8fa9c9}
+.pt .sp2-bars i{display:block;height:8px;border-radius:8px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
+.pt .sp2-bars i:after{content:"";position:absolute;inset:0;width:var(--w);border-radius:8px;background:linear-gradient(90deg,var(--g1),var(--g2))}
+.pt .sp2-bars .o i:after{background:#5d7290}
+.pt .sp2-hw table{width:100%;border-collapse:collapse;font-size:14px}
+.pt .sp2-hw th{font-size:12px;font-weight:700;color:#8fa9c9;text-align:right;padding:0 0 8px}
+.pt .sp2-hw th:nth-child(2){color:#7cc4ff}
+.pt .sp2-hw td{padding:9px 0;border-top:1px solid rgba(255,255,255,.1);color:#b9cde6}
+.pt .sp2-hw td+td{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.pt .sp2-hw td:nth-child(2){color:#fff}
+.pt .sp2-note{grid-column:1/-1;margin:4px 0 0;font-size:12px;line-height:1.6;color:#7f97b6}
+@media(max-width:960px){.pt .sp2-g{grid-template-columns:1fr}}
+@media(max-width:560px){.pt .sp2-r{grid-template-columns:1fr}.pt .sp2-hw{grid-template-columns:1fr}}
+.pt .sp2-hw table{min-width:0;font-size:14px}
+.pt .sp2-hw th{background:none;text-transform:none;letter-spacing:0;padding:0 0 8px 12px;border:0;text-align:right}
+.pt .sp2-hw td{padding:9px 0 9px 12px;border-bottom:0}
+.pt .sp2-hw td:first-child{padding-left:0;text-align:left}
+.pt .sp2-c,.pt .sp2-l{min-width:0}
+.pt .sp2-cap{font-size:11.5px;color:#7f97b6;margin-bottom:-2px}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
