@@ -239,18 +239,19 @@
     c.querySelector('.pc-vp').addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(i+(dx<0?1:-1));x0=null;});
     go(0);
   });
-  // comparación: carrera animada (ZWCAD termina primero en proporción a los resultados)
+  // comparación: carrera animada en bucle (ZWCAD termina primero en proporción a los resultados)
   document.querySelectorAll('.pt .sp2-race').forEach(function(c){
-    var r=parseFloat(c.getAttribute('data-r'))||2,z=c.querySelector('.z'),o=c.querySelector('.o'),zu=z.querySelector('u'),ou=o.querySelector('u'),raf,base=1100;
-    function run(){cancelAnimationFrame(raf);c.classList.remove('fin');z.classList.remove('done');o.classList.remove('done');
-      if(reduce){zu.style.width='100%';ou.style.width='100%';z.classList.add('done');o.classList.add('done');c.classList.add('fin');return;}
+    var r=parseFloat(c.getAttribute('data-r'))||2,z=c.querySelector('.z'),o=c.querySelector('.o'),zu=z.querySelector('u'),ou=o.querySelector('u'),raf,tm,on=false,base=1100;
+    function fin(){zu.style.width='100%';ou.style.width='100%';z.classList.add('done');o.classList.add('done');}
+    function run(){cancelAnimationFrame(raf);clearTimeout(tm);z.classList.remove('done');o.classList.remove('done');
+      if(reduce){fin();return;}
       var t0=performance.now(),tz=base,to=base*r;
       (function step(t){var e=t-t0,pz=Math.min(1,e/tz),po=Math.min(1,e/to);
         zu.style.width=(pz*100)+'%';ou.style.width=(po*100)+'%';
-        if(pz>=1)z.classList.add('done');if(po>=1){o.classList.add('done');c.classList.add('fin');return;}
+        if(pz>=1)z.classList.add('done');
+        if(po>=1){o.classList.add('done');if(on)tm=setTimeout(run,1800);return;}
         raf=requestAnimationFrame(step);})(t0);}
-    c.querySelector('.sp2-rep').addEventListener('click',run);
-    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)run();});},{threshold:.5});io.observe(c);}else run();
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){on=e.isIntersecting;if(on)run();else{cancelAnimationFrame(raf);clearTimeout(tm);}});},{threshold:.3}).observe(c);}else fin();
   });
   document.querySelectorAll('.pt .sp2-hw').forEach(function(h){
     if(!('IntersectionObserver' in window)){h.classList.add('go');return;}
