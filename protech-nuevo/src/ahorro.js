@@ -16,8 +16,8 @@
         '</div>'+
         '<div class="sv-st"><div class="sv-h"><span>3</span><h3>Mantenimiento y actualizaciones <em>Opcional</em></h3></div>'+
           '<div class="sv-plans" role="radiogroup" aria-label="Plan de mantenimiento">'+
-            '<div class="sv-pl on" data-p="mant" role="radio" aria-checked="true" tabindex="0"><b>Mantenimiento anual</b><small>Aprox. 20 % del valor de la licencia al año, a partir del año 2. Siempre en la última versión.</small><i>Recomendado</i></div>'+
-            '<div class="sv-pl" data-p="up" role="radio" aria-checked="false" tabindex="0"><b>Actualización flexible</b><small>Aprox. 30 % del valor de la licencia, solo en el año que decidas actualizar.</small>'+
+            '<div class="sv-pl on" data-p="mant" role="radio" aria-checked="true" tabindex="0"><b>Mantenimiento anual</b><small>Un costo especial para mantenerte <b>siempre en la última versión</b>: aprox. 20 % del valor de la licencia al año, a partir del año 2.</small><i>Recomendado</i></div>'+
+            '<div class="sv-pl" data-p="up" role="radio" aria-checked="false" tabindex="0"><b>Actualización flexible</b><small><b>Tú eliges en qué año actualizarte</b> a la versión más reciente: aprox. 30 % del valor de la licencia, solo ese año.</small>'+
               '<span class="sv-yrs" role="group" aria-label="Año de actualización"><span>Actualizar en:</span><button type="button" data-y="2">Año 2</button><button type="button" data-y="3" class="on">Año 3</button><button type="button" data-y="4">Año 4</button><button type="button" data-y="5">Año 5</button></span></div>'+
             '<div class="sv-pl" data-p="none" role="radio" aria-checked="false" tabindex="0"><b>Sin mantenimiento</b><small>Usa tu versión el tiempo que quieras, sin pagos adicionales.</small></div>'+
           '</div>'+
@@ -26,7 +26,7 @@
       '<div class="sv-out" aria-live="polite">'+
         '<div class="sv-k">Tu ahorro estimado</div>'+
         '<div class="sv-adv" hidden><b class="sv-adv-t">Hablemos de un plan a tu medida</b><p class="sv-adv-p">Con el presupuesto que indicas, lo mejor es que un asesor te ayude a encontrar un plan flexible. Tenemos diversas opciones para que ZWCAD entre en tu presupuesto.</p><a class="btn btn-p sv-adv-go" href="#" target="_blank" rel="noopener">Hablar con un asesor</a></div>'+
-        '<div class="sv-sp" hidden><span><b>¿Buscas una opción más accesible?</b> Tenemos planes especiales para ti.</span><a class="sv-sp-go" href="#" target="_blank" rel="noopener">Conocer planes especiales →</a></div>'+
+        '<div class="sv-sp" hidden><span class="sv-sp-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span><span><b>¿Buscas una opción más accesible?</b>Platica con un asesor sobre las formas de adquirir ZWCAD.</span><a class="sv-sp-go" href="#" target="_blank" rel="noopener">Platicar con un asesor →</a></div>'+
         '<div class="sv-big"><div><small class="sv-k3">A 3 años</small><b class="sv-s3"></b><span class="sv-p3"></span></div><div class="sv-5"><small>A 5 años <i class="sv-best">Mayor ahorro</i></small><b class="sv-s5"></b><span class="sv-p5"></span></div></div>'+
         '<div class="sv-ch"><div class="sv-cht">Lo que pagas cada año</div><div class="sv-leg"><span><i class="a"></i>Suscripción actual</span><span><i class="b"></i>ZWCAD</span></div><svg class="sv-svg" role="img" aria-label="Pago de cada año"></svg><div class="sv-tip" hidden></div></div>'+
         '<table class="sv-tbl"><thead><tr><th></th><th>3 años</th><th>5 años</th></tr></thead><tbody><tr><td>Suscripción actual</td><td class="sv-c3"></td><td class="sv-c5"></td></tr><tr><td>ZWCAD</td><td class="sv-z3"></td><td class="sv-z5"></td></tr></tbody></table>'+
@@ -83,7 +83,7 @@
       $('.sv-adv-p').textContent=tr==='low'?'Cada empresa es distinta. Cuéntanos cuántos usuarios son y cómo trabajan, y te diremos con claridad si ZWCAD es una buena opción para ti.':'Con el presupuesto que indicas, lo mejor es que un asesor te ayude a encontrar un plan flexible. Tenemos diversas opciones para que ZWCAD entre en tu presupuesto.';
       $('.sv-adv-go').textContent=tr==='low'?'Platica con un asesor':'Hablar con un asesor';
       $('.sv-sp').hidden=bad||tr!=='mid';
-      $('.sv-sp-go').href=link('Hola ProTech, hoy pago '+fmt(st.cur)+' al año por licencia de CAD (sin IVA) y me interesan los planes especiales de ZWCAD ('+st.n+' licencia(s)).');$('.sv-adv').hidden=!bad;$('.sv-big').hidden=bad;$('.sv-ch').hidden=bad;$('.sv-tbl').hidden=bad;$('.sv-go').hidden=bad;
+      $('.sv-sp-go').href=link('Hola ProTech, hoy pago '+fmt(st.cur)+' al año por licencia de CAD (sin IVA) y me interesa conocer las formas de adquirir ZWCAD ('+st.n+' licencia(s)).');$('.sv-adv').hidden=!bad;$('.sv-big').hidden=bad;$('.sv-ch').hidden=bad;$('.sv-tbl').hidden=bad;$('.sv-go').hidden=bad;
       $('.sv-adv-go').href=link('Hola ProTech, hoy pago '+fmt(st.cur)+' al año por licencia de CAD (sin IVA) y me interesa ZWCAD ('+st.n+' licencia(s)). '+(tr==='low'?'Me gustaría platicar mi caso con un asesor.':'¿Qué plan flexible me recomiendan?'));
       if(bad)return;
       var pay=5;for(var yy=0;yy<5;yy++){if(r.a[yy]>=r.b[yy]){pay=yy+1;break;}}

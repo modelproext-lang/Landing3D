@@ -1318,6 +1318,17 @@
 .pt .sv-big.hl5 .sv-best{display:inline-block}
 .pt .sv-big.hl5>div:first-child{opacity:.85}
 @media(max-width:480px){.pt .sv-big.hl5{grid-template-columns:1fr}.pt .sv-big.hl5 .sv-5{order:-1;transform:none}}
+
+/* calculadora: recuadro de asesoría más visible y textos de planes */
+.pt .sv-sp{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px 14px;padding:16px 18px;border-radius:16px;background:radial-gradient(80% 140% at 0% 0%,rgba(255,196,92,.28),transparent 60%),linear-gradient(90deg,rgba(245,158,11,.22),rgba(249,115,22,.14));border:1px solid rgba(255,190,80,.6);box-shadow:0 12px 28px rgba(0,0,0,.22);color:#ffe9c7;font-size:14.5px;line-height:1.45}
+.pt .sv-sp>span:nth-child(2) b{display:block;font-size:16.5px;color:#fff;margin-bottom:2px}
+.pt .sv-sp-i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#f59e0b,#f97316);color:#fff;box-shadow:0 8px 18px rgba(249,115,22,.35)}
+.pt .sv-sp-i svg{width:22px;height:22px}
+.pt .sv-sp a{display:inline-flex;align-items:center;font-size:14px;font-weight:700;color:#3a1d00;background:linear-gradient(90deg,#ffc35c,#ffa53a);border-radius:100px;padding:10px 16px;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.pt .sv-sp a:hover{color:#3a1d00;transform:translateY(-1px);box-shadow:0 8px 18px rgba(255,165,58,.35)}
+@media(max-width:560px){.pt .sv-sp{grid-template-columns:44px 1fr}.pt .sv-sp a{grid-column:1/-1;justify-content:center}}
+.pt .sv-pl small b{color:var(--n);font-weight:700}
+.pt .sv-pl small b{font-size:inherit;display:inline;margin:0}
 /* ===== página ZW3D (adaptada del diseño oficial ZW3D 2027) ===== */
 .pt .z3-hero{position:relative;overflow:hidden;padding:0;min-height:clamp(520px,42vw,720px);display:flex;align-items:center;background:#e9f2fc}
 .pt .z3-hero-bg{position:absolute;inset:0;background-size:cover;background-position:right center;animation:z3Zoom 14s var(--ease) both}
