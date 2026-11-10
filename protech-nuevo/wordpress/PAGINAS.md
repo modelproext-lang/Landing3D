@@ -3,7 +3,6 @@
 | Página | URL | Título SEO | Descripción SEO |
 |---|---|---|---|
 | Inicio | `/` | Software CAD para Arquitectura y Manufactura | ZWCAD y ZW3D | ProTech | ProTech, distribuidor exclusivo de ZWSOFT en México. ZWCAD y ZW3D para arquitectura, ingeniería, construcción y manufactura, con licencia perpetua, actualizaciones flexibles y soporte técnico en México. |
-| Productos | `/productos/` | Software CAD/CAM ZWSOFT en México | ZWCAD y ZW3D | ProTech | Conoce ZWCAD y ZW3D, el software CAD/CAM de ZWSOFT, y sus plugins gratuitos. Distribuidor exclusivo en México con soporte local. |
 | ZWCAD | `/product/zwcad/` | ZWCAD en México | CAD 2D/3D compatible con DWG desde $17,980 MXN | ProTech | ZWCAD: CAD 2D/3D 100% compatible con DWG, con licencia perpetua desde $17,980 MXN. Prueba gratis 30 días. Distribuidor exclusivo en México. |
 | ZW3D CAD/CAM | `/product/zw3d-cad-cam/` | ZW3D CAD/CAE/CAM en México | Licencia perpetua desde $36,000 MXN | ProTech | ZW3D integra CAD, simulación, CAM y gestión de datos para maquinaria y manufactura. Licencia perpetua desde $36,000 MXN, prueba gratis 30 días y soporte en México. |
 | Precios y Comprar | `/precios/` | Precios ZWCAD y ZW3D en México 2026 | Licencia Perpetua | ProTech | Lista de precios en MXN de ZWCAD (desde $17,980) y ZW3D (desde $36,000) con licencia perpetua. Cotiza por WhatsApp y prueba gratis 30 días. |

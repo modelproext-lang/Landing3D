@@ -31,6 +31,8 @@
     var li=t.parentNode,o=li.classList.toggle('open');t.setAttribute('aria-expanded',o);
     root.querySelectorAll('.dd.open').forEach(function(x){if(x!==li){x.classList.remove('open');x.querySelector('.dd-t').setAttribute('aria-expanded','false');}});
   });});
+  // "Productos" no es una página: al tocarlo solo abre su submenú
+  root.querySelectorAll('.dd-nl').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=a.parentNode.querySelector('.dd-t');if(t)t.click();});});
   document.addEventListener('click',function(e){if(!e.target.closest('.dd'))root.querySelectorAll('.dd.open').forEach(function(x){x.classList.remove('open');});});
 
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
