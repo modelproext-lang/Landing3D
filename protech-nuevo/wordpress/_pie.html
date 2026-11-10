@@ -274,6 +274,15 @@
     if(!('IntersectionObserver' in window)){h.classList.add('go');return;}
     var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){h.classList.add('go');io.disconnect();}},{threshold:.4});io.observe(h);
   });
+  // banner ZW3D: el modelo y las etiquetas se mueven en profundidad siguiendo al mouse
+  document.querySelectorAll('.pt .z3-hero').forEach(function(h){
+    if(reduce||!matchMedia('(hover:hover)').matches)return;
+    var raf;
+    h.addEventListener('mousemove',function(e){var r=h.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){h.style.setProperty('--mx',((x-.5)*2).toFixed(3));h.style.setProperty('--my',((y-.5)*2).toFixed(3));h.style.setProperty('--lx',(x*100).toFixed(1)+'%');h.style.setProperty('--ly',(y*100).toFixed(1)+'%');});});
+    h.addEventListener('mouseenter',function(){h.classList.add('hov');});
+    h.addEventListener('mouseleave',function(){h.classList.remove('hov');h.style.setProperty('--mx',0);h.style.setProperty('--my',0);});
+  });
   // ===== cotizador de licencias =====
   function money(n){return '$'+Math.round(n).toLocaleString('es-MX');}
   document.querySelectorAll('.pt .cz').forEach(function(cz){
