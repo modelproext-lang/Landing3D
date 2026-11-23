@@ -16,8 +16,8 @@
         '</div>'+
         '<div class="sv-st"><div class="sv-h"><span>3</span><h3>Mantenimiento y actualizaciones <em>Opcional</em></h3></div>'+
           '<div class="sv-plans" role="radiogroup" aria-label="Plan de mantenimiento">'+
-            '<div class="sv-pl on" data-p="mant" role="radio" aria-checked="true" tabindex="0"><b>Mantenimiento anual</b><small>Un costo especial para mantenerte <b>siempre en la última versión</b>: aprox. 20 % del valor de la licencia al año, a partir del año 2.</small><i>Recomendado</i></div>'+
-            '<div class="sv-pl" data-p="up" role="radio" aria-checked="false" tabindex="0"><b>Actualización flexible</b><small><b>Tú eliges en qué año actualizarte</b> a la versión más reciente: aprox. 30 % del valor de la licencia, solo ese año.</small>'+
+            '<div class="sv-pl on" data-p="mant" role="radio" aria-checked="true" tabindex="0"><b>Actualización anual</b><small>Mantente <b>siempre al día con la última versión</b> pagando aproximadamente el 20 % del valor de tu licencia al año.</small><i>Recomendado</i></div>'+
+            '<div class="sv-pl" data-p="up" role="radio" aria-checked="false" tabindex="0"><b>Actualización cuando tú decidas</b><small>Actualiza a la última versión <b>cuando lo necesites</b>, pagando aproximadamente el 30 % del valor de tu licencia, solo cuando actualices.</small>'+
               '<span class="sv-yrs" role="group" aria-label="Año de actualización"><span>Actualizar en:</span><button type="button" data-y="2">Año 2</button><button type="button" data-y="3" class="on">Año 3</button><button type="button" data-y="4">Año 4</button><button type="button" data-y="5">Año 5</button></span></div>'+
             '<div class="sv-pl" data-p="none" role="radio" aria-checked="false" tabindex="0"><b>Sin mantenimiento</b><small>Usa tu versión el tiempo que quieras, sin pagos adicionales.</small></div>'+
           '</div>'+
@@ -94,7 +94,7 @@
       
       $('.sv-c3').textContent=fmt(r.a[2]);$('.sv-c5').textContent=fmt(r.a[4]);$('.sv-z3').textContent=fmt(r.b[2]);$('.sv-z5').textContent=fmt(r.b[4]);
       draw(r);
-      var plan={mant:'mantenimiento anual',up:'actualización flexible en el año '+st.up,none:'sin mantenimiento'}[st.plan];
+      var plan={mant:'actualización anual',up:'actualización cuando yo decida (año '+st.up+')',none:'sin mantenimiento'}[st.plan];
       $('.sv-go').href=link('Hola ProTech, calculé mi ahorro con ZWCAD:\n• '+r.P.name+' · '+(st.t==='net'?'Red (flotante)':'Standalone')+' · '+st.n+' licencia(s)\n• Plan: '+plan+'\n• Hoy pago '+fmt(st.cur)+' por licencia al año (sin IVA)\n• Ahorro estimado a 5 años: '+fmt(s5)+'\nQuiero una cotización formal.');
     }
     $('#sv-v').addEventListener('change',function(e){st.v=+e.target.value;st.mv=true;auto();render();});
