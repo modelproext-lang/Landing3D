@@ -273,6 +273,11 @@
     h.addEventListener('mouseenter',function(){h.classList.add('hov');});
     h.addEventListener('mouseleave',function(){h.classList.remove('hov');h.style.setProperty('--mx',0);h.style.setProperty('--my',0);});
   });
+  // video de comparación: se reproduce (sin sonido) solo mientras está en pantalla
+  document.querySelectorAll('.pt .sp2-vf video').forEach(function(v){
+    if(!('IntersectionObserver' in window)||reduce)return;
+    new IntersectionObserver(function(es){if(es[0].isIntersecting){v.preload='auto';var r=v.play();if(r&&r.catch)r.catch(function(){});}else v.pause();},{threshold:.4}).observe(v);
+  });
   // single-file preview: hash router
   var pages=root.querySelectorAll('[data-page]');
   if(pages.length>1){
