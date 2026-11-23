@@ -1171,3 +1171,7 @@
 @media(max-width:560px){.pt .how-c{min-height:0}.pt .how-bg{font-size:110px;bottom:-26px}}
 @media(hover:none){.pt .how-c:hover .how-bg{background-image:linear-gradient(160deg,rgba(10,106,201,.22),rgba(60,171,246,.05));filter:blur(1.5px);transform:none}.pt .how-c.on .how-bg{background-image:linear-gradient(160deg,rgba(255,255,255,.45),rgba(255,255,255,.08));filter:none}}
 @media(max-width:560px){.pt .how-bg{font-size:84px;bottom:-22px;right:-4px;opacity:.8}}
+/* números de fondo nítidos en reposo (sin desenfoque, que se veía pixeleado) */
+.pt .how-bg,.pt .how-c:hover .how-bg{filter:none!important}
+.pt .how-bg{background-image:linear-gradient(160deg,rgba(10,106,201,.16),rgba(60,171,246,.03))}
+@media(hover:none){.pt .how-c:hover .how-bg{background-image:linear-gradient(160deg,rgba(10,106,201,.16),rgba(60,171,246,.03))}}
