@@ -3076,7 +3076,7 @@
   document.querySelectorAll('.pt .sv').forEach(function(sv){
     var D=JSON.parse(sv.getAttribute('data-sv')),st={v:1,t:'sa',n:1,cur:25000,plan:'mant',up:3,mv:false,mp:false};
     function fmt(n){return '$'+Math.round(n).toLocaleString('es-MX');}
-    var opts=D.map(function(p,i){return '<option value="'+i+'"'+(i===1?' selected':'')+'>'+p.name+'</option>';}).join('');
+    var opts=D.map(function(p,i){return '<option value="'+i+'"'+(i===1?' selected':'')+'>'+({'ZWCAD Standard':'ZWCAD Standard (sólo 2D)','ZWCAD Professional':'ZWCAD Professional (2D y 3D)'}[p.name]||p.name)+'</option>';}).join('');
     sv.innerHTML=
       '<div class="sv-g"><form class="sv-in" onsubmit="return false">'+
         '<div class="sv-st"><div class="sv-h"><span>1</span><h3>Lo que pagas hoy</h3></div>'+
