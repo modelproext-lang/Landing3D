@@ -1175,3 +1175,14 @@
 .pt .how-bg,.pt .how-c:hover .how-bg{filter:none!important}
 .pt .how-bg{background-image:linear-gradient(160deg,rgba(10,106,201,.16),rgba(60,171,246,.03))}
 @media(hover:none){.pt .how-c:hover .how-bg{background-image:linear-gradient(160deg,rgba(10,106,201,.16),rgba(60,171,246,.03))}}
+
+/* pie: contacto con íconos */
+.pt footer .fct{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px}
+.pt footer .fct a{display:flex;align-items:center;gap:12px;color:#dbe7f5}
+.pt footer .fct a:hover{color:#fff}
+.pt footer .fct small{display:block;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#7f97b6}
+.pt footer .fct-i{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex:none;background:rgba(124,196,255,.12);color:#7cc4ff;transition:background .25s,color .25s}
+.pt footer .fct-i svg{width:18px;height:18px}
+.pt footer .fct-i.wa-i{background:rgba(37,211,102,.15);color:#25d366}
+.pt footer .fct a:hover .fct-i{background:var(--g1);color:#fff}
+.pt footer .fct a:hover .fct-i.wa-i{background:#25d366}
