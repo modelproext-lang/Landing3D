@@ -1192,3 +1192,6 @@
 @media(max-width:900px){.pt .how-img2{margin:8px auto 80px;max-width:520px}}
 .pt .how-img2 img{background:none;border-radius:0;box-shadow:none;max-width:640px;filter:drop-shadow(0 28px 40px rgba(4,30,80,.35))}
 .pt .how-img2{margin:clamp(8px,2vw,24px) 0 clamp(90px,8vw,120px)}
+.pt .how-img2 img{max-width:none;width:118%;margin-left:-6%}
+.pt .how-img2{margin:clamp(0px,1vw,12px) 0 clamp(80px,7vw,110px)}
+@media(max-width:900px){.pt .how-img2 img{width:112%;margin-left:-6%}}
