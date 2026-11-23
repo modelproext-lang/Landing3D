@@ -1195,3 +1195,10 @@
 .pt .how-img2 img{max-width:none;width:118%;margin-left:-6%}
 .pt .how-img2{margin:clamp(0px,1vw,12px) 0 clamp(80px,7vw,110px)}
 @media(max-width:900px){.pt .how-img2 img{width:112%;margin-left:-6%}}
+/* Funciones ZWCAD: indicación para elegir categoría */
+.pt .fx-wrap{text-align:center}
+.pt .fx-hint{display:flex;justify-content:center;align-items:center;gap:8px;margin:6px 0 -14px;font-size:14px;font-weight:600;color:var(--g1)}
+.pt .fx-hint i{font-style:normal;display:inline-block;animation:fxHint 1.4s ease-in-out infinite}
+@keyframes fxHint{50%{transform:translateY(3px)}}
+@media(prefers-reduced-motion:reduce){.pt .fx-hint i{animation:none}}
+.pt .fx-hint{margin:22px 0 10px}.pt .fx-wrap .fx-tabs{margin-top:0}
