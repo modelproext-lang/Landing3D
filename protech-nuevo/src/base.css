@@ -1186,3 +1186,9 @@
 .pt footer .fct-i.wa-i{background:rgba(37,211,102,.15);color:#25d366}
 .pt footer .fct a:hover .fct-i{background:var(--g1);color:#fff}
 .pt footer .fct a:hover .fct-i.wa-i{background:#25d366}
+/* Habla con un experto: imagen del equipo en tarjeta blanca */
+.pt .how-img2{align-self:center;margin:clamp(24px,3vw,40px) 0 clamp(96px,9vw,130px)}
+.pt .how-img2 img{max-width:620px;border-radius:26px;background:#fff;filter:none;box-shadow:0 30px 60px rgba(4,30,80,.35),0 0 0 6px rgba(255,255,255,.18);animation:howFloat 6s ease-in-out infinite}
+@media(max-width:900px){.pt .how-img2{margin:8px auto 80px;max-width:520px}}
+.pt .how-img2 img{background:none;border-radius:0;box-shadow:none;max-width:640px;filter:drop-shadow(0 28px 40px rgba(4,30,80,.35))}
+.pt .how-img2{margin:clamp(8px,2vw,24px) 0 clamp(90px,8vw,120px)}
