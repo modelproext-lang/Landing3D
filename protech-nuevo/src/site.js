@@ -187,9 +187,12 @@
   document.querySelectorAll('.pt [data-lic-wrap]').forEach(function(w){
     var bs=w.querySelectorAll('.lic-sw button');
     function fmt(n){return '$'+Number(n).toLocaleString('es-MX');}
+    function ax(){var inf=w.querySelector('.lic-info'),ab=w.querySelector('.lic-sw button.on');if(inf&&ab){var ir=inf.getBoundingClientRect(),br=ab.getBoundingClientRect();if(ir.width)inf.style.setProperty('--ax',(br.left+br.width/2-ir.left)+'px');}}
+    addEventListener('resize',ax);addEventListener('hashchange',function(){setTimeout(ax,80);});if('IntersectionObserver' in window)new IntersectionObserver(ax).observe(w);
     function set(t){
       bs.forEach(function(b){var on=b.getAttribute('data-lic')===t;b.classList.toggle('on',on);b.setAttribute('aria-checked',on);});
       w.querySelectorAll('.lic-info p').forEach(function(p){p.hidden=p.getAttribute('data-for')!==t;});
+      ax();
       var lbl=t==='net'?'Red (flotante)':'Standalone';
       w.querySelectorAll('.plan[data-sa]').forEach(function(c){var v=t==='net'&&c.getAttribute('data-net')?c.getAttribute('data-net'):c.getAttribute('data-sa');
         var a=c.querySelector('.lic-amt');a.textContent=fmt(v);a.classList.remove('bump');void a.offsetWidth;a.classList.add('bump');setTimeout(function(){a.classList.remove('bump');},350);
