@@ -12,9 +12,10 @@
   - `vista-previa.html`: todo el sitio en un archivo para revisarlo.
 
 ## Menú
-Productos (ZWCAD, ZW3D CAD/CAM, Todos los productos) · Soporte (Centro de descargas, Soporte técnico,
-Preguntas frecuentes) · Precios y Comprar · Partners (Programa de Partners, Localizador de Resellers) ·
-Nosotros · Contacto. Se conservan las URLs del sitio anterior (`/product/zwcad/`, `/descarga/`, etc.).
+Productos (ZWCAD, ZW3D) · Soporte (Centro de descargas) · Precios y Comprar · Partners (Programa de
+Partners, Localizador de Resellers) · Nosotros · Contacto. "Productos", "Soporte" y "Partners" solo abren su
+submenú (no son páginas). Se conservan las URLs del sitio anterior (`/product/zwcad/`, `/descarga/`, etc.).
+La página "Productos" se eliminó: crea una redirección 301 de `/productos/` a `/` (plugin Redirection).
 
 ## Subirlo a WordPress (manual; con la conexión por API lo hace Claude)
 1. Tema **Astra** (gratis). Sube la carpeta `img/` a `/wp-content/uploads/protech/` con el Administrador
