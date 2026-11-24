@@ -1234,3 +1234,8 @@
 .pt .vd-in h3{font-size:clamp(24px,2.6vw,32px);margin:6px 0 12px;color:var(--n)}
 .pt .vd-k{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);background:#eaf4ff;border-radius:100px;padding:5px 12px}
 .pt .vd-in+.ac{margin-top:24px}
+/* Cámbiate a ZWCAD sin fricción */
+.pt .mig{background:#fff}
+.pt .mig .ac{margin-top:40px}
+.pt .mig-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+@media(max-width:560px){.pt .mig-cta .btn{width:100%;justify-content:center}}
