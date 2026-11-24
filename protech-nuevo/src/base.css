@@ -1239,3 +1239,15 @@
 .pt .mig .ac{margin-top:40px}
 .pt .mig-cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
 @media(max-width:560px){.pt .mig-cta .btn{width:100%;justify-content:center}}
+/* ZWCAD en acción: video protagonista */
+.pt .vd-sec{padding-block:clamp(56px,6vw,84px)}
+.pt .vd-sec .c .lead{max-width:640px;margin-inline:auto}
+.pt .vd-sec h2 .hl{color:var(--g1);-webkit-text-fill-color:var(--g1);background:none}
+.pt .vd-big{max-width:1040px;margin:32px auto 0;position:relative}
+.pt .vd-big:before{content:"";position:absolute;inset:8% 6% -6%;z-index:0;border-radius:40px;background:radial-gradient(60% 60% at 50% 50%,rgba(26,163,255,.35),transparent 70%);filter:blur(30px)}
+.pt .vd-big .vd-frame{position:relative;z-index:1;border-radius:24px;box-shadow:0 34px 70px rgba(10,60,140,.22),0 0 0 1px rgba(10,106,201,.08)}
+.pt .vd-big .vd-btn{width:96px;height:96px;margin:-48px 0 0 -48px}
+.pt .fwa{transition:opacity .3s,transform .3s}
+.vd-on .pt .fwa{opacity:0;pointer-events:none;transform:translateY(12px)}
+@media(max-width:560px){.pt .vd-big{margin-top:24px}.pt .vd-big .vd-frame{border-radius:16px}.pt .vd-big .vd-btn{width:72px;height:72px;margin:-36px 0 0 -36px}}
+.pt .vd-sec h2{background:none;color:var(--n);-webkit-text-fill-color:var(--n)}

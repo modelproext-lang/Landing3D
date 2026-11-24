@@ -281,6 +281,12 @@
     if(!('IntersectionObserver' in window)||reduce)return;
     new IntersectionObserver(function(es){if(es[0].isIntersecting){v.preload='auto';var r=v.play();if(r&&r.catch)r.catch(function(){});}else v.pause();},{threshold:.4}).observe(v);
   });
+  // video principal: oculta el botón flotante de WhatsApp mientras el video está en pantalla
+  document.querySelectorAll('.pt .vd-big').forEach(function(v){
+    if(!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(es){document.documentElement.classList.toggle('vd-on',es[0].isIntersecting&&!v.closest('[hidden]'));},{threshold:.25}).observe(v);
+    addEventListener('hashchange',function(){document.documentElement.classList.remove('vd-on');});
+  });
   // single-file preview: hash router
   var pages=root.querySelectorAll('[data-page]');
   if(pages.length>1){
