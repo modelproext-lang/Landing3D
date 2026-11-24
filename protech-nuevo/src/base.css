@@ -1261,3 +1261,4 @@
 @keyframes fxHint{50%{transform:translateX(3px)}}
 @media(max-width:600px){.pt .fx-head{justify-content:center;text-align:center}.pt .fx-box .fx-tabs{width:100%;display:grid;grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.pt .fx-head .fx-hint i{display:none}}
+.pt .sp2-l .lead+.lead{margin-top:10px}
