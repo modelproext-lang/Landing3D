@@ -1233,6 +1233,11 @@
 .pt .lic-info:before{content:"";position:absolute;top:-9px;left:var(--ax,25%);width:18px;height:18px;background:#fff;border-left:1px solid #d4e6f8;border-top:1px solid #d4e6f8;transform:translateX(-50%) rotate(45deg);transition:left .35s cubic-bezier(.22,.61,.36,1)}
 .pt .lic-info p{text-align:left;margin:0;padding:20px 24px 20px 28px;border-radius:16px;background:#fff;border:1px solid #d4e6f8;border-left:4px solid #1aa3ff;box-shadow:0 14px 30px rgba(11,27,51,.07)}
 .pt .lic-info b{display:block;margin-bottom:4px;color:var(--g1)}
+/* video integrado en ¿Qué es ZWCAD? */
+.pt .vd-in{margin-top:40px;background:#fff;border-radius:28px;padding:clamp(20px,3.5vw,44px);box-shadow:0 20px 50px rgba(10,60,140,.07)}
+.pt .vd-in h3{font-size:clamp(24px,2.6vw,32px);margin:6px 0 12px;color:var(--n)}
+.pt .vd-k{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);background:#eaf4ff;border-radius:100px;padding:5px 12px}
+.pt .vd-in+.ac{margin-top:24px}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
@@ -1914,11 +1919,12 @@
 </div>
 <div class="zb-badge"><span class="zb-ring">RVT<br>&amp; IFC</span><span><b>Soporte para modelos BIM</b><small>Abre, revisa y extrae información BIM directamente en ZWCAD.</small></span></div>
 </section>
-
-<section class="vd" id="zwcad-video"><div class="w vd-g">
+<section class="zf" id="zwcad-que-es"><div class="w">
+  <div class="c"><span class="eb">¿Qué es ZWCAD?</span><h2>Compatible, eficiente e intuitivo</h2><p class="lead">Empieza a trabajar con ZWCAD desde el primer día.</p></div>
+  <div class="vd-g vd-in">
   <div class="vd-txt">
-    <span class="eb">Video</span>
-    <h2>¿Qué hace diferente a ZWCAD?</h2>
+    <span class="vd-k">▶ Video</span>
+    <h3>¿Qué hace diferente a ZWCAD?</h3>
     <p class="lead">Descubre en pocos minutos por qué ZWCAD es la alternativa CAD que tu equipo puede usar desde el primer día.</p>
     <ul class="vd-pts"><li>Rendimiento superior</li><li>Licencia perpetua</li><li>Compatibilidad DWG</li><li>Integración con flujos BIM</li></ul>
   </div>
@@ -1928,10 +1934,7 @@
       <span class="vd-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
     </button>
   </div>
-</div></section>
-
-<section class="zf" id="zwcad-que-es"><div class="w">
-  <div class="c"><span class="eb">¿Qué es ZWCAD?</span><h2>Compatible, eficiente e intuitivo</h2><p class="lead">Empieza a trabajar con ZWCAD desde el primer día.</p></div>
+  </div>
   <div class="ac" data-ac>
     <div class="ac-list">
       <div class="ac-i on" data-k="0">

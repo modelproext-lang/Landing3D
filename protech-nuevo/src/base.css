@@ -1229,3 +1229,8 @@
 .pt .lic-info:before{content:"";position:absolute;top:-9px;left:var(--ax,25%);width:18px;height:18px;background:#fff;border-left:1px solid #d4e6f8;border-top:1px solid #d4e6f8;transform:translateX(-50%) rotate(45deg);transition:left .35s cubic-bezier(.22,.61,.36,1)}
 .pt .lic-info p{text-align:left;margin:0;padding:20px 24px 20px 28px;border-radius:16px;background:#fff;border:1px solid #d4e6f8;border-left:4px solid #1aa3ff;box-shadow:0 14px 30px rgba(11,27,51,.07)}
 .pt .lic-info b{display:block;margin-bottom:4px;color:var(--g1)}
+/* video integrado en ¿Qué es ZWCAD? */
+.pt .vd-in{margin-top:40px;background:#fff;border-radius:28px;padding:clamp(20px,3.5vw,44px);box-shadow:0 20px 50px rgba(10,60,140,.07)}
+.pt .vd-in h3{font-size:clamp(24px,2.6vw,32px);margin:6px 0 12px;color:var(--n)}
+.pt .vd-k{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);background:#eaf4ff;border-radius:100px;padding:5px 12px}
+.pt .vd-in+.ac{margin-top:24px}
