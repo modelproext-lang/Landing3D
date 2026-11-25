@@ -110,12 +110,11 @@ def plans_lic_html(key):
             f'<p>{desc}</p><ul>{lis}</ul>'
             f'<a class="btn btn-p wa lic-go" data-msg="Hola ProTech, quiero {name} con licencia Standalone (${price:,} MXN + IVA)." href="#">Cotizar este plan</a>'
             f'<a class="trial wa" data-msg="Hola ProTech, quiero la prueba gratis de 30 días de {name}." href="#">o pruébalo gratis 30 días</a></div>')
-    sw = ('<div class="lic-sw" role="radiogroup" aria-label="Tipo de licencia">'
-          '<button type="button" class="on" data-lic="sa" role="radio" aria-checked="true"><b>Standalone</b><small>Se instala en una computadora</small></button>'
-          '<button type="button" data-lic="net" role="radio" aria-checked="false"><b>Red (flotante)</b><small>Se comparte en la red de tu empresa</small></button>'
+    sw = ('<div class="lic-sw lic-opts" role="radiogroup" aria-label="Tipo de licencia">'
+          '<button type="button" class="on" data-lic="sa" role="radio" aria-checked="true"><span class="lo-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><span class="lo-t"><b>Standalone</b><small>Una licencia por computadora. Ideal para usuarios fijos.</small></span><span class="lo-r"></span></button>'
+          '<button type="button" data-lic="net" role="radio" aria-checked="false"><span class="lo-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-3h14v3"/></svg></span><span class="lo-t"><b>Red (flotante)</b><small>Se comparte en tu red. Pagas por usuarios simultáneos.</small></span><span class="lo-r"></span></button>'
           '</div>')
-    info = ('<div class="lic-info"><p data-for="sa"><b>Standalone</b>Cada licencia se activa en una sola computadora. Ideal para usuarios que trabajan siempre en el mismo equipo.</p>'
-            '<p data-for="net" hidden><b>Licencia de red (flotante)</b>Se instala en un servidor, que puede ser una computadora de la red, y permite compartir el software entre varios equipos. El número de usuarios simultáneos depende de las licencias adquiridas.</p></div>')
+    info = ''
     n = len(items)
     grid = {2: "plans two", 3: "plans", 4: "plans four"}.get(n, "plans")
     return f'<div class="lic" data-lic-wrap>{sw}{info}<div class="{grid}">' + "".join(cards) + "</div></div>"

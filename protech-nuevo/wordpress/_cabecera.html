@@ -1296,6 +1296,20 @@
 .pt .sp2-cta .btn{padding:16px 32px;font-size:16px;box-shadow:0 14px 34px rgba(0,150,255,.35)}
 .pt .sp2-cta small{font-size:13.5px;color:#9fb4cf}
 @media(max-width:560px){.pt .sp2-cta .btn{width:100%;justify-content:center}}
+
+/* licencias: dos tarjetas seleccionables */
+.pt .lic-sw.lic-opts{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;width:100%;margin:26px auto 34px;padding:0;background:none;border:0;box-shadow:none;border-radius:0}
+.pt .lic-opts button{display:grid;grid-template-columns:48px 1fr 24px;gap:14px;align-items:center;text-align:left;padding:18px 20px;border-radius:20px;background:#fff;border:2px solid #d4e6f8;color:var(--n);box-shadow:none;transition:border-color .25s,background .25s,box-shadow .25s}
+.pt .lic-opts button:hover{border-color:#9fd2ff}
+.pt .lic-opts button.on{background:linear-gradient(135deg,#f2f9ff,#e6f3ff);border-color:#1aa3ff;color:var(--n);box-shadow:0 14px 30px rgba(10,106,201,.15)}
+.pt .lo-i{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#eaf4ff;color:var(--g1);transition:background .25s,color .25s}
+.pt .lic-opts .on .lo-i{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff}
+.pt .lo-i svg{width:24px;height:24px}
+.pt .lic-opts b{display:block;font-size:17px;color:var(--n)}
+.pt .lic-opts small{display:block;font-size:13.5px;color:var(--m);margin-top:2px;opacity:1}
+.pt .lo-r{width:22px;height:22px;border-radius:50%;border:2px solid #b9cde6;transition:border .2s}
+.pt .lic-opts .on .lo-r{border:6px solid #1aa3ff}
+@media(max-width:600px){.pt .lic-sw.lic-opts{grid-template-columns:1fr;gap:12px}.pt .lic-opts button{padding:14px 16px}}
 /* ===== cotizador ===== */
 .pt .cz{text-align:left;margin-top:36px}
 .pt .cz-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
