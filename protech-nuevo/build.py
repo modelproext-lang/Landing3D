@@ -25,8 +25,8 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 # ---------- precios (una sola fuente para todas las páginas) ----------
 PLANS = {
     "zwcad": [
-        ("ZWCAD Standard", 17980, "Dibujo 2D y visualización 3D básica.",
-         ["Herramientas completas de dibujo 2D", "Visualización de modelos 3D", "Extensión LISP"], False),
+        ("ZWCAD Standard", 17980, "Dibujo 2D y visualización de modelos 3D en DWG.",
+         ["Herramientas completas de dibujo 2D", "Visualización de modelos 3D (solo archivos DWG)", "Extensión LISP"], False),
         ("ZWCAD Professional", 23980, "CAD 2D/3D completo con modelado.",
          ["Todo lo de Standard", "Modelado 3D", "Nube de puntos y GIS", "Vectorización de imágenes", "APIs completas (VBA, ZRX, .NET)"], True),
         ("ZWCAD MFG (Mecánico)", 27980, "Professional con módulo mecánico.",
