@@ -26,9 +26,9 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="
 PLANS = {
     "zwcad": [
         ("ZWCAD Standard", 17980, "Dibujo 2D y visualización de modelos 3D en DWG.",
-         ["Herramientas completas de dibujo 2D", "Visualización de modelos 3D (solo archivos DWG)", "Extensión LISP"], False),
+         ["Herramientas completas de dibujo 2D", "Visualización de modelos 3D*", "Extensión LISP"], False),
         ("ZWCAD Professional", 23980, "CAD 2D/3D completo con modelado.",
-         ["Todo lo de Standard", "Modelado 3D", "Nube de puntos y GIS", "Vectorización de imágenes", "APIs completas (VBA, ZRX, .NET)"], True),
+         ["Todo lo de Standard", "Modelado 3D", "Importa modelos RVT, IFC y STEP*", "Herramientas con IA (Smart Match y Similar Search)", "Nube de puntos y GIS", "Vectorización de imágenes", "APIs completas (VBA, ZRX, .NET)"], True),
         ("ZWCAD MFG (Mecánico)", 27980, "Professional con módulo mecánico.",
          ["Todo lo de Professional", "Biblioteca de piezas estándar", "Compatible con AutoCAD® Mechanical", "Generación de BOM",
           "Cotas, anotaciones y cálculo mecánico"], False),
@@ -117,7 +117,8 @@ def plans_lic_html(key):
     info = ''
     n = len(items)
     grid = {2: "plans two", 3: "plans", 4: "plans four"}.get(n, "plans")
-    return f'<div class="lic" data-lic-wrap>{sw}{info}<div class="{grid}">' + "".join(cards) + "</div></div>"
+    note = ('<p class="lic-note">* ZWCAD Standard permite visualizar modelos 3D solo en formato DWG. La importación de modelos RVT, IFC y STEP está disponible a partir de ZWCAD Professional.</p>' if key == "zwcad" else "")
+    return f'<div class="lic" data-lic-wrap>{sw}{info}<div class="{grid}">' + "".join(cards) + "</div>" + note + "</div>"
 
 
 def ahorro_html(key):
