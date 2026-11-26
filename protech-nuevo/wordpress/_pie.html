@@ -394,21 +394,24 @@
     var opts=D.map(function(p,i){return '<option value="'+i+'"'+(i===1?' selected':'')+'>'+({'ZWCAD Standard':'ZWCAD Standard (sólo 2D)','ZWCAD Professional':'ZWCAD Professional (2D y 3D)'}[p.name]||p.name)+'</option>';}).join('');
     sv.innerHTML=
       '<div class="sv-g"><form class="sv-in" onsubmit="return false">'+
-        '<div class="sv-st"><div class="sv-h"><span>1</span><h3>Lo que pagas hoy</h3></div>'+
+        '<div class="sv-st open" data-s="0"><button type="button" class="sv-h" aria-expanded="true"><span>1</span><h3>Lo que pagas hoy</h3><small class="sv-sum"></small><i class="sv-chev" aria-hidden="true"></i></button><div class="sv-body">'+
           '<label for="sv-c">¿Cuánto pagas al año por tu suscripción CAD actual? <small>Por licencia, sin IVA</small><span class="sv-money"><span>$</span><input id="sv-c" type="text" inputmode="numeric" value="25,000"><em>MXN / año</em></span></label>'+
           '<div class="sv-pre" role="group" aria-label="Montos de referencia"><span>Referencia:</span><button type="button" data-c="25000">CAD completo ≈ $25,000</button><button type="button" data-c="6800">CAD ligero ≈ $6,800</button></div>'+
+        '<button type="button" class="sv-next">Continuar →</button></div>'+
         '</div>'+
-        '<div class="sv-st"><div class="sv-h"><span>2</span><h3>Tu licencia ZWCAD</h3></div>'+
+        '<div class="sv-st" data-s="1"><button type="button" class="sv-h" aria-expanded="false"><span>2</span><h3>Tu licencia ZWCAD</h3><small class="sv-sum"></small><i class="sv-chev" aria-hidden="true"></i></button><div class="sv-body">'+
           '<label for="sv-v">Versión <small class="sv-rec"></small><select id="sv-v">'+opts+'</select></label>'+
           '<div class="sv-f"><span class="sv-l">Tipo de licencia</span><div class="sv-seg" role="radiogroup" aria-label="Tipo de licencia"><button type="button" data-t="sa" class="on" role="radio" aria-checked="true">Standalone</button><button type="button" data-t="net" role="radio" aria-checked="false">Red (flotante)</button></div></div>'+
           '<label for="sv-n">Número de licencias<span class="sv-qty"><button type="button" data-q="-1" aria-label="Quitar una licencia">−</button><input id="sv-n" type="number" min="1" max="200" value="1" inputmode="numeric"><button type="button" data-q="1" aria-label="Agregar una licencia">+</button></span></label>'+
+        '<button type="button" class="sv-next">Continuar →</button></div>'+
         '</div>'+
-        '<div class="sv-st"><div class="sv-h"><span>3</span><h3>Mantenimiento y actualizaciones <em>Opcional</em></h3></div>'+
+        '<div class="sv-st" data-s="2"><button type="button" class="sv-h" aria-expanded="false"><span>3</span><h3>Mantenimiento y actualizaciones <em>Opcional</em></h3><small class="sv-sum"></small><i class="sv-chev" aria-hidden="true"></i></button><div class="sv-body">'+
           '<div class="sv-plans" role="radiogroup" aria-label="Plan de mantenimiento">'+
             '<div class="sv-pl on" data-p="mant" role="radio" aria-checked="true" tabindex="0"><b>Actualización anual</b><small>Mantente <b>siempre al día con la última versión</b> pagando aproximadamente el 20 % del valor de tu licencia al año.</small><i>Recomendado</i></div>'+
             '<div class="sv-pl" data-p="up" role="radio" aria-checked="false" tabindex="0"><b>Actualización cuando tú decidas</b><small>Actualiza a la última versión <b>cuando lo necesites</b>, pagando aproximadamente el 30 % del valor de tu licencia, solo cuando actualices.</small>'+
               '<span class="sv-yrs" role="group" aria-label="Año de actualización"><span>Actualizar en:</span><button type="button" data-y="2">Año 2</button><button type="button" data-y="3" class="on">Año 3</button><button type="button" data-y="4">Año 4</button><button type="button" data-y="5">Año 5</button></span></div>'+
             '<div class="sv-pl" data-p="none" role="radio" aria-checked="false" tabindex="0"><b>Sin mantenimiento</b><small>Usa tu versión el tiempo que quieras, sin pagos adicionales.</small></div>'+
+        '<button type="button" class="sv-next">Continuar →</button></div>'+
           '</div>'+
         '</div>'+
       '</form>'+
@@ -497,6 +500,18 @@
     $$('.sv-yrs button').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();st.up=+b.getAttribute('data-y');$$('.sv-yrs button').forEach(function(x){x.classList.toggle('on',x===b);});pick(b.closest('.sv-pl'));});});
     $$('.sv-qty button').forEach(function(b){b.addEventListener('click',function(){st.n=Math.max(1,Math.min(200,st.n+ +b.getAttribute('data-q')));$('#sv-n').value=st.n;render();});});
     $('.sv-go').addEventListener('click',function(){track('generate_lead',{form:'ahorro'});});
+    // pasos que se abren y cierran, con resumen del paso cerrado
+    var sts=[].slice.call($$('.sv-st'));
+    function openStep(k){sts.forEach(function(x,i){var on=i===k;x.classList.toggle('open',on);x.querySelector('.sv-h').setAttribute('aria-expanded',on);if(!on&&i<k)x.classList.add('done');});}
+    sts.forEach(function(x,i){x.querySelector('.sv-h').addEventListener('click',function(){x.classList.add('done');openStep(x.classList.contains('open')?-1:i);});
+      var nx=x.querySelector('.sv-next');if(!nx)return;
+      if(i===sts.length-1){nx.textContent='Ver mi ahorro →';nx.addEventListener('click',function(){x.classList.add('done');openStep(-1);var o=$('.sv-out');if(o&&innerWidth<900)o.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});});}
+      else nx.addEventListener('click',function(){x.classList.add('done');openStep(i+1);});});
+    function sums(){var P=D[st.v],n=sts.map(function(x){return x.querySelector('.sv-sum');});
+      n[0].textContent=fmt(st.cur)+' / año';
+      n[1].textContent=P.name.replace('ZWCAD ','')+' · '+(st.t==='net'?'Red':'Individual')+' · '+st.n+' lic.';
+      n[2].textContent={mant:'Actualización anual',up:'Cuando decidas (año '+st.up+')',none:'Sin mantenimiento'}[st.plan];}
+    var _r=render;render=function(){_r();sums();};
     sv.querySelectorAll('.sv-adv-go,.sv-sp-go').forEach(function(a){a.addEventListener('click',function(){track('generate_lead',{form:'ahorro-plan-especial'});});});
     auto();render();
     if('ResizeObserver' in window)new ResizeObserver(function(){render();}).observe(svg);

@@ -234,3 +234,24 @@
 @media(max-width:560px){.pt .sv-sp{grid-template-columns:44px 1fr}.pt .sv-sp a{grid-column:1/-1;justify-content:center}}
 .pt .sv-pl small b{color:var(--n);font-weight:700}
 .pt .sv-pl small b{font-size:inherit;display:inline;margin:0}
+
+/* calculadora: pasos que se abren y cierran */
+.pt .sv-st{padding:0;gap:0;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+.pt .sv-st>.sv-h{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px 12px;width:100%;padding:18px 22px;cursor:pointer;flex-wrap:wrap}
+.pt .sv-st>.sv-h:focus-visible{outline:2px solid var(--g2);outline-offset:-2px;border-radius:22px}
+.pt .sv-st>.sv-h span{flex:none}
+.pt .sv-sum{display:none;font-size:13px;font-weight:600;color:var(--g1);background:#eaf4ff;border-radius:100px;padding:4px 10px}
+.pt .sv-st.done:not(.open) .sv-sum{display:inline-block}
+.pt .sv-chev{margin-left:auto;width:10px;height:10px;border-right:2px solid var(--g1);border-bottom:2px solid var(--g1);transform:rotate(45deg);transition:transform .3s;flex:none}
+.pt .sv-st.open .sv-chev{transform:rotate(-135deg)}
+.pt .sv-body{display:none;gap:14px;padding:0 22px 22px}
+.pt .sv-st.open .sv-body{display:grid}
+.pt .sv-st.open{border-color:#9fd2ff;box-shadow:0 14px 30px rgba(10,106,201,.1)}
+.pt .sv-st.done:not(.open) .sv-h>span{background:linear-gradient(135deg,#0f9d6b,#16c784)}
+.pt .sv-next{justify-self:start;font:inherit;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--g1),var(--g2));border:0;border-radius:100px;padding:11px 20px;cursor:pointer;box-shadow:0 8px 18px rgba(10,106,201,.25)}
+@media(max-width:480px){.pt .sv-st>.sv-h{padding:16px}.pt .sv-body{padding:0 16px 18px}.pt .sv-next{width:100%}}
+.pt .sv-st>.sv-h{flex-wrap:nowrap}
+.pt .sv-st>.sv-h h3{flex:1 1 auto;min-width:0}
+.pt .sv-st>.sv-h .sv-sum{flex:none}
+@media(max-width:600px){.pt .sv-st>.sv-h{flex-wrap:wrap}.pt .sv-st>.sv-h h3{flex:1 1 60%}.pt .sv-st>.sv-h .sv-chev{order:3}.pt .sv-st>.sv-h .sv-sum{order:4;flex-basis:100%;margin-left:44px;width:max-content;max-width:calc(100% - 44px)}}
+@media(max-width:600px){.pt .sv-st.done:not(.open) .sv-sum{display:block;flex:none;flex-basis:auto;width:auto;max-width:calc(100% - 44px)}}
