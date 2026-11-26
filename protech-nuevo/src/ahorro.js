@@ -22,8 +22,8 @@
             '<div class="sv-pl" data-p="up" role="radio" aria-checked="false" tabindex="0"><b>Actualización cuando tú decidas</b><small>Actualiza a la última versión <b>cuando lo necesites</b>, pagando aproximadamente el 30 % del valor de tu licencia, solo cuando actualices.</small>'+
               '<span class="sv-yrs" role="group" aria-label="Año de actualización"><span>Actualizar en:</span><button type="button" data-y="2">Año 2</button><button type="button" data-y="3" class="on">Año 3</button><button type="button" data-y="4">Año 4</button><button type="button" data-y="5">Año 5</button></span></div>'+
             '<div class="sv-pl" data-p="none" role="radio" aria-checked="false" tabindex="0"><b>Sin mantenimiento</b><small>Usa tu versión el tiempo que quieras, sin pagos adicionales.</small></div>'+
-        '<button type="button" class="sv-next">Continuar →</button></div>'+
           '</div>'+
+        '<button type="button" class="sv-next">Continuar →</button></div>'+
         '</div>'+
       '</form>'+
       '<div class="sv-out" aria-live="polite">'+
